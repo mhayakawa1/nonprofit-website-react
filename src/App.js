@@ -4,7 +4,8 @@ import Video from './components/Main'
 
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
-https://www.pexels.com/photo/aerial-shot-of-forest-3923721/
+https://www.pexels.com/video/drone-shot-of-forest-856478/
+https://www.pexels.com/photo/highway-in-the-middle-of-the-forest-753873/
 https://www.pexels.com/photo/multicolored-trees-growing-in-autumn-woods-in-daytime-5580658/
 https://www.pexels.com/photo/breathtaking-landscape-of-lush-autumn-forest-in-highlands-against-cloudy-sundown-sky-4593369/
 https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
