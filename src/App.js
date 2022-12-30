@@ -1,29 +1,13 @@
-//import { render } from "@testing-library/react";
-//import { useState } from 'react';
 import React, { useEffect } from 'react';
 import './App.css';
 import Video from './components/Main'
 
-{/*BUILDING OBJECTIVES
-https://www.schemecolor.com/navy-blue-and-mint.php
-https://www.schemecolor.com/beige-and-navy-blue.php
+{/* Resources
+https://www.schemecolor.com/dark-orange-green.php
 https://www.pexels.com/photo/aerial-shot-of-forest-3923721/
 https://www.pexels.com/photo/multicolored-trees-growing-in-autumn-woods-in-daytime-5580658/
 https://www.pexels.com/photo/breathtaking-landscape-of-lush-autumn-forest-in-highlands-against-cloudy-sundown-sky-4593369/
-
 https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
-
-- Basic page layout, no CSS X
-- Intro - hamburger menu, logo, h1, p X
-- About - p X
-- Our Work - graph, image carousel, p
-- Get Involved - images, search for events
-- Contact - Name, Email, Subject, Message, submit
-- Footer - logo, contact info, social media, copyright, site terms, privacy policy
-
-TASKS FOR TODAY
-- Style search results
-- 
 */}
 
 class Menu extends React.Component {
@@ -191,8 +175,17 @@ class DonateButtons extends React.Component {
   }
 
   toggleButtons(event, value){
-    console.log(value)
+    //console.log(value)
     switch(value){
+      case 0:
+        this.setState( state => ({
+          selected5: false,
+          selected10: false,
+          selected25: false,
+          selected50: false,
+          selected100: false
+        }));
+        break;
       case 5:
         this.setState( state => ({
           selected5: !state.selected5,
@@ -269,7 +262,7 @@ class DonateButtons extends React.Component {
 
         <div id='donate-custom'>
           <label id='dollar-label'>$</label>
-          <input id='custom-input' type='number' min='0' placeholder='Custom' />
+          <input onChange={event => this.toggleButtons(event, 0)} id='custom-input' type='number' min='0' placeholder='Custom' />
         </div>
       </div>
     )
@@ -552,15 +545,15 @@ class SearchEvents extends React.Component {
     const results = this.state.renderProperties.map((item, index) =>
       <div className='search-result' key={index}>
         <div>
-          <p className='result-date-time font-size-small font-weight-thin'>{this.state.object[item].dateTime}</p>
-          <p className='result-title'>{this.state.object[item].title.toUpperCase()}</p>
-          <p className='result-type-location font-size-small'>{this.state.object[item].eventType} @{this.state.object[item].address}, {this.state.object[item].city}</p>
-          <p className='result-description font-size-small font-weight-thin'>{this.state.object[item].description}</p>
+          <p className='result-font result-date-time font-size-small font-weight-thin'>{this.state.object[item].dateTime}</p>
+          <p className='result-font result-title'>{this.state.object[item].title.toUpperCase()}</p>
+          <p className='result-font result-type-location font-size-small'>{this.state.object[item].eventType} @{this.state.object[item].address}, {this.state.object[item].city}</p>
+          <p className='result-font result-description font-size-small font-weight-thin'>{this.state.object[item].description}</p>
         </div>
         
         <div className='result-buttons'>
-          <button className='result-button font-size-small font-weight-thin'>Learn More</button>
-          <button className='result-button font-size-small font-weight-thin'>Add to Calendar</button>
+          <button className='result-font result-button font-size-small font-weight-thin'>Learn More</button>
+          <button className='result-font result-button font-size-small font-weight-thin'>Add to Calendar</button>
         </div>
         
       </div>)
@@ -590,15 +583,10 @@ class App extends React.Component {
         <Menu />
         {/*INTRO SECTION STARTS HERE*/}
         <section id='intro-section'>
-          
-          {/*
-          <span id='video-placeholder' />
-          */}
+
           <Video />
                     
           <span id='video-cover' />
-          
-          
           
           <div id='intro-items'>
             <div id='intro-logo-container'> 
@@ -646,12 +634,6 @@ class App extends React.Component {
             </div>
           </div>
           
-          {/*
-          <p className='font-weight-thin' id='placeholder-caption'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <img className='gallery-photo' alt='gallery-placeholder'
-              src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" />
-           */}
           <div id='gallery'>
             <Carousel />
           </div>
@@ -669,11 +651,6 @@ class App extends React.Component {
               <p id='donate-text' className='font-size-small font-weight-thin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               
               <DonateButtons />
-              
-              {/*<div id='donate-custom'>
-                <label id='dollar-label'>$</label>
-                <input id='custom-input' type='number' min='0' placeholder='Custom' />
-              </div>*/}
 
               <button id='donate-continue' className='font-weight-thin'>Continue</button>
               
@@ -744,8 +721,8 @@ class App extends React.Component {
 
             <div id='legal-info'>
               <p className='footer-headings'>Legal</p>
-              <p><a className='legal-link font-size-small font-weight-thin' href='#' target='_blank'>Privacy Policy</a></p>
-              <p><a className='legal-link font-size-small font-weight-thin' href='#' target='_blank'>Terms of Use</a></p>
+              <p className='legal-link' ><a className='font-size-small font-weight-thin' href='#' target='_blank'>Privacy Policy</a></p>
+              <p className='legal-link' ><a className='font-size-small font-weight-thin' href='#' target='_blank'>Terms of Use</a></p>
             </div>
           </div>
 
