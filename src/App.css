@@ -257,12 +257,12 @@ a{
 }
 
 .hidden{
-  transition: margin 2s;
+  transition: margin 1.5s;
   margin: 0 -50% 0 0;
 }
 
 .visible{
-  transition: margin 2s;
+  transition: margin 1.5s;
   margin: 0 0 0 0;
 }
 
