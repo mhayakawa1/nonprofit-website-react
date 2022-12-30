@@ -37,6 +37,12 @@ a{
   }
 }
 
+@media screen and (max-width: 769px){
+  .title-headings{
+    font-size: 3rem;
+  }
+}
+
 @media screen and (max-width: 426px){
   .title-headings{
     font-size: 3rem;
@@ -64,6 +70,12 @@ a{
 }  
 
 @media screen and (min-width: 1440px){
+  .font-size-small{
+    font-size: 1rem;
+  }
+} 
+
+@media screen and (min-width: 769px){
   .font-size-small{
     font-size: 1rem;
   }
@@ -116,7 +128,7 @@ a{
   align-self: flex-start;
   object-fit: cover;
   overflow-x: hidden;
-} 
+}
 
 @media screen and (min-width: 1440px){
   .video{
@@ -246,22 +258,12 @@ a{
 
 .hidden{
   transition: margin 3s;
-  margin: 0 -40% 0 0;
+  margin: 0 -50% 0 0;
 }
 
 .visible{
   transition: margin 3s;
   margin: 0 0 0 0;
-}
-
-@media screen and (max-width: 376px){
-  .hidden{
-    margin: 0 -50% 0 0;
-  }
-  
-  .visible{
-    margin: 0 0 0 0;
-  }
 }
 
 #intro-items{
@@ -314,9 +316,9 @@ a{
   }
 }
 
-@media screen and (max-width: 426px){
+@media screen and (max-width: 769px){
   #intro-items{
-    margin: 15vh 0 0 2.5%;
+    margin: 12vh 0 0 5%;
   }
 
   #intro-logo-container{
@@ -327,6 +329,12 @@ a{
   #intro-logo{
     width: 11rem;
     height: 11rem;
+  }
+} 
+
+@media screen and (max-width: 426px){
+  #intro-items{
+    margin: 12vh 0 0 2.5%;
   }
 }
 
@@ -371,6 +379,12 @@ h2{
   h2{
     font-size: 1.5rem;
     margin: 0 0 0 .4rem;
+  }
+} 
+
+@media screen and (max-width: 769px){
+  h2{
+    font-size: 1rem;
   }
 } 
 
@@ -455,7 +469,7 @@ h2{
   }
 } 
 
-@media screen and (max-width: 426px){
+@media screen and (max-width: 769px){
   #about-section{
     display: flex;
     flex-direction: column;
@@ -464,12 +478,13 @@ h2{
   }
 
   #about-p{
-    height: 6rem;
-    margin: 0 0 1.5rem 0;
+    height: 5rem;
+    margin: 0 0 2rem 0;
   }
 
   #about-photo{
     height: 25rem;
+    width: 100%;
   }
 }
 
@@ -575,6 +590,12 @@ h2{
     width: auto;
     max-width: 30rem;
     height: 5rem;
+  }
+}
+
+@media screen and (max-width: 769px){
+  #our-work-p{
+    max-width: 20rem;
   }
 }
 
@@ -832,7 +853,7 @@ h2{
   }
 }
 
-@media screen and (max-width: 426px){
+@media screen and (max-width: 769px){
   #tree-counter{
     margin: 0;
   }
@@ -899,6 +920,12 @@ h2{
     height: 120rem;
   }
 } 
+
+@media screen and (max-width: 769px){
+  #get-involved-section{
+    height: 115rem;
+  }
+}
 
 @media screen and (max-width: 426px){
   #get-involved-section{
