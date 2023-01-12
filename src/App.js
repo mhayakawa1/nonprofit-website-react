@@ -20,6 +20,7 @@ class Menu extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
+//toggle showMenu true/false
 toggleMenu = () =>{
   this.setState( state => ({
     showMenu: !state.showMenu
@@ -27,21 +28,23 @@ toggleMenu = () =>{
 }
 
   render(){
-    const menuHidden =
+    const menuHidden = //const for menu with className hidden
       <ul className='menu-items hidden font-weight-thin'>
-        <a href='#' className='menu-link home-logo-row' ><img className='menu-link home-logo' src='https://i.imgur.com/tkaM5kN.png' /></a>
+        <a href='#intro-section' className='menu-link home-logo-row' ><img className='menu-link home-logo' src='https://i.imgur.com/tkaM5kN.png' /></a>
         <a href='#about-section'><li className='menu-link'>About</li></a>
         <a href='#our-work-section'><li className='menu-link'>Our Work</li></a>
         <a href='#get-involved-section'><li className='menu-link last-link'>Get Involved</li></a>
       </ul>
-    const menuVisible =
+    const menuVisible = //const for menu with className visible
       <ul className='menu-items visible font-weight-thin'>
         <a href='#intro-section' className='menu-link home-logo-row' ><img className='menu-link home-logo' src='https://i.imgur.com/tkaM5kN.png' /></a>
         <a href='#about-section'><li className='menu-link'>About</li></a>
         <a href='#our-work-section'><li className='menu-link'>Our Work</li></a>
         <a href='#get-involved-section'><li className='menu-link last-link'>Get Involved</li></a>
       </ul>
-    return(
+    return( 
+    //when user clicks on hamburger menu, call toggleMenu
+    //if showMenu is true, menu is visible, if flalse menu is hidden
       <div id='menu'>
           <div onClick={this.toggleMenu} className='menu-lines'>
             <span className='menu-line' />
@@ -54,6 +57,7 @@ toggleMenu = () =>{
   }
 }
 
+//consts for images and captions for image carousel
 const Image1 = () =>{
   return(
     <div id="image1" className="slide fade-in"><img className="slide-img" src='https://images.pexels.com/photos/5029929/pexels-photo-5029929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' />
@@ -79,6 +83,7 @@ const Caption2 = () =>{
     <p id="image2-text" className="slide-text font-size-small fade-in">Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida quis commodo ut, feugiat non nulla.</p>
   )
 }
+
 const Image3 = () =>{
   return(
     <div id="image3" className="slide fade-in"><img className="slide-img" src='https://cdn.create.vista.com/api/media/medium/540180070/stock-photo-spruce-tree-nursery-for-reforestation?token=' />
@@ -92,7 +97,7 @@ const Caption3 = () =>{
   )
 }
 
-let imageNumArr = [1, 2, 3];
+let imageNumArr = [1, 2, 3]; //array to cycle through images
 class Carousel extends React.Component {
     constructor(props){
       super(props);
@@ -101,14 +106,16 @@ class Carousel extends React.Component {
       }
       this.switchImage = this.switchImage.bind(this)
     }
- 
+  
+  //used when carousel buttons are clicked
   switchImage(event, direction){
-    if(direction === "right"){
+    if(direction === "right"){ //if direction is right, move 1st number in imageNumArr to end
       imageNumArr.push(imageNumArr.shift());
-    }else if(direction === "left"){
+    }else if(direction === "left"){ //if direction is left, most last number in imageNumArr to beginning
       imageNumArr.unshift(imageNumArr.pop());
     }
- 
+    
+    //set imageNumber to 1st element in imageNumArr
     this.setState({
       imageNumber: imageNumArr[0]
     })
@@ -118,6 +125,8 @@ class Carousel extends React.Component {
     let image;
     let caption;
     let dots;
+    //assign images and captions to variables image & caption based on value of imageNumber
+    //assign className translucent to respective dot based on imageNumber
     if(this.state.imageNumber === 1){
       image = <Image1 />
       caption = <Caption1 />
@@ -145,14 +154,14 @@ class Carousel extends React.Component {
     }
  
     return(
+      //when carousel buttons are clicked, pass switchImage with direction
       <div id="gallery-container">
         <button id="btn-1" className="carousel-btn fade-in" onClick={event => this.switchImage(event, "left")}>◀</button>
-       
         {image}
         <button id="btn-2" className="carousel-btn fade-in" onClick={event => this.switchImage(event, "right")}>▶</button>
  
         <div id="caption" className="fade-in text-white font-weight-thin">
-          {caption}
+        {caption}
         </div>
  
         {dots}
@@ -165,6 +174,7 @@ class Carousel extends React.Component {
 class DonateButtons extends React.Component {
   constructor(props) {
     super(props);
+    //set all buttons to false by default
     this.state = {
       selected5: false,
       selected10: false,
@@ -176,7 +186,9 @@ class DonateButtons extends React.Component {
   }
 
   toggleButtons(event, value){
-    //console.log(value)
+    //toggle correct button based on value number, set the rest to false
+    //only one button can be selected at a time
+    //when custom value is entered, set all to false so that no buttons are selected
     switch(value){
       case 0:
         this.setState( state => ({
@@ -237,6 +249,10 @@ class DonateButtons extends React.Component {
   render(){
 
     return( 
+      //when buttons are clicked, call toggleButtons to toggle boolean and pass number as parameter
+      //if false, render button without className donate-amount-selected
+      //if true, render button with className donate-amount-selected
+      //if custom input is entered, call toggleButtons and pass 0 as parameter to unselect all buttons
       <div id='donate-selection'>
         <div id='donate-buttons'>
           {this.state.selected5 === false ? 
@@ -493,24 +509,23 @@ class SearchEvents extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this)
   }
  
+  //update input as text is entered
   handleChange = (event) =>{
     this.setState({
       input: event.target.value
     }, () => {
     })
-    
   }
  
   handleKeyDown(event){
   this.setState({
         inputArr: [],
-        searchedTags: [],
         renderProperties: []
       })
     //if 'Enter' is pressed, execute the following
     if (event.keyCode === 13){ //13 is keyCode for ‘Enter’
       if(this.state.input.length === 0){
-        this.setState({
+        this.setState({ //if input is blank, reset renderProperties to include all properties
           renderProperties: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
         }, () => {
         })
@@ -521,20 +536,17 @@ class SearchEvents extends React.Component {
           inputArr: this.state.inputArr
         })
  
+        //loop thru object property 'tags' within object
         for(let i = 1; i <= Object.keys(this.state.object).length; i++){
-       
           for(let j = 0; j < this.state.object[i].tags.length; j++){
+            //if text entered in search includes a tag in the object & renderProperties doesn't include i
+            //push i to renderProperties
             if(this.state.inputArr.includes(this.state.object[i].tags[j]) === true
               && this.state.renderProperties.includes(i) === false){
-              this.state.searchedTags.push(this.state.object[i].tags[j])
               this.state.renderProperties.push(i)
-            }else if(this.state.inputArr.includes(this.state.object[i].tags[j]) === true
-              && this.state.renderProperties.includes(i) === true){
-              this.state.searchedTags.push(this.state.object[i].tags[j])
             }
           }
           this.setState({
-            searchedTags: this.state.searchedTags,
             renderProperties: this.state.renderProperties
           })
         }
@@ -542,7 +554,8 @@ class SearchEvents extends React.Component {
     }
   }
   render(){
-    //map thru renderProperties and create a div containing the string of each item
+    //map thru renderProperties and create a div containing p tags containing title, city, address, eventType, dateTime, and description
+    //create buttons for Learn More & Add to Calendar
     const results = this.state.renderProperties.map((item, index) =>
       <div className='search-result' key={index}>
         <div>
@@ -560,6 +573,9 @@ class SearchEvents extends React.Component {
       </div>)
  
     return(
+      //when input is entered, pass handleChange
+      //when enter is pressed, pass handleKeyDown
+      //set aria-hidden to true to make elements on last row left aligned
       <div id='find-event' >
         <input id='search-input' className='font-weight-thin'
           placeholder='Search time, location, etc.' type='text'
