@@ -1,596 +1,39 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import Video from './components/Main'
+import Video from './components/Video';
+import Menu from './components/Menu';
+import Carousel from './components/Carousel';
+import DonateButtons from './components/DonateButtons';
+import SearchEvents from './components/SearchEvents';
 
+import handLogo from './images/hand-planting.png';
+
+import aboutImage from './images/about-image.jpg';
+
+import owBackground from './images/our-work-background.jpeg';
+
+import giImage1 from './images/get-involved-image-1.jpeg';
+import giImage2 from './images/get-involved-image-2.jpg';
+import giImage3 from './images/get-involved-image-3.jpg';
+import giImage4 from './images/get-involved-image-4.jpg';
+import giImage5 from './images/get-involved-image-5.jpg';
+import giImage6 from './images/get-involved-image-6.jpg';
+import giImage7 from './images/get-involved-image-7.jpg';
+import giImage8 from './images/get-involved-image-8.jpg';
+ 
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
-https://www.pexels.com/video/drone-shot-of-forest-856478/
-https://www.pexels.com/photo/highway-in-the-middle-of-the-forest-753873/
-https://www.pexels.com/photo/multicolored-trees-growing-in-autumn-woods-in-daytime-5580658/
-https://www.pexels.com/photo/breathtaking-landscape-of-lush-autumn-forest-in-highlands-against-cloudy-sundown-sky-4593369/
-https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 */}
-
-class Menu extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      showMenu: false
-    }
-    this.toggleMenu = this.toggleMenu.bind(this)
-  }
-
-//toggle showMenu true/false
-toggleMenu = () =>{
-  this.setState( state => ({
-    showMenu: !state.showMenu
-  }));
-}
-
-  render(){
-    const menuHidden = //const for menu with className hidden
-      <ul className='menu-items hidden font-weight-thin'>
-        <a href='#intro-section' className='menu-link home-logo-row' ><img className='menu-link home-logo' src='https://i.imgur.com/tkaM5kN.png' /></a>
-        <a href='#about-section'><li className='menu-link'>About</li></a>
-        <a href='#our-work-section'><li className='menu-link'>Our Work</li></a>
-        <a href='#get-involved-section'><li className='menu-link last-link'>Get Involved</li></a>
-      </ul>
-    const menuVisible = //const for menu with className visible
-      <ul className='menu-items visible font-weight-thin'>
-        <a href='#intro-section' className='menu-link home-logo-row' ><img className='menu-link home-logo' src='https://i.imgur.com/tkaM5kN.png' /></a>
-        <a href='#about-section'><li className='menu-link'>About</li></a>
-        <a href='#our-work-section'><li className='menu-link'>Our Work</li></a>
-        <a href='#get-involved-section'><li className='menu-link last-link'>Get Involved</li></a>
-      </ul>
-    return( 
-    //when user clicks on hamburger menu, call toggleMenu
-    //if showMenu is true, menu is visible, if flalse menu is hidden
-      <div id='menu'>
-          <div onClick={this.toggleMenu} className='menu-lines'>
-            <span className='menu-line' />
-            <span className='menu-line' />
-            <span className='menu-line' />
-          </div>
-        {this.state.showMenu === true ? menuVisible : menuHidden}
-      </div>
-    )
-  }
-}
-
-//consts for images and captions for image carousel
-const Image1 = () =>{
-  return(
-    <div id="image1" className="slide fade-in"><img className="slide-img" src='https://images.pexels.com/photos/5029929/pexels-photo-5029929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' />
-    </div>
-  )
-}
- 
-const Caption1 = () =>{
-  return(
-    <p id="image1-text" className="slide-text font-size-small fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla. Donec malesuada orci et pulvinar tempor.</p>
-  )
-}
- 
-const Image2 = () =>{
-  return(
-    <div id="image2" className="slide fade-in"><img className="slide-img" src='https://img.freepik.com/free-photo/planting-trees-as-part-reforestation-process_23-2149409981.jpg?w=996&t=st=1671158831~exp=1671159431~hmac=9821facfeb53ddcf8d77aa1257e19570857f639f931b1c769dc0b2ad270a8224' />
-    </div>
-  )
-}
- 
-const Caption2 = () =>{
-  return(
-    <p id="image2-text" className="slide-text font-size-small fade-in">Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida quis commodo ut, feugiat non nulla.</p>
-  )
-}
-
-const Image3 = () =>{
-  return(
-    <div id="image3" className="slide fade-in"><img className="slide-img" src='https://cdn.create.vista.com/api/media/medium/540180070/stock-photo-spruce-tree-nursery-for-reforestation?token=' />
-    </div>
-  )
-}
- 
-const Caption3 = () =>{
-  return(
-    <p id="image3-text" className="slide-text font-size-small fade-in">Aenean tempus accumsan sem, ac varius nulla laoreet ac. Pellentesque luctus ante in mauris sodales, facilisis tempor ex posuere. Sed auctor purus sit amet est consequat pulvinar eu ac nisl. </p>
-  )
-}
-
-let imageNumArr = [1, 2, 3]; //array to cycle through images
-class Carousel extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        imageNumber: 1,
-      }
-      this.switchImage = this.switchImage.bind(this)
-    }
-  
-  //used when carousel buttons are clicked
-  switchImage(event, direction){
-    if(direction === "right"){ //if direction is right, move 1st number in imageNumArr to end
-      imageNumArr.push(imageNumArr.shift());
-    }else if(direction === "left"){ //if direction is left, most last number in imageNumArr to beginning
-      imageNumArr.unshift(imageNumArr.pop());
-    }
-    
-    //set imageNumber to 1st element in imageNumArr
-    this.setState({
-      imageNumber: imageNumArr[0]
-    })
-  }
- 
-  render(){
-    let image;
-    let caption;
-    let dots;
-    //assign images and captions to variables image & caption based on value of imageNumber
-    //assign className translucent to respective dot based on imageNumber
-    if(this.state.imageNumber === 1){
-      image = <Image1 />
-      caption = <Caption1 />
-      dots = <div id="dots" className="fade-in">
-                <span id="dot1" className="dot"></span>
-                <span id="dot2" className="dot translucent"></span>
-                <span id="dot3" className="dot translucent"></span>
-              </div>
-    }else if(this.state.imageNumber === 2){
-      image = <Image2 />
-      caption = <Caption2 />
-      dots = <div id="dots" className="fade-in">
-                <span id="dot1" className="dot translucent"></span>
-                <span id="dot2" className="dot"></span>
-                <span id="dot3" className="dot translucent"></span>
-              </div>
-    }else if(this.state.imageNumber === 3){
-      image = <Image3 />
-      caption = <Caption3 />
-      dots = <div id="dots" className="fade-in">
-                <span id="dot1" className="dot translucent"></span>
-                <span id="dot2" className="dot translucent"></span>
-                <span id="dot3" className="dot"></span>
-              </div>
-    }
- 
-    return(
-      //when carousel buttons are clicked, pass switchImage with direction
-      <div id="gallery-container">
-        <button id="btn-1" className="carousel-btn fade-in" onClick={event => this.switchImage(event, "left")}>◀</button>
-        {image}
-        <button id="btn-2" className="carousel-btn fade-in" onClick={event => this.switchImage(event, "right")}>▶</button>
- 
-        <div id="caption" className="fade-in text-white font-weight-thin">
-        {caption}
-        </div>
- 
-        {dots}
- 
-      </div>
-    )
-  }
-}
-
-class DonateButtons extends React.Component {
-  constructor(props) {
-    super(props);
-    //set all buttons to false by default
-    this.state = {
-      selected5: false,
-      selected10: false,
-      selected25: false,
-      selected50: false,
-      selected100: false
-    }
-    this.toggleButtons = this.toggleButtons.bind(this)
-  }
-
-  toggleButtons(event, value){
-    //toggle correct button based on value number, set the rest to false
-    //only one button can be selected at a time
-    //when custom value is entered, set all to false so that no buttons are selected
-    switch(value){
-      case 0:
-        this.setState( state => ({
-          selected5: false,
-          selected10: false,
-          selected25: false,
-          selected50: false,
-          selected100: false
-        }));
-        break;
-      case 5:
-        this.setState( state => ({
-          selected5: !state.selected5,
-          selected10: false,
-          selected25: false,
-          selected50: false,
-          selected100: false
-        }));
-        break;
-      case 10:
-        this.setState( state => ({
-          selected5: false,
-          selected10: !state.selected10,
-          selected25: false,
-          selected50: false,
-          selected100: false
-        }));
-        break;
-      case 25:
-        this.setState( state => ({
-          selected5: false,
-          selected10: false,
-          selected25: !state.selected25,
-          selected50: false,
-          selected100: false
-        }));
-        break;
-      case 50:
-        this.setState( state => ({
-          selected5: false,
-          selected10: false,
-          selected25: false,
-          selected50: !state.selected50,
-          selected100: false
-        }));
-        break;
-      case 100:
-        this.setState( state => ({
-          selected5: false,
-          selected10: false,
-          selected25: false,
-          selected50: false,
-          selected100: !state.selected100
-        }));
-    }
-  }
-
-  render(){
-
-    return( 
-      //when buttons are clicked, call toggleButtons to toggle boolean and pass number as parameter
-      //if false, render button without className donate-amount-selected
-      //if true, render button with className donate-amount-selected
-      //if custom input is entered, call toggleButtons and pass 0 as parameter to unselect all buttons
-      <div id='donate-selection'>
-        <div id='donate-buttons'>
-          {this.state.selected5 === false ? 
-            <button onClick={event => this.toggleButtons(event, 5)} className='donate-amount'>$5</button>
-            : <button onClick={event => this.toggleButtons(event, 5)} className='donate-amount donate-amount-selected'>$5</button>}
-      
-          {this.state.selected10 === false ? 
-            <button onClick={event => this.toggleButtons(event, 10)} className='donate-amount'>$10</button>
-            : <button onClick={event => this.toggleButtons(event, 10)} className='donate-amount donate-amount-selected'>$10</button>}
-      
-          {this.state.selected25 === false ? 
-            <button onClick={event => this.toggleButtons(event, 25)} className='donate-amount'>$25</button>
-            : <button onClick={event => this.toggleButtons(event, 25)} className='donate-amount donate-amount-selected'>$25</button>}
-
-          {this.state.selected50 === false ? 
-            <button onClick={event => this.toggleButtons(event, 50)} className='donate-amount'>$50</button>
-            : <button onClick={event => this.toggleButtons(event, 50)} className='donate-amount donate-amount-selected'>$50</button>}
-      
-          {this.state.selected100 === false ? 
-            <button onClick={event => this.toggleButtons(event, 100)} className='donate-amount'>$100</button>
-            : <button onClick={event => this.toggleButtons(event, 100)} className='donate-amount donate-amount-selected'>$100</button>}
-
-        </div>
-
-        <div id='donate-custom'>
-          <label id='dollar-label'>$</label>
-          <input onChange={event => this.toggleButtons(event, 0)} id='custom-input' type='number' min='0' placeholder='Custom' />
-        </div>
-      </div>
-    )
-  }
-}
-
-class SearchEvents extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: '',
-      object: {
-        1: {
-          tags: ['arizona', 'az', 'phoenix', 'fundraiser', 'saturday', 'sat', 'april'],
-          title: 'Lorem ipsum dolor sit amet',
-          city: 'Phoenix, AZ',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Fundraiser',
-          dateTime: 'SAT APR 29 2023, 4PM-5PM',
-          description:'Urna nunc id cursus metus aliquam eleifend mi in nulla. Nunc id cursus metus aliquam eleifend.'
-        },
-        2: {
-          tags: ['arizona', 'az', 'prescott', 'tree', 'planting', 'wednesday', 'wed', 'march'],
-          title: 'consectetur adipiscing elit',
-          city: 'Prescott, AZ',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'WED MAR 1 2023, 9AM-11AM',
-          description:'Lectus arcu bibendum at varius. Non nisi est sit amet facilisis magna etiam.'
-        },
-        3: {
-          tags: ['california', 'ca', 'greenfield', 'tree', 'planting', 'sunday', 'sun', 'may'],
-          title: 'sed do eiusmod tempor incididunt ut',
-          city: 'Greenfield, CA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'SUN MAY 21 2023, 10PM-12PM',
-          description:'Amet tellus cras adipiscing enim eu turpis egestas pretium. Elementum nibh tellus molestie nunc.'
-        },
-        4: {
-          tags: ['california', 'ca', 'los angeles', 'la', 'fundraiser', 'thursday', 'thurs', 'may'],
-          title: 'labore et dolore magna aliqua',
-          city: 'Los Angeles, CA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Fundraiser',
-          dateTime: 'THURS MAY 11 2023, 5PM-6PM',
-          description:'Luctus venenatis lectus magna fringilla urna porttitor rhoncus.'
-        },
-        5: {
-          tags: ['california', 'ca', 'redding', 'workshop', 'monday', 'mon', 'may'],
-          title: 'Ut enim ad minim veniam',
-          city: 'Redding, CA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Workshop',
-          dateTime: 'MON MAY 1 2023, 4PM-5PM',
-          description:'Viverra maecenas accumsan lacus vel facilisis volutpat est.'
-        },
-        6: {
-          tags: ['california', 'ca', 'san diego', 'lecture', 'friday', 'fri', 'april'],
-          title: 'quis nostrud exercitation ullamco',
-          city: 'San Diego, CA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Lecture',
-          dateTime: 'FRI APR 14 2023, 3PM-4PM',
-          description:'Nec tincidunt praesent semper feugiat nibh sed pulvinar proin.'
-        },
-        7: {
-          tags: ['california', 'ca', 'santa barbara', 'tree', 'planting', 'wednesday', 'wed', 'april'],
-          title: 'laboris nisi ut aliquip ex ea',
-          city: 'Santa Barbara, CA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'WED APR 5 2023, 1PM-3PM',
-          description:'Aliquam etiam erat velit scelerisque in dictum non consectetur a.'
-        },
-        8: {
-          tags: ['colorado', 'co', 'springs', 'tree', 'planting', 'saturday', 'sat', 'july'],
-          title: 'commodo consequat duis aute',
-          city: 'Colorado Springs, CO',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'SAT JUL 1 2023, 9AM-11AM',
-          description:'Vivamus arcu felis bibendum ut. Nunc non blandit massa enim nec.'
-        },
-        9: {
-          tags: ['colorado', 'co', 'denver', 'lecture', 'wednesday', 'wed', 'may'],
-          title: 'irure dolor in reprehenderit',
-          city: 'Denver, CO',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'WED MAY 17 2023, 2PM-4PM',
-          description:'Viverra aliquet eget sit amet. Est placerat in egestas erat.'
-        },
-        10: {
-          tags: ['colorado', 'co', 'pueblo', 'workshop', 'thursday', 'thurs', 'april'],
-          title: 'in voluptate velit esse cillum',
-          city: 'Pueblo, CO',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Workshop',
-          dateTime: 'THURS APR 27 2023, 4PM-5PM',
-          description:'Id diam maecenas ultricies mi eget mauris. Integer malesuada nunc vel risus commodo.'
-        },
-        11: {
-          tags: ['idaho', 'io', 'boise', 'fundraiser', 'wednesday', 'wed', 'april'],
-          title: 'dolore eu fugiat nulla pariatur',
-          city: 'Boise, IO',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Fundraiser',
-          dateTime: 'WED APR 26 2023, 12PM-1PM',
-          description:'Duis at consectetur lorem donec massa. Ultrices tincidunt arcu non sodales neque sodales ut etiam sit.'
-        },
-        12: {
-          tags: ['idaho', 'io', 'twin falls', 'tree', 'planting', 'monday', 'mon', 'april'],
-          title: 'Excepteur sint occaecat',
-          city: 'Twin Falls, IO',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'MON APR 10 2023, 10AM-12PM',
-          description:'Dictum fusce ut placerat orci. Eu nisl nunc mi ipsum faucibus.'
-        },
-        13: {
-          tags: ['minnesota', 'mn', 'duluth', 'tree', 'planting', 'tuesday', 'tues', 'march'],
-          title: 'cupidatat non proident sunt',
-          city: 'Minnesota, MN',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'TUES MAR 21 2023, 9AM-11AM',
-          description:'Erat nam at lectus urna duis. Diam ut venenatis tellus in metus vulputate eu scelerisque.'
-        },
-        14: {
-          tags: ['nevada', 'nv', 'reno', 'workshop', 'sunday', 'sun', 'march'],
-          title: 'in culpa qui officia deserunt',
-          city: 'Reno, NV',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Workshop',
-          dateTime: 'SUN MAR 19 2023, 9AM-10AM',
-          description:'Ullamcorper a lacus vestibulum sed arcu non odio euismod. Tellus mauris a diam maecenas sed enim ut sem.'
-        },
-        15: {
-          tags: ['new mexico', 'nm', 'apache', 'lecture', 'friday', 'fri', 'june'],
-          title: 'mollit anim id est laborum',
-          city: 'Apache, NM',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Lecture',
-          dateTime: 'FRI JUN 9 2023, 3PM-4PM',
-          description:'At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
-        },
-        16: {
-          tags: ['oregon', 'or', 'baker city', 'tree', 'planting', 'monday', 'mon', 'march'],
-          title: 'Nibh tellus molestie nunc non',
-          city: 'Baker City, OR',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'MON MAR 20 2023, 9AM-11AM',
-          description:'Non arcu risus quis varius quam. Justo eget magna fermentum iaculis eu.'
-        },
-        17: {
-          tags: ['oregon', 'or', 'eugene', 'lecture', 'saturday', 'sat', 'march'],
-          title: 'Nunc pulvinar sapien et ligula',
-          city: 'Eugene, OR',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Lecture',
-          dateTime: 'SAT MAR 11 2023, 10AM-11AM',
-          description:'Mi in nulla posuere sollicitudin aliquam. Non nisi est sit amet facilisis magna.'
-        },
-        18: {
-          tags: ['oregon', 'or', 'portland', 'lecture', 'tuesday', 'tues', 'february'],
-          title: 'ullamcorper malesuada proin libero',
-          city: 'Portland, OR',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Lecture',
-          dateTime: 'TUES FEB 28 2023, 2PM-3PM',
-          description:'In pellentesque massa placerat duis ultricies. Aliquet nec ullamcorper sit amet risus.'
-        },
-        19: {
-          tags: ['washington', 'wa', 'colville', 'tree', 'planting', 'saturday', 'sat', 'may'],
-          title: 'Nullam ac tortor vitae purus',
-          city: 'Colville, WA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'SAT MAY 6 2023, 1PM-3PM',
-          description:'Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Viverra accumsan in nisl nisi scelerisque.'
-        },
-        20: {
-          tags: ['washington', 'wa', 'wenatchee', 'tree', 'planting', 'wednesday', 'wed', 'april'],
-          title: 'faucibus ornare suspendisse sed nisi',
-          city: 'Wenatchee, WA',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'WED APR 26 2023, 2PM-4PM',
-          description:'At quis risus sed vulputate odio ut. Ac felis donec et odio pellentesque diam.'
-        },
-        21: {
-          tags: ['wyoming', 'wy', 'cheyenne', 'fundraiser', 'wednesday', 'wed', 'april'],
-          title: 'Semper viverra nam libero justo',
-          city: 'Cheyenne, WY',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Fundraiser',
-          dateTime: 'WED APR 12 2023, 1PM-2PM',
-          description:'Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Turpis tincidunt id aliquet risus feugiat.'
-        },
-        22: {
-          tags: ['wyoming', 'wy', 'douglas', 'tree', 'planting', 'monday', 'mon', 'may'],
-          title: 'laoreet sit amet cursus',
-          city: 'Douglas, WY',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Tree Planting',
-          dateTime: 'MON MAY 15 2023, 12PM-2PM',
-          description:'Arcu vitae elementum curabitur vitae nunc. Ipsum consequat nisl vel pretium lectus quam id leo.'
-        },
-        23: {
-          tags: ['wyoming', 'wy', 'sheridan', 'workshop', 'saturday', 'sat', 'february'],
-          title: 'Volutpat sed cras ornare',
-          city: 'Sheridan, WY',
-          address: 'Lorem Ipsum Dolor Sit',
-          eventType: 'Workshop',
-          dateTime: 'SAT FEB 18 2023, 10AM-11AM',
-          description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'
-        }
-      },
-      inputArr: [], //for input text split into array of individual words
-      searchedTags: [], //for all search terms in inputArr that will yield results
-      renderProperties: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], //for all properties in object that should be rendered
-      output: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleKeyDown = this.handleKeyDown.bind(this)
-  }
- 
-  //update input as text is entered
-  handleChange = (event) =>{
-    this.setState({
-      input: event.target.value
-    }, () => {
-    })
-  }
- 
-  handleKeyDown(event){
-  this.setState({
-        inputArr: [],
-        renderProperties: []
-      })
-    //if 'Enter' is pressed, execute the following
-    if (event.keyCode === 13){ //13 is keyCode for ‘Enter’
-      if(this.state.input.length === 0){
-        this.setState({ //if input is blank, reset renderProperties to include all properties
-          renderProperties: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-        }, () => {
-        })
-      }else{
-        //get all input text split into array of individual words
-        this.state.inputArr = this.state.input.toLowerCase().split(' ')
-        this.setState({
-          inputArr: this.state.inputArr
-        })
- 
-        //loop thru object property 'tags' within object
-        for(let i = 1; i <= Object.keys(this.state.object).length; i++){
-          for(let j = 0; j < this.state.object[i].tags.length; j++){
-            //if text entered in search includes a tag in the object & renderProperties doesn't include i
-            //push i to renderProperties
-            if(this.state.inputArr.includes(this.state.object[i].tags[j]) === true
-              && this.state.renderProperties.includes(i) === false){
-              this.state.renderProperties.push(i)
-            }
-          }
-          this.setState({
-            renderProperties: this.state.renderProperties
-          })
-        }
-      }  
-    }
-  }
-  render(){
-    //map thru renderProperties and create a div containing p tags containing title, city, address, eventType, dateTime, and description
-    //create buttons for Learn More & Add to Calendar
-    const results = this.state.renderProperties.map((item, index) =>
-      <div className='search-result' key={index}>
-        <div>
-          <p className='result-font result-date-time font-size-small font-weight-thin'>{this.state.object[item].dateTime}</p>
-          <p className='result-font result-title'>{this.state.object[item].title.toUpperCase()}</p>
-          <p className='result-font result-type-location font-size-small'>{this.state.object[item].eventType} @{this.state.object[item].address}, {this.state.object[item].city}</p>
-          <p className='result-font result-description font-size-small font-weight-thin'>{this.state.object[item].description}</p>
-        </div>
-        
-        <div className='result-buttons'>
-          <button className='result-font result-button font-size-small font-weight-thin'>Learn More</button>
-          <button className='result-font result-button font-size-small font-weight-thin'>Add to Calendar</button>
-        </div>
-        
-      </div>)
- 
-    return(
-      //when input is entered, pass handleChange
-      //when enter is pressed, pass handleKeyDown
-      //set aria-hidden to true to make elements on last row left aligned
-      <div id='find-event' >
-        <input id='search-input' className='font-weight-thin'
-          placeholder='Search time, location, etc.' type='text'
-          value={this.state.input} onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown} />
- 
-        <div id='search-results'>
-          {results}
-          <i aria-hidden='true'></i>
-        </div>
-      </div>
-    )
-  }
-
-}
+{/* Updates
+- * Save all images and logos locally and import them into the document instead of using src
+- * Change components to .jsx files and import them into App.js
+  - Menu
+  - Image Carousel
+  - Donate Buttons
+  - Search Events
+- Redo image carousel to be more simple and concise, add more images, fix image glitch
+- Add bootstrap - logos
+*/}
 
 class App extends React.Component {
   render(){
@@ -608,7 +51,7 @@ class App extends React.Component {
           <div id='intro-items'>
             <div id='intro-logo-container'> 
               <img id='intro-logo'
-              src='https://img.icons8.com/ios-filled/512/hand-planting.png'/>
+              src={handLogo}/>
             </div>
            
           
@@ -626,7 +69,7 @@ class App extends React.Component {
         <section id='about-section'>
           
           <img id='about-photo'
-            src='https://img.freepik.com/free-photo/reforestation-done-by-voluntary-group_23-2149500864.jpg?w=996&t=st=1671158778~exp=1671159378~hmac=8f7911633b52df769a4491234eb62793ea2807bde58743e492fff2a65f8073e1' />
+            src={aboutImage} />
         
           <div id='about-text'>
             <h2 className='title-headings text-white' id='about-heading'>About</h2>
@@ -639,7 +82,7 @@ class App extends React.Component {
 
         {/*OUR WORK SECTION STARTS HERE*/}
         <section id="our-work-section">
-        <img id='our-work-background' src='https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' />
+        <img id='our-work-background' src={owBackground} />
           <div id='our-work-col-1'>
             <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
             <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -678,14 +121,14 @@ class App extends React.Component {
           <SearchEvents />
 
           <div id='get-involved-images'>
-            <img className='get-involved-image' src='https://images.pexels.com/photos/5487071/pexels-photo-5487071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-            <img className='get-involved-image' src='https://images.unsplash.com/photo-1598335624134-5bceb5de202d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'/> 
-            <img className='get-involved-image' src='https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'/>
-            <img className='get-involved-image' src='https://img.freepik.com/free-photo/child-girl-holding-seedlings-ready-be-planted-ground-little-gardener-brown-dress_1157-39059.jpg?w=996&t=st=1671422158~exp=1671422758~hmac=08c28e00f47fc28713f12b87b63dced36f286d060b04a1efb45a51d383084e35'/>
-            <img className='get-involved-image' src='https://img.freepik.com/free-photo/reforestation-done-by-voluntary-group_23-2149500843.jpg?w=996&t=st=1671422075~exp=1671422675~hmac=eedfd05afe2d874da75df6c24f2aaff9ee2b9205b0700904bc08d521af50d7d9'/>
-            <img className='get-involved-image' src='https://images.pexels.com/photos/6285004/pexels-photo-6285004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-            <img className='get-involved-image' src='https://img.freepik.com/free-photo/family-with-with-little-sons-are-planting-tree-yard_1157-37424.jpg?w=996&t=st=1671422616~exp=1671423216~hmac=ebf117b2ef8b2a306e6cbdeebad6758c9feb3fa430494fb09dabb3e1bd15025a'/>
-            <img className='get-involved-image' src='https://img.freepik.com/free-photo/closeup-shot-mangrove-tree-saplings-planted-forest-trapeang-sangkae-kampot_181624-58384.jpg?w=900&t=st=1671422747~exp=1671423347~hmac=b28dca3c3998bdf917d1a017789158e17cb486e409e10b6137f7618209f90c1f'/>
+            <img className='get-involved-image' src={giImage1}/>
+            <img className='get-involved-image' src={giImage2}/> 
+            <img className='get-involved-image' src={giImage3}/>
+            <img className='get-involved-image' src={giImage4}/>
+            <img className='get-involved-image' src={giImage5}/>
+            <img className='get-involved-image' src={giImage6}/>
+            <img className='get-involved-image' src={giImage7}/>
+            <img className='get-involved-image' src={giImage8}/>
           </div>
 
           <div id='email-signup'>
@@ -703,7 +146,7 @@ class App extends React.Component {
           <div id='footer-container'>
             <div id='footer-logo-container'>
               <img id='footer-logo'
-              src='https://img.icons8.com/ios-filled/512/hand-planting.png'/>
+              src={handLogo}/>
             </div>
           
 
