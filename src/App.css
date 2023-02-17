@@ -113,7 +113,7 @@ a{
 
 @media screen and (max-width: 426px){
   #intro-section{
-    height: 100vh;
+    height: 30rem;
   }
 }
 
@@ -137,7 +137,7 @@ a{
 
 @media screen and (max-width: 426px){
   .video{
-    margin: -5vh 0 0 -10%;
+    margin: 0vh 0 0 -10%;
   }
 }
 
