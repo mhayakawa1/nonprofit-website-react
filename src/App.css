@@ -137,7 +137,7 @@ a{
 
 @media screen and (max-width: 426px){
   .video{
-    margin: 20vh 0 0 -10%;
+    margin: vh 0 0 -10%;
   }
 }
 
@@ -368,6 +368,12 @@ a{
   #intro-logo{
     width: 7.5rem;
     height: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 321px){
+  #intro-items{
+    margin: 2vh 0 0 5%;
   }
 }
 
