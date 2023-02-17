@@ -373,6 +373,7 @@ a{
 
 @media screen and (max-width: 321px){
   #intro-items{
+    height: 30vh;
     margin: 2vh 0 0 5%;
   }
 }
