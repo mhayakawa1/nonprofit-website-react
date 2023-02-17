@@ -7,7 +7,6 @@
 */
 
 html, body{
-  overflow-x: hidden;
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100vw;
@@ -112,6 +111,12 @@ a{
   }
 }
 
+@media screen and (max-width: 426px){
+  #intro-section{
+    height: 30rem;
+  }
+}
+
 .video{
   width: 120%;
   height: 70%;
@@ -127,6 +132,12 @@ a{
 @media screen and (min-width: 1440px){
   .video{
     height: 75%;
+  }
+}
+
+@media screen and (max-width: 426px){
+  .video{
+    margin: -5vh 0 0 -10%;
   }
 }
 
