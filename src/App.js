@@ -25,14 +25,9 @@ import giImage8 from './images/get-involved-image-8.jpg';
 https://www.schemecolor.com/dark-orange-green.php
 */}
 {/* Updates
-- * Save all images and logos locally and import them into the document instead of using src
-- * Change components to .jsx files and import them into App.js
-  - Menu
-  - Image Carousel
-  - Donate Buttons
-  - Search Events
-- Redo image carousel to be more simple and concise, add more images, fix image glitch
-- Add bootstrap - logos
+  - Video does not show on some devices/browsers
+      - Add image under video with same CSS as an alternatice in case vid doesn't show
+  
 */}
 
 class App extends React.Component {
@@ -43,10 +38,8 @@ class App extends React.Component {
         <Menu />
         {/*INTRO SECTION STARTS HERE*/}
         <section id='intro-section'>
-
+          {/*Insert image in case video doesn't load*/}
           <Video />
-                    
-          <span id='video-cover' />
           
           <div id='intro-items'>
             <div id='intro-logo-container'> 
@@ -62,7 +55,7 @@ class App extends React.Component {
           </div>
           
           <p id='intro-p' className='font-size-small font-weight-thin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            sed do eiusmod tempor<br/>incididunt ut labore et dolore magna aliqua.</p>
         </section>
 
         {/*ABOUT SECTION STARTS HERE*/}
