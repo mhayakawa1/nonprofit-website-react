@@ -89,7 +89,7 @@ a{
   height: 44rem;
   background-color: black;
   z-index: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
 }
 
@@ -374,7 +374,7 @@ a{
 @media screen and (max-width: 321px){
   #intro-items{
     height: 30vh;
-    margin: 2vh 0 0 5%;
+    margin: 10vh 0 0 5%;
   }
 }
 
@@ -423,6 +423,12 @@ h2{
   text-align: center;
   margin: 6% 15% 0 15%;
   color: white;
+}
+
+@media screen and (max-width: 321px){
+  #intro-p{
+    margin: 2% 15% 0 15%;
+  }
 }
 
 #about-section{
