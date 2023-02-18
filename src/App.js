@@ -34,7 +34,6 @@ class App extends React.Component {
   render(){
     return(
       <div id='page'>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0"></meta>
         <Menu />
         {/*INTRO SECTION STARTS HERE*/}
         <section id='intro-section'>
