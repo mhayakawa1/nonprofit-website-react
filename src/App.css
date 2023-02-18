@@ -110,12 +110,12 @@ a{
     height: 38rem;
   }
 }
-
+/*
 @media screen and (max-width: 426px){
   #intro-section{
     height: 30rem;
   }
-}
+}*/
 
 .video{
   width: 120%;
