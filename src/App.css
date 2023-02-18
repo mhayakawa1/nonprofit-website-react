@@ -134,12 +134,12 @@ a{
     height: 75%;
   }
 }
-
+/*
 @media screen and (max-width: 426px){
   .video{
-    margin: vh 0 0 -10%;
+    margin: -15vh 0 0 -10%;
   }
-}
+}*/
 
 #menu{
   display: flex;
