@@ -84,14 +84,26 @@ a{
   font-weight: 100;
 }
 
-#intro-section{
+/*#intro-section{
   width: 100%;
   height: 44rem;
   background-color: black;
   z-index: 0;
-  /*overflow: hidden;*/
+  overflow: hidden;
   position: relative;
+  margin: 0;
+}*/
+
+#intro-section{
+  width: 100%;
+  height: 45rem;
+  background-color: black;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
 }
+
 
 @media all and (min-width: 2560px){
   #intro-section{
@@ -104,16 +116,16 @@ a{
     height: 51rem;
   }
 }
-
+/*
 @media screen and (max-width: 769px){
   #intro-section{
     height: 38rem;
   }
 }
-/*
+
 @media screen and (max-width: 426px){
   #intro-section{
-    height: 30rem;
+    height: 38rem;
   }
 }*/
 
@@ -123,8 +135,8 @@ a{
   border-radius: 0px 0px 50% 50%;
   position: absolute;
   z-index: 1;
-  margin: -15vh 0 0 -10%;
-  align-self: flex-start;
+  margin: -18vh 0 0 -10%;
+  justify-self: flex-start;
   object-fit: cover;
   overflow-x: hidden;
 }
@@ -134,12 +146,18 @@ a{
     height: 75%;
   }
 }
-/*
-@media screen and (max-width: 426px){
-  .video{
-    margin: -15vh 0 0 -10%;
-  }
-}*/
+
+.video-alt-img{
+  width: 120%;
+  height: 70%;
+  border-radius: 0px 0px 50% 50%;
+  position: absolute;
+  z-index: 1;
+  margin: -18vh 0 0 -10%;
+  justify-self: flex-start;
+  object-fit: cover;
+  overflow-x: hidden;
+}
 
 #menu{
   display: flex;
@@ -284,15 +302,42 @@ a{
 }
 
 #intro-items{
-  height: 60vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 15vh 0 0 5%;
+  margin: 11rem 0 0 5%;
   gap: 2.5%;
+}
+/**/
+@media screen and (max-width: 2561px){
+  #intro-items{
+    margin: 25rem 0 0 5%;
+  }
+}
+
+@media screen and (max-width: 1441px){
+  #intro-items{
+    margin: 11rem 0 0 5%;
+  }
+}
+
+@media screen and (max-width: 769px){
+  #intro-items{
+    margin: 11rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 426px){
+  #intro-items{
+    margin: 5rem 0 0 0;/**/
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+  }
 }
 
 #intro-logo-container{
+  position: relative;
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
@@ -334,32 +379,19 @@ a{
 }
 
 @media screen and (max-width: 769px){
-  #intro-items{
-    margin: 12vh 0 0 5%;
-  }
-
   #intro-logo-container{
     width: 10rem;
     height: 10rem;
+    margin: 2rem;
   }
 
   #intro-logo{
     width: 11rem;
     height: 11rem;
   }
-} 
-
-@media screen and (max-width: 426px){
-  #intro-items{
-    margin: 12vh 0 0 2.5%;
-  }
 }
-
+/*
 @media screen and (max-width: 376px){
-  #intro-items{
-    justify-content: center;
-  }
-
   #intro-logo-container{
     width: 7rem;
     height: 7rem;
@@ -369,14 +401,7 @@ a{
     width: 7.5rem;
     height: 7.5rem;
   }
-}
-
-@media screen and (max-width: 321px){
-  #intro-items{
-    height: 30vh;
-    margin: 10vh 0 0 5%;
-  }
-}
+}*/
 
 #h1-h2{
   align-self: center;
@@ -412,7 +437,10 @@ h2{
   }
 } 
 
-@media screen and (max-width: 376px){
+@media screen and (max-width: 426px){
+  h1{
+    font-size: 2rem !important;
+  }
   h2{
     font-size: .8rem;
     margin: 0 0 0 0.2rem;
@@ -420,14 +448,29 @@ h2{
 }
 
 #intro-p{
+  position: relative;
   text-align: center;
-  margin: 6% 15% 0 15%;
+  margin: 8rem 15% 0 15%;/**/
   color: white;
+  z-index: 1;
+}
+/**/
+@media screen and (max-width: 2561px){
+  #intro-p{
+    margin: 18rem 15% 0 15%;
+  }
 }
 
-@media screen and (max-width: 321px){
+@media screen and (max-width: 1441px){
   #intro-p{
-    margin: 2% 15% 0 15%;
+    margin: 8rem 15% 0 15%;
+  }
+}
+
+@media screen and (max-width: 426px){
+  #intro-p{
+    font-size: .6rem !important;
+    margin: 8rem 15% 0 15%;
   }
 }
 
