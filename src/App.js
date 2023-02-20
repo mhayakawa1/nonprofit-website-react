@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
 import Video from './components/Video';
-import Menu from './components/Menu';
+import NavbarMenu from './components/NavbarMenu';
+import HamburgerMenu from './components/HamburgerMenu';
 import Carousel from './components/Carousel';
 import DonateButtons from './components/DonateButtons';
 import SearchEvents from './components/SearchEvents';
 
 import handLogo from './images/hand-planting.png';
 
+import videoAltImg from './images/video-alt-image.jpg';
+
 import aboutImage from './images/about-image.jpg';
 
 import owBackground from './images/our-work-background.jpeg';
+import giBackground from './images/get-involved-background.jpg'
 
 import giImage1 from './images/get-involved-image-1.jpeg';
 import giImage2 from './images/get-involved-image-2.jpg';
@@ -25,20 +29,24 @@ import giImage8 from './images/get-involved-image-8.jpg';
 https://www.schemecolor.com/dark-orange-green.php
 */}
 {/* Updates
-  - Video does not show on some devices/browsers
-      - Add image under video with same CSS as an alternatice in case vid doesn't show
-  
-*/}
+  - Fix search filter
+    - if date (number) is entered, only display dates from that day after
+    - multiple terms are entered, only show ones that meet all the
+  */}
 
 class App extends React.Component {
   render(){
     return(
       <div id='page'>
-        <Menu />
+        
+        <NavbarMenu />
+        <HamburgerMenu />
         {/*INTRO SECTION STARTS HERE*/}
         <section id='intro-section'>
-          {/*Insert image in case video doesn't load*/}
-          <Video />
+          {/*Background image in case video doesn't appear on different devices/browsers*/}
+          <img className='video' src={videoAltImg} />
+          <Video />{/**/}
+          
           
           <div id='intro-items'>
             <div id='intro-logo-container'> 
@@ -94,6 +102,7 @@ class App extends React.Component {
 
         {/*GET INVOLVED SECTION STARTS HERE*/}
         <section id='get-involved-section'>
+          <img id='get-involved-background' src={giBackground} />
           
           <h2 className='title-headings text-white' id='get-involved-heading'>Get Involved</h2>
 
@@ -156,15 +165,15 @@ class App extends React.Component {
             <div id='social-media'>
               <p className='footer-headings'>Social Media</p>
               <div id='sm-links'>
-                <a href='#' target='_blank'>
+                <a href='javascript:void(0)'>
                   <img className='sm-icon' id='facebook'
                   src='https://i.imgur.com/4fJVofG.png' />
                   </a>
-                <a href='#' target='_blank'>
+                <a href='javascript:void(0)'>
                   <img className='sm-icon' id='twitter'
                   src='https://i.imgur.com/W6y6mTj.png' />
                   </a>
-                <a href='#' target='_blank'>
+                <a href='javascript:void(0)'>
                   <img className='sm-icon' id='instagram'
                   src='https://i.imgur.com/lMOGBoh.png' />
                   </a>
@@ -173,8 +182,8 @@ class App extends React.Component {
 
             <div id='legal-info'>
               <p className='footer-headings'>Legal</p>
-              <p className='legal-link' ><a className='font-size-small font-weight-thin' href='#' target='_blank'>Privacy Policy</a></p>
-              <p className='legal-link' ><a className='font-size-small font-weight-thin' href='#' target='_blank'>Terms of Use</a></p>
+              <p><a className='legal-link font-size-small font-weight-thin' href='javascript:void(0)'>Privacy Policy</a></p>
+              <p><a className='legal-link font-size-small font-weight-thin' href='javascript:void(0)'>Terms of Use</a></p>
             </div>
           </div>
 
