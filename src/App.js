@@ -7,7 +7,8 @@ import Carousel from './components/Carousel';
 import DonateButtons from './components/DonateButtons';
 import SearchEvents from './components/SearchEvents';
 
-import handLogo from './images/hand-planting.png';
+//import handLogo from './images/hand-planting.png';
+import logo from './images/hand-planting-logo.svg';
 
 import videoAltImg from './images/video-alt-image.jpg';
 
@@ -24,11 +25,16 @@ import giImage5 from './images/get-involved-image-5.jpg';
 import giImage6 from './images/get-involved-image-6.jpg';
 import giImage7 from './images/get-involved-image-7.jpg';
 import giImage8 from './images/get-involved-image-8.jpg';
+
+import facebook from './images/facebook-logo.png';
+import twitter from './images/twitter-logo.png';
+import instagram from './images/instagram-logo.png';
  
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
 */}
 {/* Updates
+- 
   - Fix search filter
     - if date (number) is entered, only display dates from that day after
     - multiple terms are entered, only show ones that meet all the
@@ -51,7 +57,7 @@ class App extends React.Component {
           <div id='intro-items'>
             <div id='intro-logo-container'> 
               <img id='intro-logo'
-              src={handLogo}/>
+              src={logo}/>
             </div>
            
           
@@ -136,7 +142,7 @@ class App extends React.Component {
             <h3 id='sign-up-h3' className='text-white'>Sign up for our newsletter</h3>
             <p className='text-white font-size-small font-weight-thin' id='sign-up-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magn a aliqua.</p>
-            <input className='font-weight-thin' id='email-input' placeholder='Enter your email'></input>
+            <input className='font-weight-thin' id='email-input' type='email' placeholder='Enter your email'></input>
             <button className='font-weight-thin' id='submit-email' type='submit'>Sign Up</button>
           </div>
           
@@ -147,7 +153,7 @@ class App extends React.Component {
           <div id='footer-container'>
             <div id='footer-logo-container'>
               <img id='footer-logo'
-              src={handLogo}/>
+              src={logo}/>
             </div>
           
 
@@ -165,25 +171,25 @@ class App extends React.Component {
             <div id='social-media'>
               <p className='footer-headings'>Social Media</p>
               <div id='sm-links'>
-                <a href='javascript:void(0)'>
+                <a href='#social-media'>
                   <img className='sm-icon' id='facebook'
-                  src='https://i.imgur.com/4fJVofG.png' />
+                  src={facebook} />
                   </a>
-                <a href='javascript:void(0)'>
+                <a href='#social-media'>
                   <img className='sm-icon' id='twitter'
-                  src='https://i.imgur.com/W6y6mTj.png' />
+                  src={twitter} />
                   </a>
-                <a href='javascript:void(0)'>
+                <a href='#social-media'>
                   <img className='sm-icon' id='instagram'
-                  src='https://i.imgur.com/lMOGBoh.png' />
+                  src={instagram} />
                   </a>
               </div>
             </div>
 
             <div id='legal-info'>
               <p className='footer-headings'>Legal</p>
-              <p><a className='legal-link font-size-small font-weight-thin' href='javascript:void(0)'>Privacy Policy</a></p>
-              <p><a className='legal-link font-size-small font-weight-thin' href='javascript:void(0)'>Terms of Use</a></p>
+              <p><a className='legal-link font-size-small font-weight-thin' href='#legal-info'>Privacy Policy</a></p>
+              <p><a className='legal-link font-size-small font-weight-thin' href='#legal-info'>Terms of Use</a></p>
             </div>
           </div>
 
