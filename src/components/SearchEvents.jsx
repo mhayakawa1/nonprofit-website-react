@@ -7,7 +7,7 @@ export default class SearchEvents extends React.Component {
         input: '',
         object: {
           1: {
-            tags: ['arizona', 'az', 'phoenix', 'fundraiser', 'saturday', 'sat', 'april'],
+            tags: ['arizona', 'az', 'phoenix', 'fundraiser', 'saturday', 'sat', 'april', 29],
             title: 'Lorem ipsum dolor sit amet',
             city: 'Phoenix, AZ',
             address: 'Lorem Ipsum Dolor Sit',
@@ -16,7 +16,7 @@ export default class SearchEvents extends React.Component {
             description:'Urna nunc id cursus metus aliquam eleifend mi in nulla. Nunc id cursus metus aliquam eleifend.'
           },
           2: {
-            tags: ['arizona', 'az', 'prescott', 'tree', 'planting', 'wednesday', 'wed', 'march'],
+            tags: ['arizona', 'az', 'prescott', 'tree', 'planting', 'wednesday', 'wed', 'march', 1],
             title: 'consectetur adipiscing elit',
             city: 'Prescott, AZ',
             address: 'Lorem Ipsum Dolor Sit',
@@ -25,7 +25,7 @@ export default class SearchEvents extends React.Component {
             description:'Lectus arcu bibendum at varius. Non nisi est sit amet facilisis magna etiam.'
           },
           3: {
-            tags: ['california', 'ca', 'greenfield', 'tree', 'planting', 'sunday', 'sun', 'may'],
+            tags: ['california', 'ca', 'greenfield', 'tree', 'planting', 'sunday', 'sun', 'may', 21],
             title: 'sed do eiusmod tempor incididunt ut',
             city: 'Greenfield, CA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -34,7 +34,7 @@ export default class SearchEvents extends React.Component {
             description:'Amet tellus cras adipiscing enim eu turpis egestas pretium. Elementum nibh tellus molestie nunc.'
           },
           4: {
-            tags: ['california', 'ca', 'los angeles', 'la', 'fundraiser', 'thursday', 'thurs', 'may'],
+            tags: ['california', 'ca', 'los angeles', 'la', 'fundraiser', 'thursday', 'thurs', 'may', 11],
             title: 'labore et dolore magna aliqua',
             city: 'Los Angeles, CA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -43,7 +43,7 @@ export default class SearchEvents extends React.Component {
             description:'Luctus venenatis lectus magna fringilla urna porttitor rhoncus.'
           },
           5: {
-            tags: ['california', 'ca', 'redding', 'workshop', 'monday', 'mon', 'may'],
+            tags: ['california', 'ca', 'redding', 'workshop', 'monday', 'mon', 'may', 1],
             title: 'Ut enim ad minim veniam',
             city: 'Redding, CA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -52,7 +52,7 @@ export default class SearchEvents extends React.Component {
             description:'Viverra maecenas accumsan lacus vel facilisis volutpat est.'
           },
           6: {
-            tags: ['california', 'ca', 'san diego', 'lecture', 'friday', 'fri', 'april'],
+            tags: ['california', 'ca', 'san diego', 'lecture', 'friday', 'fri', 'april', 14],
             title: 'quis nostrud exercitation ullamco',
             city: 'San Diego, CA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -61,7 +61,7 @@ export default class SearchEvents extends React.Component {
             description:'Nec tincidunt praesent semper feugiat nibh sed pulvinar proin.'
           },
           7: {
-            tags: ['california', 'ca', 'santa barbara', 'tree', 'planting', 'wednesday', 'wed', 'april'],
+            tags: ['california', 'ca', 'santa barbara', 'tree', 'planting', 'wednesday', 'wed', 'april', 5],
             title: 'laboris nisi ut aliquip ex ea',
             city: 'Santa Barbara, CA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -70,7 +70,7 @@ export default class SearchEvents extends React.Component {
             description:'Aliquam etiam erat velit scelerisque in dictum non consectetur a.'
           },
           8: {
-            tags: ['colorado', 'co', 'springs', 'tree', 'planting', 'saturday', 'sat', 'july'],
+            tags: ['colorado', 'co', 'springs', 'tree', 'planting', 'saturday', 'sat', 'july', 1],
             title: 'commodo consequat duis aute',
             city: 'Colorado Springs, CO',
             address: 'Lorem Ipsum Dolor Sit',
@@ -79,7 +79,7 @@ export default class SearchEvents extends React.Component {
             description:'Vivamus arcu felis bibendum ut. Nunc non blandit massa enim nec.'
           },
           9: {
-            tags: ['colorado', 'co', 'denver', 'lecture', 'wednesday', 'wed', 'may'],
+            tags: ['colorado', 'co', 'denver', 'lecture', 'wednesday', 'wed', 'may', 17],
             title: 'irure dolor in reprehenderit',
             city: 'Denver, CO',
             address: 'Lorem Ipsum Dolor Sit',
@@ -88,7 +88,7 @@ export default class SearchEvents extends React.Component {
             description:'Viverra aliquet eget sit amet. Est placerat in egestas erat.'
           },
           10: {
-            tags: ['colorado', 'co', 'pueblo', 'workshop', 'thursday', 'thurs', 'april'],
+            tags: ['colorado', 'co', 'pueblo', 'workshop', 'thursday', 'thurs', 'april', 27],
             title: 'in voluptate velit esse cillum',
             city: 'Pueblo, CO',
             address: 'Lorem Ipsum Dolor Sit',
@@ -97,7 +97,7 @@ export default class SearchEvents extends React.Component {
             description:'Id diam maecenas ultricies mi eget mauris. Integer malesuada nunc vel risus commodo.'
           },
           11: {
-            tags: ['idaho', 'io', 'boise', 'fundraiser', 'wednesday', 'wed', 'april'],
+            tags: ['idaho', 'io', 'boise', 'fundraiser', 'wednesday', 'wed', 'april', 26],
             title: 'dolore eu fugiat nulla pariatur',
             city: 'Boise, IO',
             address: 'Lorem Ipsum Dolor Sit',
@@ -106,7 +106,7 @@ export default class SearchEvents extends React.Component {
             description:'Duis at consectetur lorem donec massa. Ultrices tincidunt arcu non sodales neque sodales ut etiam sit.'
           },
           12: {
-            tags: ['idaho', 'io', 'twin falls', 'tree', 'planting', 'monday', 'mon', 'april'],
+            tags: ['idaho', 'io', 'twin falls', 'tree', 'planting', 'monday', 'mon', 'april', 10],
             title: 'Excepteur sint occaecat',
             city: 'Twin Falls, IO',
             address: 'Lorem Ipsum Dolor Sit',
@@ -115,7 +115,7 @@ export default class SearchEvents extends React.Component {
             description:'Dictum fusce ut placerat orci. Eu nisl nunc mi ipsum faucibus.'
           },
           13: {
-            tags: ['minnesota', 'mn', 'duluth', 'tree', 'planting', 'tuesday', 'tues', 'march'],
+            tags: ['minnesota', 'mn', 'duluth', 'tree', 'planting', 'tuesday', 'tues', 'march', 21],
             title: 'cupidatat non proident sunt',
             city: 'Minnesota, MN',
             address: 'Lorem Ipsum Dolor Sit',
@@ -124,7 +124,7 @@ export default class SearchEvents extends React.Component {
             description:'Erat nam at lectus urna duis. Diam ut venenatis tellus in metus vulputate eu scelerisque.'
           },
           14: {
-            tags: ['nevada', 'nv', 'reno', 'workshop', 'sunday', 'sun', 'march'],
+            tags: ['nevada', 'nv', 'reno', 'workshop', 'sunday', 'sun', 'march', 19],
             title: 'in culpa qui officia deserunt',
             city: 'Reno, NV',
             address: 'Lorem Ipsum Dolor Sit',
@@ -133,7 +133,7 @@ export default class SearchEvents extends React.Component {
             description:'Ullamcorper a lacus vestibulum sed arcu non odio euismod. Tellus mauris a diam maecenas sed enim ut sem.'
           },
           15: {
-            tags: ['new mexico', 'nm', 'apache', 'lecture', 'friday', 'fri', 'june'],
+            tags: ['new mexico', 'nm', 'apache', 'lecture', 'friday', 'fri', 'june', 9],
             title: 'mollit anim id est laborum',
             city: 'Apache, NM',
             address: 'Lorem Ipsum Dolor Sit',
@@ -142,7 +142,7 @@ export default class SearchEvents extends React.Component {
             description:'At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
           },
           16: {
-            tags: ['oregon', 'or', 'baker city', 'tree', 'planting', 'monday', 'mon', 'march'],
+            tags: ['oregon', 'or', 'baker city', 'tree', 'planting', 'monday', 'mon', 'march', 20],
             title: 'Nibh tellus molestie nunc non',
             city: 'Baker City, OR',
             address: 'Lorem Ipsum Dolor Sit',
@@ -151,7 +151,7 @@ export default class SearchEvents extends React.Component {
             description:'Non arcu risus quis varius quam. Justo eget magna fermentum iaculis eu.'
           },
           17: {
-            tags: ['oregon', 'or', 'eugene', 'lecture', 'saturday', 'sat', 'march'],
+            tags: ['oregon', 'or', 'eugene', 'lecture', 'saturday', 'sat', 'march', 11],
             title: 'Nunc pulvinar sapien et ligula',
             city: 'Eugene, OR',
             address: 'Lorem Ipsum Dolor Sit',
@@ -160,7 +160,7 @@ export default class SearchEvents extends React.Component {
             description:'Mi in nulla posuere sollicitudin aliquam. Non nisi est sit amet facilisis magna.'
           },
           18: {
-            tags: ['oregon', 'or', 'portland', 'lecture', 'tuesday', 'tues', 'february'],
+            tags: ['oregon', 'or', 'portland', 'lecture', 'tuesday', 'tues', 'february', 28],
             title: 'ullamcorper malesuada proin libero',
             city: 'Portland, OR',
             address: 'Lorem Ipsum Dolor Sit',
@@ -169,7 +169,7 @@ export default class SearchEvents extends React.Component {
             description:'In pellentesque massa placerat duis ultricies. Aliquet nec ullamcorper sit amet risus.'
           },
           19: {
-            tags: ['washington', 'wa', 'colville', 'tree', 'planting', 'saturday', 'sat', 'may'],
+            tags: ['washington', 'wa', 'colville', 'tree', 'planting', 'saturday', 'sat', 'may', 6],
             title: 'Nullam ac tortor vitae purus',
             city: 'Colville, WA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -178,7 +178,7 @@ export default class SearchEvents extends React.Component {
             description:'Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Viverra accumsan in nisl nisi scelerisque.'
           },
           20: {
-            tags: ['washington', 'wa', 'wenatchee', 'tree', 'planting', 'wednesday', 'wed', 'april'],
+            tags: ['washington', 'wa', 'wenatchee', 'tree', 'planting', 'wednesday', 'wed', 'april', 26],
             title: 'faucibus ornare suspendisse sed nisi',
             city: 'Wenatchee, WA',
             address: 'Lorem Ipsum Dolor Sit',
@@ -187,7 +187,7 @@ export default class SearchEvents extends React.Component {
             description:'At quis risus sed vulputate odio ut. Ac felis donec et odio pellentesque diam.'
           },
           21: {
-            tags: ['wyoming', 'wy', 'cheyenne', 'fundraiser', 'wednesday', 'wed', 'april'],
+            tags: ['wyoming', 'wy', 'cheyenne', 'fundraiser', 'wednesday', 'wed', 'april', 12],
             title: 'Semper viverra nam libero justo',
             city: 'Cheyenne, WY',
             address: 'Lorem Ipsum Dolor Sit',
@@ -196,7 +196,7 @@ export default class SearchEvents extends React.Component {
             description:'Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Turpis tincidunt id aliquet risus feugiat.'
           },
           22: {
-            tags: ['wyoming', 'wy', 'douglas', 'tree', 'planting', 'monday', 'mon', 'may'],
+            tags: ['wyoming', 'wy', 'douglas', 'tree', 'planting', 'monday', 'mon', 'may', 15],
             title: 'laoreet sit amet cursus',
             city: 'Douglas, WY',
             address: 'Lorem Ipsum Dolor Sit',
@@ -205,7 +205,7 @@ export default class SearchEvents extends React.Component {
             description:'Arcu vitae elementum curabitur vitae nunc. Ipsum consequat nisl vel pretium lectus quam id leo.'
           },
           23: {
-            tags: ['wyoming', 'wy', 'sheridan', 'workshop', 'saturday', 'sat', 'february'],
+            tags: ['wyoming', 'wy', 'sheridan', 'workshop', 'saturday', 'sat', 'february', 18],
             title: 'Volutpat sed cras ornare',
             city: 'Sheridan, WY',
             address: 'Lorem Ipsum Dolor Sit',
@@ -249,15 +249,32 @@ export default class SearchEvents extends React.Component {
           this.setState({
             inputArr: this.state.inputArr
           })
+          //if inputArr includes word that includes a number or is a number
+          let dateNum
+          for(let i = 0; i < this.state.inputArr.length; i++){
+            if(/^\d+$/.test(this.state.inputArr[i]) === true){
+              dateNum = Number(this.state.inputArr[i])
+              this.state.inputArr.splice(this.state.inputArr.indexOf(this.state.inputArr[i]), 1, Number(this.state.inputArr[i]))
+            }else if((/\d/.test(this.state.inputArr[i]) === true)){
+              dateNum = Number(this.state.inputArr[i].split('').filter(i => /^\d+$/.test(i) === true).join(''))
+              this.state.inputArr.splice(this.state.inputArr.indexOf(this.state.inputArr[i]), 1, dateNum)
+            }
+          }
+          //console.log(this.state.inputArr, dateNum)
    
           //loop thru object property 'tags' within object
           for(let i = 1; i <= Object.keys(this.state.object).length; i++){
             for(let j = 0; j < this.state.object[i].tags.length; j++){
               //if text entered in search includes a tag in the object & renderProperties doesn't include i
               //push i to renderProperties
+
+              //if item is a number, only display properties with number >= it
               if(this.state.inputArr.includes(this.state.object[i].tags[j]) === true
-                && this.state.renderProperties.includes(i) === false){
-                this.state.renderProperties.push(i)
+                && this.state.renderProperties.includes(i) === false
+                && this.state.inputArr.includes(this.state.object[i].tags[this.state.object[i].tags.length - 2]) === true
+                && this.state.object[i].tags[this.state.object[i].tags.length - 1] >= dateNum){
+                  //console.log(this.state.object[i].tags)
+                  this.state.renderProperties.push(i)
               }
             }
             this.setState({
@@ -265,6 +282,7 @@ export default class SearchEvents extends React.Component {
             })
           }
         }  
+        //console.log(this.state.inputArr)
       }
     }
     render(){
