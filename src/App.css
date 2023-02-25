@@ -399,7 +399,7 @@ a{
   height: 15rem;
   border-radius: 50%;
   z-index: 3;
-  background: linear-gradient(#FAC55A, #7FB03F);
+  /*background: linear-gradient(#FAC55A, #7FB03F);*/
   margin: 0 1rem 0 0;
 }
 
@@ -408,7 +408,7 @@ a{
   height: 16rem;
   object-fit: cover;
   justify-self: flex-start;
-  filter: invert(100%);
+  /*filter: invert(100%);*/
 }
 
 @media screen and (min-width: 2560px){
@@ -1652,7 +1652,7 @@ i{
 }
 
 #footer-logo{
-  filter: invert(100%);
+  /*filter: invert(100%);*/
   width: 4.25rem;
 }
 
@@ -1660,7 +1660,7 @@ i{
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: linear-gradient(#FAC55A, #7FB03F);
+  /*background: linear-gradient(#FAC55A, #7FB03F);*/
   margin: 1rem 0 0 0;
   justify-self: center;
 }
