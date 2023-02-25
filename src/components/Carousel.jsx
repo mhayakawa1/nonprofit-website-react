@@ -116,7 +116,6 @@ import image9 from '../images/carousel-image-9.jpg';
     }
    
     render(){
-      //let showImage = this.renderImage();
       let caption;
    
       return(
@@ -125,8 +124,6 @@ import image9 from '../images/carousel-image-9.jpg';
           <button id="btn-1" className="carousel-btn fade-in" 
             onClick={() => this.switchImage("left")}>◀</button>
           
-           {/*{showImage} 
-          {this.getImageAndCaption()}   */}  
           {this.renderImage()}    
 
           <button id="btn-2" className="carousel-btn fade-in" 
