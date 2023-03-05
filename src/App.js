@@ -33,12 +33,6 @@ import instagram from './images/instagram-logo.png';
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
 */}
-{/* Updates
-- 
-  - Fix search filter
-    - if date (number) is entered, only display dates from that day after
-    - multiple terms are entered, only show ones that meet all the
-  */}
 
 class App extends React.Component {
   render(){
