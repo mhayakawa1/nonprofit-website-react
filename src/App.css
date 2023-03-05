@@ -386,7 +386,7 @@ a{
 
 @media screen and (max-width: 426px){
   #intro-items{
-    margin: 5rem 0 0 0;/**/
+    margin: 3rem 0 0 0;/**/
     flex-direction: column;
     justify-content: center;
     gap: 10%;
@@ -1006,6 +1006,12 @@ h2{
 
   #dots{
     margin: 1rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 426px){
+  .carousel-btn{
+    font-size: 1.5rem;
   }
 }
 
