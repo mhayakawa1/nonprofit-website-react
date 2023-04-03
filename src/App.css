@@ -195,6 +195,16 @@ a{
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 434px){
+  .video{    
+    height: 75%;
+  }
+
+  .video-alt-img{    
+    height: 75%;
+  }
+}
+
 #menu{
   display: flex;
   gap: 10px;
@@ -1019,13 +1029,13 @@ h2{
 
 @media screen and (min-width: 2560px){
   #get-involved-section{
-    height: 220rem !important;
+    height: 226rem !important;
   }
 }
 
 @media screen and (min-width: 1440px){
   #get-involved-section{
-    height: 120rem;
+    height: 124rem;
   }
 } 
 
@@ -1056,6 +1066,18 @@ h2{
   object-fit: cover;
   filter: brightness(75%);
 }
+
+@media screen and (min-width: 2560px){
+  #get-involved-background{
+    height: 180rem !important;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  #get-involved-background{
+    height: 106rem;
+  }  
+} 
 
 #get-involved-heading{
   position: static;
@@ -1480,7 +1502,13 @@ i{
   }
 
   .get-involved-image{
-    height: 20rem;
+    height: 25rem !important;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .get-involved-image{
+    height: 15rem;
   }
 }
 
