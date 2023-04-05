@@ -224,7 +224,7 @@ export default class SearchEvents extends React.Component {
     }
    
     //update input as text is entered
-    handleChange = (event) =>{
+    handleChange(event){
       this.setState({
         input: event.target.value
       }, () => {
@@ -260,20 +260,27 @@ export default class SearchEvents extends React.Component {
               this.state.inputArr.splice(this.state.inputArr.indexOf(this.state.inputArr[i]), 1, dateNum)
             }
           }
-          //console.log(this.state.inputArr, dateNum)
    
           //loop thru object property 'tags' within object
           for(let i = 1; i <= Object.keys(this.state.object).length; i++){
             for(let j = 0; j < this.state.object[i].tags.length; j++){
               //if text entered in search includes a tag in the object & renderProperties doesn't include i
               //push i to renderProperties
-
               //if item is a number, only display properties with number >= it
-              if(this.state.inputArr.includes(this.state.object[i].tags[j]) === true
+              if(
+                this.state.inputArr.includes(this.state.object[i].tags[j]) === true
                 && this.state.renderProperties.includes(i) === false
                 && this.state.inputArr.includes(this.state.object[i].tags[this.state.object[i].tags.length - 2]) === true
-                && this.state.object[i].tags[this.state.object[i].tags.length - 1] >= dateNum){
-                  //console.log(this.state.object[i].tags)
+                && (this.state.object[i].tags[this.state.object[i].tags.length - 1] >= dateNum
+                  || dateNum === undefined)
+              ){
+                this.state.renderProperties.push(i)
+              }else if(
+                this.state.inputArr.includes(this.state.object[i].tags[j]) === true
+                && this.state.renderProperties.includes(i) === false
+                //&& this.state.inputArr.includes(this.state.object[i].tags[this.state.object[i].tags.length - 2]) === true
+                && dateNum === undefined
+                ){
                   this.state.renderProperties.push(i)
               }
             }
@@ -285,6 +292,8 @@ export default class SearchEvents extends React.Component {
         //console.log(this.state.inputArr)
       }
     }
+    
+    
     render(){
       //map thru renderProperties and create a div containing p tags containing title, city, address, eventType, dateTime, and description
       //create buttons for Learn More & Add to Calendar
