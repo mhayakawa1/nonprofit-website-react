@@ -264,9 +264,11 @@ export default class SearchEvents extends React.Component {
           //loop thru object property 'tags' within object
           for(let i = 1; i <= Object.keys(this.state.object).length; i++){
             for(let j = 0; j < this.state.object[i].tags.length; j++){
-              //if text entered in search includes a tag in the object & renderProperties doesn't include i
+              //if text entered in search includes a tag in the object 
+              //& renderProperties doesn't include i
+              //& inputArr includes month
+              //& date of event is >= than dateNum or dateNum is undefined
               //push i to renderProperties
-              //if item is a number, only display properties with number >= it
               if(
                 this.state.inputArr.includes(this.state.object[i].tags[j]) === true
                 && this.state.renderProperties.includes(i) === false
@@ -275,10 +277,13 @@ export default class SearchEvents extends React.Component {
                   || dateNum === undefined)
               ){
                 this.state.renderProperties.push(i)
-              }else if(
+              }
+              //else if text entered in search includes a tag in the object 
+              //& renderProperties doesn't include i
+              //& inputArr doesn't include month
+              else if(
                 this.state.inputArr.includes(this.state.object[i].tags[j]) === true
                 && this.state.renderProperties.includes(i) === false
-                //&& this.state.inputArr.includes(this.state.object[i].tags[this.state.object[i].tags.length - 2]) === true
                 && dateNum === undefined
                 ){
                   this.state.renderProperties.push(i)
