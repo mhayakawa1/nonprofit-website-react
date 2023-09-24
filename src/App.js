@@ -56,13 +56,13 @@ class App extends React.Component {
            
           
             <div id='h1-h2'>
-              <h1 className='title-headings text-white'>Lorem <br/>Ipsum</h1>
+              <h1 className='title-headings text-white'>New <br/>Canopy</h1>
               <h2 className='text-white font-weight-thin'>Tree Foundation</h2>
             </div>
           </div>
-          
-          <p id='intro-p' className='font-size-small font-weight-thin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor<br/>incididunt ut labore et dolore magna aliqua.</p>
+
+          <p id='intro-p' className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
+             as we cultivate a greener,<br/> healthier, and more sustainable future for generations to come.</p>
         </section>
 
         {/*ABOUT SECTION STARTS HERE*/}
@@ -73,10 +73,9 @@ class App extends React.Component {
         
           <div id='about-text'>
             <h2 className='title-headings text-white' id='about-heading'>About</h2>
-            <p id='about-p' className='text-white font-size-small font-weight-thin'>Sit amet purus gravida quis blandit turpis cursus. Nulla pharetra 
-            diam sit amet nisl suscipit adipiscing bibendum. Pellentesque diam 
-            volutpat commodo sed egestas egestas fringilla phasellus. Fringilla 
-            ut morbi tincidunt augue interdum velit euismod.</p>
+            <p id='about-p' className='text-white font-size-small font-weight-thin'>At New Canopy Tree Foundation, our mission is to 
+            rejuvenate and safeguard the natural world by planting trees, nurturing forests, and fostering a sustainable future. We 
+            are driven by a deep commitment to the environment and a belief that every tree planted is a step toward a healthier planet.</p>
           </div>
         </section>
 
@@ -85,9 +84,9 @@ class App extends React.Component {
         <img id='our-work-background' src={owBackground} />
           <div id='our-work-col-1'>
             <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
-            <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          
+            <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Our unwavering dedication to reforestation has 
+            transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
+            worked toward the reclamation of nature, one tree at a time.</p>          
             <div className='text-white' id='tree-counter'>
               <p id='tree-number'>2,248</p>
               <p id='trees-planted'>Trees Planted</p>
@@ -109,7 +108,8 @@ class App extends React.Component {
             <div id='make-donation'>
               <h3 id='make-donation-heading'>Make a donation</h3>
               
-              <p id='donate-text' className='font-size-small font-weight-thin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p id='donate-text' className='font-size-small font-weight-thin'>Every dollar you contribute goes directly 
+              to our reforestation efforts. No amount is too small, and every tree planted makes a difference.</p>
               
               <DonateButtons />
 
@@ -134,8 +134,8 @@ class App extends React.Component {
 
           <div id='email-signup'>
             <h3 id='sign-up-h3' className='text-white'>Sign up for our newsletter</h3>
-            <p className='text-white font-size-small font-weight-thin' id='sign-up-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magn a aliqua.</p>
+            <p className='text-white font-size-small font-weight-thin' id='sign-up-p'>Stay informed and be part of our mission by 
+            signing up for our newsletter today – together, we can make a positive difference</p>
             <input className='font-weight-thin' id='email-input' type='email' placeholder='Enter your email'></input>
             <button className='font-weight-thin' id='submit-email' type='submit'>Sign Up</button>
           </div>
@@ -187,7 +187,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          <p className='font-weight-thin' id='copyright-info'>Copyright © 2022 Lorem ipsum dolor sit amet. All rights reserved.</p>
+          <p className='font-weight-thin' id='copyright-info'>Copyright © 2022 New Canopy Tree Foundation. All rights reserved.</p>
         </section>
       </div>
     )
