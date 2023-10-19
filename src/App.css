@@ -1144,8 +1144,8 @@ h3{
 
 .donate-amount{
   width: 5rem;
-  height: 4rem;
-  font-size: 1.5rem;
+  height: 44px;
+  font-size: 1rem;
   font-family: 'Alexandria', sans-serif;
   border: none;
   border-radius: .25rem;
@@ -1164,23 +1164,23 @@ h3{
 
 #dollar-label{
   margin: 0 .5rem 0 0;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 #custom-input{
   border: none;
   border-radius: .25rem;
   width: 15rem;
-  height: 4rem;
+  height: 44px;
   padding: 0 0 0 .5rem;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: 'Alexandria', sans-serif;
   background-color: whitesmoke;
 }
 
 #donate-continue{
   width: 8rem;
-  height: 2rem;
+  height: 44px;
   font-size: 1rem;
   font-family: 'Alexandria', sans-serif;
   grid-column: 2;
@@ -1316,8 +1316,9 @@ h3{
 
 #search-input{
   font-family: 'Alexandria', sans-serif;
+  font-size: 1rem;
   width: 41rem;
-  height: 2rem;
+  height: 44px;
   border: none;
   border-radius: .25rem;
   padding: 0 0 0 1rem;
@@ -1369,7 +1370,7 @@ h3{
 .result-button{
   margin: 0 0 1rem 0;
   width: 8rem;
-  height: 2rem;
+  height: 32px;
   background-color: #FAC55A;
   color: white;
   border: none;
@@ -1538,10 +1539,10 @@ i{
 }
 
 #email-input{
-  height: 2rem;
-  width: 25rem;
-  border-radius: .25rem;
+  height: 44px;
+  width: 13rem;
   padding: 0 1rem 0 1rem;
+  border-radius: .25rem;
   border: none;
   font-family: 'Alexandria', sans-serif;
   border: 1px solid black;
@@ -1549,8 +1550,8 @@ i{
 
 #submit-email{
   margin: 0 0 0 0;
-  width: 15rem;
-  height: 3rem;
+  width: 8rem;
+  height: 44px;
   border-radius: .25rem;
   border: none;
   font-family: 'Alexandria', sans-serif;
