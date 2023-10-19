@@ -9,7 +9,8 @@ export default class DonateButtons extends React.Component {
         selected10: false,
         selected25: false,
         selected50: false,
-        selected100: false
+        selected100: false,
+        selected200: false
       }
       this.toggleButtons = this.toggleButtons.bind(this)
     }
@@ -25,7 +26,8 @@ export default class DonateButtons extends React.Component {
             selected10: false,
             selected25: false,
             selected50: false,
-            selected100: false
+            selected100: false,
+            selected200: false
           }));
           break;
         case 5:
@@ -34,7 +36,8 @@ export default class DonateButtons extends React.Component {
             selected10: false,
             selected25: false,
             selected50: false,
-            selected100: false
+            selected100: false,
+            selected200: false
           }));
           break;
         case 10:
@@ -43,7 +46,8 @@ export default class DonateButtons extends React.Component {
             selected10: !state.selected10,
             selected25: false,
             selected50: false,
-            selected100: false
+            selected100: false,
+            selected200: false
           }));
           break;
         case 25:
@@ -52,7 +56,8 @@ export default class DonateButtons extends React.Component {
             selected10: false,
             selected25: !state.selected25,
             selected50: false,
-            selected100: false
+            selected100: false,
+            selected200: false
           }));
           break;
         case 50:
@@ -61,7 +66,8 @@ export default class DonateButtons extends React.Component {
             selected10: false,
             selected25: false,
             selected50: !state.selected50,
-            selected100: false
+            selected100: false,
+            selected200: false
           }));
           break;
         case 100:
@@ -70,7 +76,18 @@ export default class DonateButtons extends React.Component {
             selected10: false,
             selected25: false,
             selected50: false,
-            selected100: !state.selected100
+            selected100: !state.selected100,
+            selected200: false
+          }));
+          break;
+        case 200:
+          this.setState( state => ({
+            selected5: false,
+            selected10: false,
+            selected25: false,
+            selected50: false,
+            selected100: false,
+            selected200: !state.selected200
           }));
       }
     }
@@ -103,13 +120,17 @@ export default class DonateButtons extends React.Component {
             {this.state.selected100 === false ? 
               <button onClick={event => this.toggleButtons(event, 100)} className='donate-amount'>$100</button>
               : <button onClick={event => this.toggleButtons(event, 100)} className='donate-amount donate-amount-selected'>$100</button>}
-  
-          </div>
-  
-          <div id='donate-custom'>
-            <label id='dollar-label'>$</label>
-            <input onChange={event => this.toggleButtons(event, 0)} id='custom-input' type='number' min='0' placeholder='Custom' />
-          </div>
+            
+            {this.state.selected200 === false ? 
+              <button onClick={event => this.toggleButtons(event, 200)} className='donate-amount'>$200</button>
+              : <button onClick={event => this.toggleButtons(event, 200)} className='donate-amount donate-amount-selected'>$200</button>}
+            
+            <div id='donate-custom'>
+              <label id='dollar-label'>$</label>
+              <input onChange={event => this.toggleButtons(event, 0)} id='custom-input' type='number' min='0' 
+                placeholder='Custom' />
+            </div>
+          </div>          
         </div>
       )
     }
