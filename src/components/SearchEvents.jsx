@@ -312,8 +312,8 @@ export default class SearchEvents extends React.Component {
           </div>
           
           <div className='result-buttons'>
-            <button className='result-font result-button font-size-small font-weight-thin'>Learn More</button>
-            <button className='result-font result-button font-size-small font-weight-thin'>Add to Calendar</button>
+            <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
+            <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
           </div>
           
         </div>)
