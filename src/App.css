@@ -488,9 +488,11 @@ h2{
 #intro-p{
   position: relative;
   text-align: center;
-  margin: 8rem 15% 0 15%;
+  margin: 8rem auto 0 auto !important;
+  padding: 0 10% 0 10%;
   color: white;
   z-index: 1;
+  max-width: 40rem;
 }
 
 @media screen and (max-width: 2561px){
@@ -508,7 +510,6 @@ h2{
 @media screen and (max-width: 426px){
   #intro-p{
     font-size: .6rem !important;
-    margin: 8rem 15% 0 15%;
   }
 }
 
@@ -1377,25 +1378,45 @@ h3{
   gap: 1rem;
 }
 
-.result-button{
+.result-buttons button{
   margin: 0 0 1rem 0;
   width: 8rem;
   height: 32px;
-  background-color: #FAC55A;
-  color: white;
-  border: none;
+  
   font-family: 'Alexandria', sans-serif;
   border-radius: .25rem;
 }
 
-.result-button:hover{
+.primary{
+  background-color: #FAC55A;
+  color: white;
+  border: none;
+}
+
+.primary:hover{
   background-color: #F37433;
 }
 
-.result-button:active{
+.primary:active{
   background-color: #C44004;
 }
 
+.secondary{
+  border: 2px solid #FAC55A;
+  background-color: white;
+  color: #FAC55A;
+}
+
+.secondary:hover{
+  border-color: #F37433;
+  color: #F37433;
+}
+
+.secondary:active{
+  background-color: #C44004;
+  border: none;
+  color: white;
+}
 
 @media screen and (min-width: 2560px){
   #search-input{
@@ -1465,7 +1486,7 @@ h3{
   }
 
   #search-results{
-    width: 20rem;
+    width: 19rem;
     justify-self: center;
   }
 }
@@ -1550,7 +1571,7 @@ i{
 
 #email-input{
   height: 44px;
-  width: 13rem;
+  width: 13.5rem;
   padding: 0 1rem 0 1rem;
   border-radius: .25rem;
   border: none;
