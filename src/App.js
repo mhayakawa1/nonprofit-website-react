@@ -62,7 +62,7 @@ class App extends React.Component {
           </div>
 
           <p id='intro-p' className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
-             as we cultivate a greener,<br/> healthier, and more sustainable future for generations to come.</p>
+             as we cultivate a greener, healthier, and more sustainable future for generations to come.</p>
         </section>
 
         {/*ABOUT SECTION STARTS HERE*/}
