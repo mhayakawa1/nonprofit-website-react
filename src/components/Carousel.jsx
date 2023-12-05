@@ -19,14 +19,14 @@ import image9 from '../images/carousel-image-9.jpg';
           imageNumArr: [0, 1, 2, 3, 4, 5, 6, 7, 8],
           imagesArr: [image1, image2, image3, image4, image5, image6, image7, image8, image9],
           captionsArr: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla. Donec malesuada orci et pulvinar tempor.',
-            'Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida quis commodo ut, feugiat non nulla.',
-            'Aenean tempus accumsan sem, ac varius nulla laoreet ac. Pellentesque luctus ante in mauris sodales, facilisis tempor ex posuere. Sed auctor purus sit amet est consequat pulvinar eu ac nisl.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla.',
+            'Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida.',
+            'Aenean tempus accumsan sem, ac varius nulla laoreet ac. Pellentesque luctus ante in mauris sodales, facilisis tempor ex.',
             'Cursus euismod quis viverra nibh cras. Lobortis elementum nibh tellus molestie nunc non.',
             'Nec nam aliquam sem et tortor consequat id porta. Sit amet luctus venenatis lectus. Consectetur purus ut faucibus pulvinar.',
             'Non sodales neque sodales ut. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor.',
             'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'Sapien faucibus et molestie ac feugiat sed lectus. Metus vulputate eu scelerisque felis imperdiet proin. Pharetra convallis posuere morbi leo urna molestie at elementum eu.',
+            'Sapien faucibus et molestie ac feugiat sed lectus. Metus vulputate eu scelerisque felis imperdiet proin.',
             'Morbi tristique senectus et netus et malesuada. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.'
           ],
           image: '',
@@ -84,7 +84,7 @@ import image9 from '../images/carousel-image-9.jpg';
       for(let i = 0; i < this.state.imagesArr.length; i++){
         if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
           arr.push(
-            <div key={i}>
+            <div key={i} id='slide-img-container'>
               <div className='slide fade-in'>
                 <img className='slide-img' src={this.state.imagesArr[0]} />
               </div>
@@ -121,20 +121,18 @@ import image9 from '../images/carousel-image-9.jpg';
       return(
         //when carousel buttons are clicked, pass switchImage with direction
         <div id="gallery-container">
-          <button id="btn-1" className="carousel-btn fade-in" 
-            onClick={() => this.switchImage("left")}>◀</button>
-          
-          {this.renderImage()}    
-
-          <button id="btn-2" className="carousel-btn fade-in" 
-            onClick={() => this.switchImage("right")}>▶</button>
-   
+          {this.renderImage()}   
           <div id="caption" className="fade-in text-white font-weight-thin">
-          {caption}
-          </div>
-          
+            {caption}
+          </div>          
           <div id="dots" className="fade-in">
             {this.getDots()}
+          </div>
+          <div id="gallery-btns">
+            <button id="btn-1" className="carousel-btn fade-in" 
+              onClick={() => this.switchImage("left")}>◀</button>
+            <button id="btn-2" className="carousel-btn fade-in" 
+              onClick={() => this.switchImage("right")}>▶</button>
           </div>
         </div>
       )
