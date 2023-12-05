@@ -23,7 +23,6 @@ a{
 
 .title-headings{
   font-size: 4rem;
-  text-transform: uppercase;
   margin: 0;
 }
 
@@ -449,6 +448,7 @@ a{
 
 h1{
   line-height: 1;
+  text-transform: none;
 }
 
 h2{
@@ -617,9 +617,8 @@ h2{
 #our-work-section{
   width: 100%;
   height: 34rem;
-  display: grid;
-  grid-template-columns: 50% 45%;
-  padding: 5rem 0 0 0rem;
+  display: flex;
+  padding: 5rem 0 0 0;
 }
 
 #our-work-background{
@@ -633,7 +632,7 @@ h2{
 }
 
 #our-work-col-1{
-  padding: 0 0 0 6rem;
+  padding: 0 0 0 5%;
   grid-column: 1/2;
 }
 
@@ -816,16 +815,16 @@ h2{
   position: relative;
   z-index: 3;
   height: 25rem;
-  width: 50%;
+  width: 45%;
   justify-self: center;
-  margin: 0 0 0 0;
+  margin: 1rem auto 0 auto;
   filter: drop-shadow(0px 0px 5px rgb(255,255,255,.25)) sepia(20%);
 }
 
 #placeholder-caption{
   position: absolute;
   height: 3rem;
-  width: 28rem;
+  width: 24rem;
   margin: 0 0 .01rem 0;
   padding: 1rem 1rem 0rem 1rem;
   align-self: end;
@@ -837,10 +836,18 @@ h2{
 
 #gallery-container{
   margin: auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 7rem 30rem 7rem;
-  grid-template-rows: 20rem 4rem 1rem;
+  width: auto;
+}
+
+#gallery-btns{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 4;
+  width: 30rem;
+  margin: -13rem 0 0 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .carousel-btn{
@@ -854,21 +861,26 @@ h2{
 #btn-1{
   grid-column: 1/2;
   justify-self: center;
-  margin: auto 0 auto 50%;
+  margin: 0 1.5rem 0 0;
   padding: 0 3px 0 0;
 }
  
 #btn-2{
   grid-column: 3/4;
   justify-self: center;
-  margin: auto 50% auto 0;
+  margin: 0 0 0 1.5rem;
   padding: 0 0 0 3px;
 }
- 
+
+#slide-img-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
+
 .slide{
-  position: inline;
-  grid-row: 1;
-  margin: 0 0 0 0;
+  display: flex;
+  justify-content: center;
 }
  
 .hide{
@@ -876,8 +888,8 @@ h2{
 }
  
 .slide-img{
-  width: 30rem;
-  height: 20rem;
+  width: 24rem;
+  height: 16rem;
   object-fit: cover;
 }
  
@@ -892,9 +904,10 @@ h2{
 .slide-text{
   position: inline;
   text-align: center;
-  margin: 2% 0 2% 0;
+  margin: 2% auto 2% auto;
   padding: 0 5% 0 5%;
   font-size: .75rem;
+  width: 24rem;
 }
 
 #dots{
@@ -921,33 +934,52 @@ h2{
   opacity: 0.4;
 }
 
+@media screen and (min-width: 1440px){  
+  #gallery-btns{
+    width: 40rem;
+    margin: -18rem 0 0 0;
+  }
+  
+  .carousel-btn{
+    font-size: 3rem;
+  }
+
+  .slide-img{
+    width: 32rem;
+    height: 22rem;
+  }
+
+  .slide-text{
+    width: 32rem;
+    font-size: 1rem;
+  }
+
+  #dots{
+    margin: 0 0 0 0;
+  }
+}
+
 @media screen and (min-width: 2560px){
   #gallery{
     margin: 4rem;
   }
 
-  #gallery-container{
-    grid-template-columns: 14rem 60rem 14rem;
-    grid-template-rows: 40rem 12rem 1rem;
+  #gallery-btns{
+    width: 64rem;
+    margin: -28rem 0 0 0;
   }
   
   .carousel-btn{
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .slide-img{
-    width: 60rem;
-    height: 40rem;
+    width: 51rem;
+    height: 34rem;
   }
-}
 
-@media screen and (min-width: 1440px){
   .slide-text{
-    font-size: 1rem;
-  }
-
-  #dots{
-    margin: 4rem 0 0 0;
+    width: 51rem;
   }
 }
 
@@ -957,12 +989,10 @@ h2{
   }
 
   #btn-1{
-    margin: auto 0 auto 65%;
     padding: 0 3px 0 0;
   }
    
   #btn-2{
-    margin: auto 65% auto 0;
     padding: 0 0 0 3px;
   }
 }
@@ -977,8 +1007,7 @@ h2{
   }
 
   #gallery-container{
-    grid-template-columns: 7rem 21rem 7rem;
-    grid-template-rows: 14rem 4rem 1rem;
+    grid-template-rows: 12rem 4rem 2rem;
   }
 
   .slide-img{
@@ -992,8 +1021,17 @@ h2{
 }
 
 @media screen and (max-width: 426px){
-  .carousel-btn{
-    font-size: 1.5rem;
+  .slide-img{
+    width: 18rem;
+    height: 12rem;
+  }
+
+  #btn-1{    
+    margin: 0 .5rem 0 0;
+  }
+
+  #btn-2{
+    margin: 0 0 0 .5rem;
   }
 }
 
@@ -1003,7 +1041,6 @@ h2{
   }
 
   #gallery-container{
-    grid-template-columns: 7rem 15rem 7rem;
     grid-template-rows: 10rem 4rem 1rem;
   }
 
@@ -1118,16 +1155,15 @@ h3{
 
 #make-donation-heading{
   margin: 0;
-  color: #00563F;
+  color: #303030;
 }
 
 #donate-text{
-  text-align: center;
   margin: 1rem 0 3rem 0;
   border-top: 1px solid gray;
   border-left: 1px solid gray;
-  padding: .5rem 0 0 0;
-  color: #00563F;
+  padding: 1rem;
+  color: #303030;
 }
 
 #donate-selection{
@@ -1154,7 +1190,9 @@ h3{
   font-family: 'Alexandria', sans-serif;
   border: none;
   border-radius: .25rem;
-  background-color: whitesmoke;
+  background-color: rgb(250,197,90,.5);
+  /*background-color: whitesmoke;*/
+
 }
 
 .donate-amount-selected{
@@ -1198,7 +1236,8 @@ h3{
   grid-row: 3;
   border-radius: .25rem;
   border: none;
-  background-color: #FAC55A;
+  /*background-color: #FAC55A;*/
+  background-color: #ffab00;
   color: white;
 }
 
@@ -1366,6 +1405,7 @@ h3{
   background-color: white;
   filter: drop-shadow(1px 1px 5px rgb(0,0,0, .25));
   border-radius: .25rem;
+  color: #303030;
 }
 
 .result-date-time{
@@ -1569,9 +1609,14 @@ i{
   margin: 0;
 }
 
+.email-input-container{
+  display: flex;
+  gap: .5rem;
+}
+
 #email-input{
   height: 44px;
-  width: 13.5rem;
+  width: 16rem;
   padding: 0 1rem 0 1rem;
   border-radius: .25rem;
   border: none;
