@@ -1,6 +1,7 @@
 /*
 #7FB03F Light Green
 #FAC55A Yellow
+#FFAB00 Dark Yellow
 #F37433 Light Orange
 #C44004 Dark Orange
 #00563F Dark Green
@@ -1190,14 +1191,11 @@ h3{
   font-family: 'Alexandria', sans-serif;
   border: none;
   border-radius: .25rem;
-  background-color: rgb(250,197,90,.5);
-  /*background-color: whitesmoke;*/
-
+  background-color: whitesmoke;
 }
 
 .donate-amount-selected{
-  background-color: #C44004;
-  color: white;
+  border: 2px solid black;
 }
 
 #donate-custom{
@@ -1237,7 +1235,7 @@ h3{
   border-radius: .25rem;
   border: none;
   /*background-color: #FAC55A;*/
-  background-color: #ffab00;
+  background-color: #FFAB00;
   color: white;
 }
 
@@ -1428,7 +1426,7 @@ h3{
 }
 
 .primary{
-  background-color: #FAC55A;
+  background-color: #FFAB00;
   color: white;
   border: none;
 }
@@ -1442,9 +1440,9 @@ h3{
 }
 
 .secondary{
-  border: 2px solid #FAC55A;
+  border: 2px solid #FFAB00;
   background-color: white;
-  color: #FAC55A;
+  color: #FFAB00;
 }
 
 .secondary:hover{
@@ -1632,7 +1630,7 @@ i{
   border: none;
   font-family: 'Alexandria', sans-serif;
   color: white;
-  background-color: #FAC55A;
+  background-color: #FFAB00;
 }
 
 #submit-email:hover{
