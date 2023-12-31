@@ -50,8 +50,7 @@ class App extends React.Component {
           
           <div id='intro-items'>
             <div id='intro-logo-container'> 
-              <img id='intro-logo'
-              src={logo}/>
+              <img id='intro-logo' alt='New Canopy\s logo' src={logo}/>
             </div>
            
           
@@ -68,7 +67,7 @@ class App extends React.Component {
         {/*ABOUT SECTION STARTS HERE*/}
         <section id='about-section'>
           
-          <img id='about-photo'
+          <img id='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
             src={aboutImage} />
         
           <div id='about-text'>
@@ -122,14 +121,14 @@ class App extends React.Component {
           <SearchEvents />
 
           <div id='get-involved-images'>
-            <img className='get-involved-image' src={giImage1}/>
-            <img className='get-involved-image' src={giImage2}/> 
-            <img className='get-involved-image' src={giImage3}/>
-            <img className='get-involved-image' src={giImage4}/>
-            <img className='get-involved-image' src={giImage5}/>
-            <img className='get-involved-image' src={giImage6}/>
-            <img className='get-involved-image' src={giImage7}/>
-            <img className='get-involved-image' src={giImage8}/>
+            <img className='get-involved-image' src={giImage1} alt='Woman holding tray of potted saplings'/>
+            <img className='get-involved-image' src={giImage2} alt='Adult and child planting sapling'/> 
+            <img className='get-involved-image' src={giImage3} alt='Close up of person with gloves planting sapling'/>
+            <img className='get-involved-image' src={giImage4} alt='Child holding two potted saplings in both hands'/>
+            <img className='get-involved-image' src={giImage5} alt='Close up of two people preparing to plant a sapling with a trowel'/>
+            <img className='get-involved-image' src={giImage6} alt='Smiling man posing with a young evergreen tree on a cart'/>
+            <img className='get-involved-image' src={giImage7} alt='Two adults and two children planting a young tree with a shovel'/>
+            <img className='get-involved-image' src={giImage8} alt='Mangrove saplings in shallow water at the beach'/>
           </div>
 
           <div id='email-signup'>
@@ -148,8 +147,7 @@ class App extends React.Component {
         <section className='text-white' id='footer-section'>
           <div id='footer-container'>
             <div id='footer-logo-container'>
-              <img id='footer-logo'
-              src={logo}/>
+              <img id='footer-logo' alt='New Canopy\s logo' src={logo}/>
             </div>
           
 
@@ -168,15 +166,15 @@ class App extends React.Component {
               <p className='footer-headings'>Social Media</p>
               <div id='sm-links'>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='facebook'
+                  <img className='sm-icon' id='facebook' alt='Facebook logo'
                   src={facebook} />
                   </a>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='twitter'
+                  <img className='sm-icon' id='twitter' alt='Twitter logo'
                   src={twitter} />
                   </a>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='instagram'
+                  <img className='sm-icon' id='instagram' alt='Instagram logo'
                   src={instagram} />
                   </a>
               </div>
