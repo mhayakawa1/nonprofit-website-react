@@ -10,24 +10,15 @@ class NavbarMenu extends React.Component{
     }
 
     render(){
-        {/* Building Objectives
-        - Horizontal menu
-        - home on left with bootstrap logo
-        - rest of items of right
-        - black to transparent gradient background
-        */}
         return(
-            <div id='navbar'>
+            <nav>
                 <ul className='navbar-list'>
-                    <div className='nav-left'>
-                        <li className='nav-link nav-home'>
-                            <a href='#intro-section' className='nav-item navbar-home font-size-small' >
-                            <img className='nav-link home-logo' src={homeLogo} />
-                            </a>
-                        </li>
-                    </div>
-                    <div className='nav-right'>
-                        <li className='nav-link nav-section'>
+                    <li className='nav-link nav-home'>
+                        <a href='#intro-section' className='nav-item navbar-home font-size-small' >
+                        <img className='nav-link home-logo' src={homeLogo} />
+                        </a>
+                    </li>
+                    <li className='nav-link nav-section'>
                         <a href='#about-section' className='font-size-small font-weight-thin'>About</a>
                     </li>
                     <li className='nav-link nav-section'>
@@ -35,11 +26,9 @@ class NavbarMenu extends React.Component{
                     </li>
                     <li className='nav-link nav-section'>
                         <a href='#get-involved-section' className='font-size-small font-weight-thin'>Get Involved</a>
-                    </li>
-                    </div>
-                    
+                    </li>                  
                 </ul>
-            </div>
+            </nav>
         )
     }
 }
