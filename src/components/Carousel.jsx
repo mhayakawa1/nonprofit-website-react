@@ -85,12 +85,12 @@ import image9 from '../images/carousel-image-9.jpg';
         if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
           arr.push(
             <div key={i} id='slide-img-container'>
-              <div className='slide fade-in'>
-                <img className='slide-img' src={this.state.imagesArr[0]} />
-              </div>
-              <p className='slide-text font-size-small font-weight-thin text-white fade-in'>
-                {this.state.captionsArr[0]}
-              </p>
+              <figure className='slide fade-in'>
+                <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />              
+                <figcaption className='caption font-size-small font-weight-thin text-white'>
+                  {this.state.captionsArr[0]}
+                </figcaption>
+              </figure>
             </div>
           )
         }
@@ -116,15 +116,10 @@ import image9 from '../images/carousel-image-9.jpg';
     }
    
     render(){
-      let caption;
-   
       return(
         //when carousel buttons are clicked, pass switchImage with direction
         <div id="gallery-container">
-          {this.renderImage()}   
-          <div id="caption" className="fade-in text-white font-weight-thin">
-            {caption}
-          </div>          
+          {this.renderImage()}
           <div id="dots" className="fade-in">
             {this.getDots()}
           </div>
