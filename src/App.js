@@ -82,10 +82,12 @@ class App extends React.Component {
         <section id="our-work-section">
         <img id='our-work-background' src={owBackground} />
           <div id='our-work-col-1'>
-            <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
-            <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Our unwavering dedication to reforestation has 
-            transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
-            worked toward the reclamation of nature, one tree at a time.</p>          
+            <div id='our-work-text'>
+              <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
+              <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Our unwavering dedication to reforestation has 
+              transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
+              worked toward the reclamation of nature, one tree at a time.</p>
+            </div>                      
             <div className='text-white' id='tree-counter'>
               <p id='tree-number'>2,248</p>
               <p id='trees-planted'>Trees Planted</p>
