@@ -523,7 +523,7 @@ h2{
   position: relative;
   background-color: #121212;
   width: 100%;
-  height: 30rem;
+  height: 24rem;
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
@@ -534,7 +534,9 @@ h2{
 
 #about-text{
   justify-self: start;
-  margin: 0 5% 0 10%;
+  margin: 0 10% 0 10%;
+  display: flex;
+  flex-direction: column;
 }
 
 #about-heading{
@@ -550,12 +552,13 @@ h2{
   height: 8.5rem;
   align-self: center;
   justify-self: center;
+  margin: 0;
 }
 
 #about-photo{
   width: auto;
   max-width: 100%;
-  height: 30rem;
+  height: 24rem;
   object-fit: cover;
   filter: sepia(20%);
 }
@@ -642,10 +645,12 @@ h2{
   grid-column: 1/2;
 }
 
+#our-work-text{
+  padding: 0;
+}
+
 #our-work-heading{
   margin: 0;
-  padding: 0;
-  height: 4rem;
 }
 
 #our-work-p{
@@ -655,6 +660,7 @@ h2{
   width: auto;
   max-width: 20rem;
   height: 6rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 2560px){
@@ -821,7 +827,6 @@ h2{
   position: relative;
   z-index: 3;
   height: 25rem;
-  width: 45%;
   justify-self: center;
   margin: 1rem auto 0 auto;
   filter: drop-shadow(0px 0px 5px rgb(255,255,255,.25)) sepia(20%);
@@ -851,7 +856,7 @@ h2{
   position: absolute;
   z-index: 4;
   width: 30rem;
-  margin: -13rem 0 0 0;
+  margin: -35% 0 0 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -882,11 +887,13 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 35rem;
 } 
 
 .slide{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
  
 .hide{
@@ -899,21 +906,22 @@ h2{
   object-fit: cover;
 }
  
-#caption{
+/*#caption{
   position: inline;
-  height: 100%;
+  height: 5rem;
   grid-row: 2;
   grid-column: 2/3;
-  margin: 0 0 2% 0;
-}
+  margin: 0;
+}*/
  
-.slide-text{
+.caption{
   position: inline;
   text-align: center;
-  margin: 2% auto 2% auto;
-  padding: 0 5% 0 5%;
+  padding: 0 10% 0 10%;
   font-size: .75rem;
-  width: 24rem;
+  width: 100%;
+  margin: 1rem auto 1rem auto;
+  box-sizing: border-box;
 }
 
 #dots{
@@ -1016,10 +1024,10 @@ h2{
     grid-template-rows: 12rem 4rem 2rem;
   }
 
-  .slide-img{
+  /*.slide-img{
     width: 21rem;
     height: 14rem;
-  }
+  }*/
 
   #dots{
     margin: 1rem 0 0 0;
