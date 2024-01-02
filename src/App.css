@@ -532,24 +532,27 @@ h2{
   margin: 0;
 }
 
-#about-text{
+.heading-text{
   justify-self: start;
-  margin: 0 10% 0 10%;
   display: flex;
   flex-direction: column;
+}
+
+#about-section .heading-text{
+  margin: 0 10% 0 10%;
 }
 
 #about-heading{
   justify-self: center;
 }
 
-#about-p{
+.half-border-text-box{
   border-top: 1px solid white;
   border-left: 1px solid white;
   padding: 1.5rem;
   width: auto;
   max-width: 20rem;
-  height: 8.5rem;
+  height: auto;
   align-self: center;
   justify-self: center;
   margin: 0;
@@ -568,11 +571,10 @@ h2{
     height: 60rem;
   }
 
-  #about-p{
+  .half-border-text-box{
     padding: 3rem;
     width: auto;
     max-width: 40rem;
-    height: 17rem;
   }
 
   #about-photo{
@@ -585,8 +587,7 @@ h2{
     margin: -1px 0 0 0;
   }
 
-  #about-p{
-    max-width: 30rem;
+  .half-border-text-box{
   }
 } 
 
@@ -595,12 +596,20 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 41rem;
+    height: 40rem;
+    padding: 0 0 2rem 0;
   }
 
-  #about-p{
-    height: 5rem;
-    margin: 0 0 2rem 0;
+  #about-section .heading-text{
+    margin: 0;
+  }
+
+  #about-heading{
+    text-align: center;
+  }
+  
+
+  .half-border-text-box{
   }
 
   #about-photo{
@@ -614,8 +623,7 @@ h2{
     height: 31rem;
   }
 
-  #about-p{
-    height: 4rem;
+  .half-border-text-box{
   }
 
   #about-photo{
@@ -640,9 +648,12 @@ h2{
   filter: brightness(50%);
 }
 
-#our-work-col-1{
-  padding: 0 0 0 5%;
+#our-work-container{
   grid-column: 1/2;
+}
+
+#our-work-container .heading-text{
+  margin: 0 10% 0 0;
 }
 
 #our-work-text{
@@ -653,7 +664,7 @@ h2{
   margin: 0;
 }
 
-#our-work-p{
+/*#our-work-p{
   border-top: 1px solid white;
   border-left: 1px solid white;
   padding: 1.5rem;
@@ -661,33 +672,25 @@ h2{
   max-width: 20rem;
   height: 6rem;
   margin: 0;
-}
+}*/
 
 @media screen and (min-width: 2560px){
   #our-work-section{
     height: 68rem;
   }
 
-  #our-work-col-1{
+  #our-work-container{
     padding: 5rem 0 0 12rem;
   }
 
-  #our-work-p{
+  /*#our-work-p{
     max-width: 60rem !important;
     padding: 3rem 3rem 0 3rem;
     height: 14rem !important;
-  }
+  }*/
 }
 
 @media screen and (min-width: 1440px){
-  #our-work-heading{
-    line-height: .5;
-  }
-
-  #our-work-p{
-    max-width: 36rem;
-    height: 7rem;
-  }
 } 
 
 @media screen and (max-width: 1024px){
@@ -699,8 +702,12 @@ h2{
     height: 60rem;
   }
 
-  #our-work-col-1{
+  #our-work-container{
     padding: 3rem 0 0 0;
+  }
+  
+  #our-work-container .heading-text{
+    margin: 0;
   }
 
   #our-work-heading{
@@ -708,22 +715,22 @@ h2{
     width: 100%;
   }
 
-  #our-work-p{
+  /*#our-work-p{
     padding: 1.5rem 1.5rem 0 1.5rem;
     width: auto;
     max-width: 30rem;
     height: 5rem;
-  }
+  }*/
 }
 
 @media screen and (max-width: 769px){
-  #our-work-p{
+  /*#our-work-p{
     max-width: 20rem;
-  }
+  }*/
 }
 
 @media screen and (max-width: 426px){
-  #our-work-p{
+  /*#our-work-p{
     padding: 1.5rem;
     width: auto;
     max-width: 20rem;
@@ -731,7 +738,7 @@ h2{
     margin: 1rem 0 0 10%;
     align-self: center;
     justify-self: center;
-  }
+  }*/
 }
 
 @media screen and (max-width: 376px){
@@ -743,11 +750,11 @@ h2{
     height: 60rem;
   }
 
-  #our-work-p{
+  /*#our-work-p{
     max-width: 14rem;
     height: 5rem;
     margin: 0 0 0 5%;
-  }
+  }*/
 }
 
 #tree-counter{
@@ -856,7 +863,7 @@ h2{
   position: absolute;
   z-index: 4;
   width: 30rem;
-  margin: -35% 0 0 0;
+  margin: -13.5rem 0 0 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -882,6 +889,10 @@ h2{
   margin: 0 0 0 1.5rem;
   padding: 0 0 0 3px;
 }
+ 
+.hide{
+  display: none;
+}
 
 #slide-img-container{
   display: flex;
@@ -896,23 +907,11 @@ h2{
   align-items: center;
 }
  
-.hide{
-  display: none;
-}
- 
 .slide-img{
   width: 24rem;
   height: 16rem;
   object-fit: cover;
 }
- 
-/*#caption{
-  position: inline;
-  height: 5rem;
-  grid-row: 2;
-  grid-column: 2/3;
-  margin: 0;
-}*/
  
 .caption{
   position: inline;
@@ -1015,19 +1014,33 @@ h2{
   #tree-counter{
     margin: 0;
   }
-
-  #gallery{
-    margin: 4rem 2rem 2rem 2rem;
-  }
-
   #gallery-container{
-    grid-template-rows: 12rem 4rem 2rem;
+    width: 25rem;
   }
 
-  /*.slide-img{
-    width: 21rem;
-    height: 14rem;
-  }*/
+  #gallery-btns{
+    width: 24rem;
+  margin: -12rem 0 0 0;
+  }
+    
+  #slide-img-container{
+    width: 18rem;
+    margin: auto;
+  } 
+
+  .slide{
+    width: 100%;
+    margin: auto;
+  }
+  
+  .slide-img{
+    width: 100%;
+    height: 12rem;
+  }
+  
+  .caption{
+    padding: 0;
+  }
 
   #dots{
     margin: 1rem 0 0 0;
