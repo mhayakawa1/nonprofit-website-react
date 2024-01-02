@@ -536,6 +536,7 @@ h2{
   justify-self: start;
   display: flex;
   flex-direction: column;
+  width: auto;
 }
 
 #about-section .heading-text{
@@ -582,12 +583,22 @@ h2{
   }
 }  
 
-@media screen and (max-width: 1440px){
+@media screen and (min-width: 1440px){
   #about-section{
-    margin: -1px 0 0 0;
+    height: 28rem;
+  }
+
+  #about-photo{
+    width: 100%;
+    height: 28rem;
+  }
+
+  #about-section .heading-text{
+    margin: 0 10% 0 10%;
   }
 
   .half-border-text-box{
+    max-width: 30rem;
   }
 } 
 
@@ -635,7 +646,6 @@ h2{
   width: 100%;
   height: 34rem;
   display: flex;
-  padding: 5rem 0 0 0;
 }
 
 #our-work-background{
@@ -650,6 +660,7 @@ h2{
 
 #our-work-container{
   grid-column: 1/2;
+  padding: 2rem 0 0 10%;
 }
 
 #our-work-container .heading-text{
@@ -691,6 +702,13 @@ h2{
 }
 
 @media screen and (min-width: 1440px){
+  #our-work-section{
+    height: 40rem;
+  }
+
+  #our-work-container{
+    padding: 4rem 0 0 10%;
+  }
 } 
 
 @media screen and (max-width: 1024px){
@@ -835,7 +853,7 @@ h2{
   z-index: 3;
   height: 25rem;
   justify-self: center;
-  margin: 1rem auto 0 auto;
+  margin: auto;
   filter: drop-shadow(0px 0px 5px rgb(255,255,255,.25)) sepia(20%);
 }
 
