@@ -70,9 +70,9 @@ class App extends React.Component {
           <img id='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
             src={aboutImage} />
         
-          <div id='about-text'>
+          <div className='heading-text'>
             <h2 className='title-headings text-white' id='about-heading'>About</h2>
-            <p id='about-p' className='text-white font-size-small font-weight-thin'>At New Canopy Tree Foundation, our mission is to 
+            <p className='text-white font-size-small font-weight-thin half-border-text-box'>At New Canopy Tree Foundation, our mission is to 
             rejuvenate and safeguard the natural world by planting trees, nurturing forests, and fostering a sustainable future. We 
             are driven by a deep commitment to the environment and a belief that every tree planted is a step toward a healthier planet.</p>
           </div>
@@ -81,10 +81,10 @@ class App extends React.Component {
         {/*OUR WORK SECTION STARTS HERE*/}
         <section id="our-work-section">
         <img id='our-work-background' src={owBackground} />
-          <div id='our-work-col-1'>
-            <div id='our-work-text'>
+          <div id='our-work-container'>
+            <div className='heading-text'>
               <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
-              <p className='text-white font-size-small font-weight-thin' id='our-work-p'>Our unwavering dedication to reforestation has 
+              <p className='text-white font-size-small font-weight-thin half-border-text-box'>Our unwavering dedication to reforestation has 
               transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
               worked toward the reclamation of nature, one tree at a time.</p>
             </div>                      
