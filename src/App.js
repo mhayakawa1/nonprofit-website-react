@@ -51,8 +51,7 @@ class App extends React.Component {
           <div id='intro-items'>
             <div id='intro-logo-container'> 
               <img id='intro-logo' alt='New Canopy\s logo' src={logo}/>
-            </div>
-           
+            </div>         
           
             <div id='h1-h2'>
               <h1 className='title-headings text-white'>New <br/>Canopy</h1>
