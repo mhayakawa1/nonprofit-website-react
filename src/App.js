@@ -135,7 +135,7 @@ class App extends React.Component {
             <h3 id='sign-up-h3' className='text-white'>Sign up for our newsletter</h3>
             <p className='text-white font-size-small font-weight-thin' id='sign-up-p'>Stay informed and be part of our mission by 
             signing up for our newsletter today – together, we can make a positive difference</p>
-            <div className='email-input-container'>
+            <div id='email-input-container'>
               <input className='font-weight-thin' id='email-input' type='email' placeholder='Enter your email'></input>
               <button className='font-weight-thin' id='submit-email' type='submit'>Sign Up</button>
             </div>            
