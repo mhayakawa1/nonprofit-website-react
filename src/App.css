@@ -1638,12 +1638,16 @@ i{
   height: 15rem;
 }
 
+#sign-up-h3{
+  text-align: center;
+}
+
 #sign-up-p{
   text-align: center;
   margin: 0;
 }
 
-.email-input-container{
+#email-input-container{
   display: flex;
   gap: .5rem;
 }
@@ -1705,28 +1709,40 @@ i{
     height: 2.5rem;
     font-size: 1rem;
   }
-}  
+}
+
+@media screen and (max-width: 769px){
+  #email-signup{
+    width: 25rem;
+  }
+
+  #email-input{
+    width: 12rem;
+  }
+}
 
 @media screen and (max-width: 426px){
   #email-signup{
     height: 25rem;
   }
 
-  #sign-up-h3{
-    max-width: 15rem;
-    text-align: center;
-  }
-
   #sign-up-p{
     max-width: 23rem;
   }
 
+  #email-input-container{
+    width: 100%;
+    justify-content: center;
+  }
+
   #email-input{
-    width: 20rem;
+    max-width: 100%;
+    width: auto;
+    height: 2.5rem;
   }
 
   #submit-email{
-    width: 12rem;
+    width: 8rem;
     height: 2.5rem;
   }
 }
@@ -1739,14 +1755,6 @@ i{
   #sign-up-p{
     max-width: 18rem;
   }
-
-  #email-input{
-    width: 16rem;
-  }
-
-  #submit-email{
-    width: 12rem;
-  } 
 }
 
 #footer-section{
