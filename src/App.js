@@ -37,8 +37,7 @@ https://www.schemecolor.com/dark-orange-green.php
 class App extends React.Component {
   render(){
     return(
-      <div id='page'>
-        
+      <div id='page'>        
         <NavbarMenu />
         <HamburgerMenu />
         {/*INTRO SECTION STARTS HERE*/}
