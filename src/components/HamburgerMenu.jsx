@@ -21,17 +21,27 @@ export default class Menu extends React.Component {
       return( 
       //when user clicks on hamburger menu, call toggleMenu
       //if showMenu is true, menu is visible, if false menu is hidden
-        <div id='menu'>
-          <div onClick={this.toggleMenu} className='menu-lines'>
+        <div id='hamburger-menu'>
+          <button onClick={this.toggleMenu} className='menu-button'>
             <span className='menu-line' />
             <span className='menu-line' />
             <span className='menu-line' />
-          </div>
+          </button>
           <ul className={`menu-items ${this.state.showMenu === true ? 'visible' : 'hidden'} font-weight-thin`}>
-            <a href='#intro-section' className='menu-link home-logo-row' ><img className='menu-link home-logo' src={homeLogo} /></a>
-            <a href='#about-section'><li className='menu-link'>About</li></a>
-            <a href='#our-work-section'><li className='menu-link'>Our Work</li></a>
-            <a href='#get-involved-section'><li className='menu-link last-link'>Get Involved</li></a>
+            <li>
+              <a href='#intro-section' className='menu-link home-logo-row'>
+                <img className='menu-link home-logo' src={homeLogo} />
+              </a>
+            </li>
+            <li>
+              <a className='menu-link'  href='#about-section'>About</a>
+            </li>
+            <li>
+              <a className='menu-link'  href='#our-work-section'>Our Work</a>
+            </li>
+            <li>
+              <a className='menu-link'  href='#about-section'>Get Involved</a>
+            </li>
           </ul>
         </div>
       )
