@@ -148,8 +148,7 @@ class App extends React.Component {
           <div id='footer-container'>
             <div id='footer-logo-container'>
               <img id='footer-logo' alt='New Canopy\s logo' src={logo}/>
-            </div>
-          
+            </div>          
 
             <div id='contact-info'>
               <p className='footer-headings'>Contact</p>
