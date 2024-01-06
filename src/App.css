@@ -648,16 +648,6 @@ h2{
   margin: 0;
 }
 
-/*#our-work-p{
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  padding: 1.5rem;
-  width: auto;
-  max-width: 20rem;
-  height: 6rem;
-  margin: 0;
-}*/
-
 @media screen and (min-width: 2560px){
   #our-work-section{
     height: 68rem;
@@ -849,45 +839,43 @@ h2{
 }
 
 #gallery-btns{
+  align-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   z-index: 4;
-  width: 24rem;
-  height: 16rem;
-  margin: -13.25rem 0 0 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
-#gallery-btns:hover{
-  opacity: 100%;
+  border: 1px solid red;
 }
 
 .carousel-btn{
-  background-color: rgb(255,255,255, .5);
+  background-color: rgb(0,0,0, .5);
   border-style: none;
   color: white;
   grid-row: 1;
   font-size: 1rem;
   height: 4rem;
-  width: 2rem;
+  width: 2.5rem;
 }
 
 #btn-1{
   grid-column: 1/2;
   justify-self: center;
-  margin: 0 1.5rem 0 0;
-  padding: 0 3px 0 0;
+  margin: -16rem 0 0;
+  padding: 0 .25rem 0 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
  
 #btn-2{
   grid-column: 3/4;
   justify-self: center;
-  margin: 0 0 0 1.5rem;
-  padding: 0 0 0 3px;
+  margin: -5rem 0 0 21.5rem;
+  padding: 0 0 0 .25rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
  
 .hide{
@@ -897,7 +885,9 @@ h2{
 #slide-img-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 1rem;
+  width: 24rem;
+  height: auto;
 } 
 
 .slide{
@@ -915,29 +905,24 @@ h2{
 .caption{
   position: inline;
   text-align: center;
-  padding: 0 10% 0 10%;
   font-size: .75rem;
-  width: 100%;
-  margin: 1rem auto 1rem auto;
+  width: 24rem;
+  height: 4rem;
   box-sizing: border-box;
+  padding: 1rem 0 0 0;
 }
 
 #dots{
-  position: inline;
-  justify-self: center;
-  align-self: center;
-  grid-row: 3;
-  grid-column: 2/3;
+  justify-self: end;
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin: 0;
+  margin: 9rem 0 0 0;
 }
  
 .dot{  
   height: 1vh;
   width: 1vh;
-  background-color: white;
   border-radius: 50%;
   opacity: 0.75;
 }
@@ -946,23 +931,48 @@ h2{
   opacity: 0.4;
 }
 
-@media screen and (min-width: 1440px){  
+@media screen and (min-width: 1440px){ 
+  /*4/5 ratio
+  height: 16rem;
+  width: 24rem;
+  */ 
   #gallery-btns{
-    width: 40rem;
-    margin: -18rem 0 0 0;
+    height: 24rem;
+    width: 36rem;
+    margin: -19.125rem 0 0 0;
+  }
+
+  .carousel-btn{
+    font-size: 1.5rem;
+    height: 6rem;
+    width: 3.75rem;
+  }
+
+  #btn-1{
+    grid-column: 1/2;
+    justify-self: center;
+    margin: 0 1.5rem 0 0;
+    padding: 0 .25rem 0 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   
-  .carousel-btn{
-    font-size: 3rem;
+  #btn-2{
+    grid-column: 3/4;
+    justify-self: center;
+    margin: 0 0 0 1.5rem;
+    padding: 0 0 0 .25rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .slide-img{
-    width: 32rem;
-    height: 22rem;
+    height: 24rem;
+    width: 36rem;
   }
 
-  .slide-text{
-    width: 32rem;
+  .caption{
+    width: 36rem;
     font-size: 1rem;
   }
 
@@ -996,17 +1006,7 @@ h2{
 }
 
 @media screen and (max-width: 1024px){
-  #gallery{
-    margin: 4rem;
-  }
 
-  #btn-1{
-    padding: 0 3px 0 0;
-  }
-   
-  #btn-2{
-    padding: 0 0 0 3px;
-  }
 }
 
 @media screen and (max-width: 769px){
@@ -1019,7 +1019,7 @@ h2{
 
   #gallery-btns{
     width: 24rem;
-  margin: -12rem 0 0 0;
+    margin: -12rem 0 0 0;
   }
     
   #slide-img-container{
