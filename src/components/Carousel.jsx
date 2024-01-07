@@ -63,34 +63,6 @@ import image9 from '../images/carousel-image-9.jpg';
       })
     }
 
-    renderImage = () =>{
-      const arr = [];
-      for(let i = 0; i < this.state.imagesArr.length; i++){
-        if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
-          arr.push(
-            <div key={i} id='slide-img-container'>
-              <figure className='slide fade-in'>
-                <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />              
-                <figcaption className='caption font-size-small font-weight-thin text-white'>
-                  {this.state.captionsArr[0]}
-                </figcaption>
-              </figure>
-                <button id="btn-1" className="carousel-btn fade-in" 
-                  onClick={() => this.switchImage("left")}>◀</button>
-                <button id="btn-2" className="carousel-btn fade-in" 
-                  onClick={() => this.switchImage("right")}>▶</button>
-              
-              {/*<div id="gallery-btns"></div>*/}
-              <div id="dots" className="fade-in">
-                {this.getDots()}
-              </div>
-            </div>
-          )
-        }
-      }
-      return arr;
-    }
-
     getDots(){
       const dotsArr = [];
 
@@ -107,12 +79,39 @@ import image9 from '../images/carousel-image-9.jpg';
       }
       return dotsArr;
     }
+
+    renderImage = () =>{
+      const arr = [];
+      for(let i = 0; i < this.state.imagesArr.length; i++){
+        if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
+          arr.push(
+            <div key={i} id='slide-img-container'>
+              <figure className='slide fade-in'>
+                <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />              
+                <figcaption className='caption font-size-small font-weight-thin text-white'>
+                  {this.state.captionsArr[0]}
+                </figcaption>
+              </figure>
+              <button id="btn-1" className="carousel-btn fade-in" 
+                onClick={() => this.switchImage("left")}>◀</button>
+              <button id="btn-2" className="carousel-btn fade-in" 
+                onClick={() => this.switchImage("right")}>▶</button>
+              {/*<div id="gallery-btns"></div>*/}
+            </div>
+          )
+        }
+      }
+      return arr;
+    }
    
     render(){
       return(
         //when carousel buttons are clicked, pass switchImage with direction
         <div id="gallery-container">
           {this.renderImage()}
+          <div id="dots" className="fade-in">
+            {this.getDots()}
+          </div>
         </div>
       )
     }

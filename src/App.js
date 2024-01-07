@@ -44,8 +44,7 @@ class App extends React.Component {
         <section id='intro-section'>
           {/*Background image in case video doesn't appear on different devices/browsers*/}
           <img className='video' src={videoAltImg} />
-          <Video />{/**/}
-          
+          <Video />          
           
           <div id='intro-items'>
             <div id='intro-logo-container'> 
@@ -78,13 +77,13 @@ class App extends React.Component {
 
         {/*OUR WORK SECTION STARTS HERE*/}
         <section id="our-work-section">
-        <img id='our-work-background' src={owBackground} />
+          <img id='our-work-background' src={owBackground} />
           <div id='our-work-container'>
             <div className='heading-text'>
               <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
               <p className='text-white font-size-small font-weight-thin half-border-text-box'>Our unwavering dedication to reforestation has 
-              transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
-              worked toward the reclamation of nature, one tree at a time.</p>
+                transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
+                worked toward the reclamation of nature, one tree at a time.</p>
             </div>                      
             <div className='text-white' id='tree-counter'>
               <p id='tree-number'>2,248</p>
