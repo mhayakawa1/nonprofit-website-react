@@ -808,7 +808,13 @@ h2{
     font-size: 4rem;
     margin: 0 0 0 0rem;
   }
-}  
+}
+
+@media screen and (max-width: 769px){
+  #our-work-section{
+    height: 52rem;
+  }
+}
 
 @media screen and (max-width: 376px){
   #our-work-section{
@@ -963,21 +969,13 @@ h2{
   }
 
   #btn-1{
-    grid-column: 1/2;
-    justify-self: center;
     margin: -21rem 0 0 0rem;    
     padding: 0 .25rem 0 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
   }
   
   #btn-2{
-    grid-column: 3/4;
-    justify-self: center;
-    margin: -7rem 0 0 32.5rem;
+    margin: -7rem 0 0 32.25rem;
     padding: 0 0 0 .25rem;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
   }
 
   #slide-img-container{
@@ -1037,44 +1035,64 @@ h2{
   }
 }
 
-@media screen and (max-width: 1024px){
-
-}
-
 @media screen and (max-width: 769px){
   #tree-counter{
     margin: 0;
   }
+
+  #gallery{
+    height: 20rem;
+  }
+
   #gallery-container{
-    width: 25rem;
+    width: 18rem;
   }
 
   #gallery-btns{
-    width: 24rem;
-    margin: -12rem 0 0 0;
+    width: 3rem;
+    height: 1.875rem;
+  }
+
+  .carousel-btn{
+    font-size: 1rem;
+    height: 4rem;
+    width: 2.5rem;
+  }
+
+  #btn-1{
+    margin: -13rem 0 0 0;    
+    padding: 0 .25rem 0 0;
+  }
+  
+  #btn-2{
+    margin: -5rem 0 0 15.5rem;
+    padding: 0 0 0 .25rem;
   }
     
   #slide-img-container{
     width: 18rem;
+    height: 12rem;
     margin: auto;
-  } 
+  }
 
   .slide{
-    width: 100%;
-    margin: auto;
+    width: 18rem;
+    margin: 0rem 0 0 0;
   }
   
   .slide-img{
-    width: 100%;
+    width: 18rem;
     height: 12rem;
   }
   
   .caption{
-    padding: 0;
+    padding: .5rem 0 0 0;
+    width: 18rem;
+    height: 4rem;
   }
 
   #dots{
-    margin: 1rem 0 0 0;
+    margin: 5rem 0 0 0;
   }
 }
 
@@ -1084,13 +1102,6 @@ h2{
     height: 12rem;
   }
 
-  #btn-1{    
-    margin: 0 .5rem 0 0;
-  }
-
-  #btn-2{
-    margin: 0 0 0 .5rem;
-  }
 }
 
 @media screen and (max-width: 376px){
