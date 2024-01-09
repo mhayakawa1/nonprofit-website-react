@@ -92,11 +92,12 @@ import image9 from '../images/carousel-image-9.jpg';
                   {this.state.captionsArr[0]}
                 </figcaption>
               </figure>
-              <button id="btn-1" className="carousel-btn fade-in" 
-                onClick={() => this.switchImage("left")}>◀</button>
-              <button id="btn-2" className="carousel-btn fade-in" 
-                onClick={() => this.switchImage("right")}>▶</button>
-              {/*<div id="gallery-btns"></div>*/}
+              <div id="gallery-btns">
+                <button id="btn-1" className="carousel-btn fade-in" 
+                  onClick={() => this.switchImage("left")}>◀</button>
+                <button id="btn-2" className="carousel-btn fade-in" 
+                  onClick={() => this.switchImage("right")}>▶</button>
+              </div>
             </div>
           )
         }
