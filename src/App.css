@@ -920,7 +920,6 @@ h2{
   #gallery{
     margin: 5% auto auto auto;
     height: 48rem;
-    border: 1px solid white;
   }
 
   #gallery-container{
@@ -994,7 +993,6 @@ h2{
   #gallery-container{
     width: 100%;
     height: 100%;
-    border: 1px solid white;
   }
 
   #slide-img-container{
@@ -1019,18 +1017,6 @@ h2{
   #gallery-container{
     width: 100%;
   }
-  
-  #slide-img-container{
-  }
-  
-  .slide{
-  }
-
-  .slide-img{
-  }
-
-  .slide-text{
-  }
 }
 
 .caption{
@@ -1040,7 +1026,6 @@ h2{
   height: auto;
   box-sizing: border-box;
   padding: 1rem;
-  border: 1px solid red;
 }
 
 #dots{
@@ -1078,7 +1063,6 @@ h2{
 
   #dots{
     margin: 8rem 0 0 0;
-    border: 1px solid red;
     gap: 10px;
   }
 
