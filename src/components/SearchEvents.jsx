@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 export default class SearchEvents extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        eventsData: [],
         input: '',
         object: {
           1: {
@@ -297,26 +299,88 @@ export default class SearchEvents extends React.Component {
         //console.log(this.state.inputArr)
       }
     }
-    
+
+    parseCSV(csvText){
+      const rows = csvText.split(/\r?\n/); // Split CSV text into rows, handling '\r' characters
+      const headers = rows[0].split(','); // Extract headers (assumes the first row is the header row)
+      const data = []; // Initialize an array to store parsed data
+      for (let i = 1; i < rows.length; i++) {
+          const rowData = rows[i].split(','); // Split the row, handling '\r' characters
+          const rowObject = {};
+          for (let j = 0; j < headers.length; j++) {
+              rowObject[headers[j]] = rowData[j];
+          }
+          data.push(rowObject);
+      }
+      return data;
+    }
+
+    fetchEventsData(){
+      const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSz8IuTNhD06iLT4KiIP4SD61mYtLSPfFifGgmSJQJ2uff-8qELJMjRttERw8bUwVvxJMD_rX1R7qfP/pub?output=csv'
+      axios.get(url)
+      .then((response) => {
+          const parsedCsvData = this.parseCSV(response.data);
+          this.setState({
+            eventsData: parsedCsvData
+          })
+          console.log('eventsData: ', this.state.eventsData)
+      })
+      .catch((error) => {
+          console.error('Error fetching CSV data:', error);
+      });
+    }
+
+    componentDidMount(){
+      this.fetchEventsData();
+    }
+
+    getEventsWithLoop(){
+      {/*
+      Title, City, State, Address, Type, MM/DD/YY, Weekday, Month, Day, Year, Time, Description
+    */}
+      const eventsArr = [];
+      for(let i = 0; i < this.state.eventsData.length; i++){
+        console.log(this.state.eventsData[i].Title)
+        eventsArr.push(
+          <div className='search-result' key={i}>
+          <div>
+            <p className='result-font result-date-time font-size-small font-weight-thin'>
+              {this.state.eventsData[i].Weekday}, {this.state.eventsData[i].Month} {this.state.eventsData[i].Day}, {this.state.eventsData[i].Year} {this.state.eventsData[i].Time}
+            </p>
+            <p className='result-font result-title'>{this.state.eventsData[i].Title}</p>
+            <p className='result-font result-type-location font-size-small'>
+              {this.state.eventsData[i].Address}, {this.state.eventsData[i].City}, {this.state.eventsData[i].StateAbbreviation}
+            </p>
+            <p className='result-font result-description font-size-small font-weight-thin'>{this.state.eventsData[i].Description}</p>
+          </div>          
+          <div className='result-buttons'>
+            <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
+            <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
+          </div>          
+        </div>
+        )
+      }
+      return(
+        eventsArr
+      )
+    }
     
     render(){
       //map thru renderProperties and create a div containing p tags containing title, city, address, eventType, dateTime, and description
       //create buttons for Learn More & Add to Calendar
-      const results = this.state.renderProperties.map((item, index) =>
+      /*const results = this.eventsData.map((item, index) =>
         <div className='search-result' key={index}>
           <div>
-            <p className='result-font result-date-time font-size-small font-weight-thin'>{this.state.object[item].dateTime}</p>
-            <p className='result-font result-title'>{this.state.object[item].title.toUpperCase()}</p>
-            <p className='result-font result-type-location font-size-small'>{this.state.object[item].eventType} @{this.state.object[item].address}, {this.state.object[item].city}</p>
-            <p className='result-font result-description font-size-small font-weight-thin'>{this.state.object[item].description}</p>
-          </div>
-          
+            <p className='result-font result-date-time font-size-small font-weight-thin'></p>
+            <p className='result-font result-title'></p>
+            <p className='result-font result-type-location font-size-small'></p>
+            <p className='result-font result-description font-size-small font-weight-thin'></p>
+          </div>          
           <div className='result-buttons'>
             <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
             <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
-          </div>
-          
-        </div>)
+          </div>          
+        </div>)*/
    
       return(
         //when input is entered, pass handleChange
@@ -326,10 +390,12 @@ export default class SearchEvents extends React.Component {
           <input id='search-input' className='font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
             value={this.state.input} onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown} />
+            //onKeyDown={this.handleKeyDown} 
+            />
    
           <div id='search-results'>
-            {results}
+            {/*results*/}
+            {this.getEventsWithLoop()}
             <i aria-hidden='true'></i>
           </div>
         </div>
