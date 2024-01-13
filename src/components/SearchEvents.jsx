@@ -6,6 +6,7 @@ export default class SearchEvents extends React.Component {
       super(props);
       this.state = {
         eventsData: [],
+        searchResults: [],
         input: '',
         object: {
           1: {
@@ -234,69 +235,36 @@ export default class SearchEvents extends React.Component {
     }
    
     handleKeyDown(event){
-    this.setState({
-          inputArr: [],
-          renderProperties: []
-        })
+      this.setState({
+        inputArr: [],
+        renderProperties: [],
+        searchResults: []
+      })
       //if 'Enter' is pressed, execute the following
-      if (event.keyCode === 13){ //13 is keyCode for ‘Enter’
-        if(this.state.input.length === 0){
-          this.setState({ //if input is blank, reset renderProperties to include all properties
-            renderProperties: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-          }, () => {
-          })
-        }else{
-          //get all input text split into array of individual words
-          this.state.inputArr = this.state.input.toLowerCase().split(' ')
+      if(event.keyCode === 13){
+        this.state.inputArr = this.state.input.toLowerCase().split(' ')
           this.setState({
             inputArr: this.state.inputArr
           })
-          //if inputArr includes word that includes a number or is a number
-          let dateNum
-          for(let i = 0; i < this.state.inputArr.length; i++){
-            if(/^\d+$/.test(this.state.inputArr[i]) === true){
-              dateNum = Number(this.state.inputArr[i])
-              this.state.inputArr.splice(this.state.inputArr.indexOf(this.state.inputArr[i]), 1, Number(this.state.inputArr[i]))
-            }else if((/\d/.test(this.state.inputArr[i]) === true)){
-              dateNum = Number(this.state.inputArr[i].split('').filter(i => /^\d+$/.test(i) === true).join(''))
-              this.state.inputArr.splice(this.state.inputArr.indexOf(this.state.inputArr[i]), 1, dateNum)
-            }
-          }
-   
-          //loop thru object property 'tags' within object
-          for(let i = 1; i <= Object.keys(this.state.object).length; i++){
-            for(let j = 0; j < this.state.object[i].tags.length; j++){
-              //if text entered in search includes a tag in the object 
-              //& renderProperties doesn't include i
-              //& inputArr includes month
-              //& date of event is >= than dateNum or dateNum is undefined
-              //push i to renderProperties
-              if(
-                this.state.inputArr.includes(this.state.object[i].tags[j]) === true
-                && this.state.renderProperties.includes(i) === false
-                && this.state.inputArr.includes(this.state.object[i].tags[this.state.object[i].tags.length - 2]) === true
-                && (this.state.object[i].tags[this.state.object[i].tags.length - 1] >= dateNum
-                  || dateNum === undefined)
-              ){
-                this.state.renderProperties.push(i)
+        const split = this.state.input.split(' ')
+        split.forEach((searchTerm) => {
+            this.state.eventsData.forEach((event) => {
+              for(const key in event){
+                if(event[key].toLowerCase().includes(searchTerm) === true
+                  && this.state.searchResults.includes(event) === false){
+                  if(key === 'State' || key === 'StateAbbreviation' || key === 'City'){
+                    this.state.searchResults.unshift(event)
+                  }else{
+                    this.state.searchResults.push(event)
+                  }
+                  this.setState({
+                    searchResults: this.state.searchResults
+                  })
+                }
               }
-              //else if text entered in search includes a tag in the object 
-              //& renderProperties doesn't include i
-              //& inputArr doesn't include month
-              else if(
-                this.state.inputArr.includes(this.state.object[i].tags[j]) === true
-                && this.state.renderProperties.includes(i) === false
-                && dateNum === undefined
-                ){
-                  this.state.renderProperties.push(i)
-              }
-            }
-            this.setState({
-              renderProperties: this.state.renderProperties
             })
           }
-        }  
-        //console.log(this.state.inputArr)
+        );
       }
     }
 
@@ -323,7 +291,6 @@ export default class SearchEvents extends React.Component {
           this.setState({
             eventsData: parsedCsvData
           })
-          console.log('eventsData: ', this.state.eventsData)
       })
       .catch((error) => {
           console.error('Error fetching CSV data:', error);
@@ -335,29 +302,32 @@ export default class SearchEvents extends React.Component {
     }
 
     getEventsWithLoop(){
-      {/*
-      Title, City, State, Address, Type, MM/DD/YY, Weekday, Month, Day, Year, Time, Description
-    */}
       const eventsArr = [];
-      for(let i = 0; i < this.state.eventsData.length; i++){
-        console.log(this.state.eventsData[i].Title)
+      let renderEvents
+
+      if(this.state.input === ''){
+        renderEvents = this.state.eventsData
+      }else{
+        renderEvents = this.state.searchResults
+      }
+      for(let i = 0; i < renderEvents.length; i++){
         eventsArr.push(
           <div className='search-result' key={i}>
-          <div>
-            <p className='result-font result-date-time font-size-small font-weight-thin'>
-              {this.state.eventsData[i].Weekday}, {this.state.eventsData[i].Month} {this.state.eventsData[i].Day}, {this.state.eventsData[i].Year} {this.state.eventsData[i].Time}
-            </p>
-            <p className='result-font result-title'>{this.state.eventsData[i].Title}</p>
-            <p className='result-font result-type-location font-size-small'>
-              {this.state.eventsData[i].Address}, {this.state.eventsData[i].City}, {this.state.eventsData[i].StateAbbreviation}
-            </p>
-            <p className='result-font result-description font-size-small font-weight-thin'>{this.state.eventsData[i].Description}</p>
-          </div>          
-          <div className='result-buttons'>
-            <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
-            <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
-          </div>          
-        </div>
+            <div>
+              <p className='result-font result-date-time font-size-small font-weight-thin'>
+                {renderEvents[i].Weekday}, {renderEvents[i].Month} {renderEvents[i].Day}, {renderEvents[i].Year} {renderEvents[i].Time}
+              </p>
+              <p className='result-font result-title'>{renderEvents[i].Title}</p>
+              <p className='result-font result-type-location font-size-small'>
+                {renderEvents[i].Address}, {renderEvents[i].City}, {renderEvents[i].StateAbbreviation}
+              </p>
+              <p className='result-font result-description font-size-small font-weight-thin'>{renderEvents[i].Description}</p>
+            </div>          
+            <div className='result-buttons'>
+              <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
+              <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
+            </div>
+          </div>
         )
       }
       return(
@@ -365,23 +335,7 @@ export default class SearchEvents extends React.Component {
       )
     }
     
-    render(){
-      //map thru renderProperties and create a div containing p tags containing title, city, address, eventType, dateTime, and description
-      //create buttons for Learn More & Add to Calendar
-      /*const results = this.eventsData.map((item, index) =>
-        <div className='search-result' key={index}>
-          <div>
-            <p className='result-font result-date-time font-size-small font-weight-thin'></p>
-            <p className='result-font result-title'></p>
-            <p className='result-font result-type-location font-size-small'></p>
-            <p className='result-font result-description font-size-small font-weight-thin'></p>
-          </div>          
-          <div className='result-buttons'>
-            <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
-            <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
-          </div>          
-        </div>)*/
-   
+    render(){   
       return(
         //when input is entered, pass handleChange
         //when enter is pressed, pass handleKeyDown
@@ -390,8 +344,8 @@ export default class SearchEvents extends React.Component {
           <input id='search-input' className='font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
             value={this.state.input} onChange={this.handleChange}
-            //onKeyDown={this.handleKeyDown} 
-            />
+            onKeyDown={this.handleKeyDown} 
+          />
    
           <div id='search-results'>
             {/*results*/}
