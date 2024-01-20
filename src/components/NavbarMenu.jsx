@@ -1,5 +1,4 @@
 import React from 'react';
-import homeLogo from '../images/home-logo.png';
 
 class NavbarMenu extends React.Component{
     constructor(props){
@@ -15,7 +14,7 @@ class NavbarMenu extends React.Component{
                 <ul className='navbar-list'>
                     <li className='nav-link nav-home'>
                         <a href='#intro-section' className='font-size-small' >
-                        <img className='nav-link home-logo' src={homeLogo} />
+                        <i className='nav-link home-logo fas fa-home' alt=''></i>
                         </a>
                     </li>
                     <li className='nav-link'>
