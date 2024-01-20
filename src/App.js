@@ -7,7 +7,6 @@ import Carousel from './components/Carousel';
 import DonateButtons from './components/DonateButtons';
 import SearchEvents from './components/SearchEvents';
 
-//import handLogo from './images/hand-planting.png';
 import logo from './images/hand-planting-logo.svg';
 
 import videoAltImg from './images/video-alt-image.jpg';
@@ -164,9 +163,8 @@ class App extends React.Component {
               <p className='footer-headings'>Social Media</p>
               <div id='sm-links'>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='facebook' alt='Facebook logo'
-                  src={facebook} />
-                  </a>
+                  <i className='sm-icon fab fa-facebook' alt='Facebook logo'></i>
+                </a>
                 <a href='#social-media'>
                   <img className='sm-icon' id='twitter' alt='Twitter logo'
                   src={twitter} />
