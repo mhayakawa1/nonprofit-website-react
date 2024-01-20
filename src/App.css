@@ -290,7 +290,9 @@ nav{
 
 .home-logo{
   height: 1.5rem;
-  filter: invert(100%);
+  width: 1.5rem;
+  font-size: 1.5rem;
+  color: white;
   margin: 0 0 0 15%;
 }
 
@@ -1811,7 +1813,9 @@ i{
 
 .sm-icon{
   width: 1.5rem;
-  filter: invert(1);
+  height: 1.5rem;
+  font-size: 1.5rem;
+  color: white;
   margin: 0 1rem 0 0;
 }
 
