@@ -166,13 +166,11 @@ class App extends React.Component {
                   <i className='sm-icon fab fa-facebook' alt='Facebook logo'></i>
                 </a>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='twitter' alt='Twitter logo'
-                  src={twitter} />
-                  </a>
+                  <i className='sm-icon fab fa-twitter' alt='X/Twitter logo'></i>
+                </a>
                 <a href='#social-media'>
-                  <img className='sm-icon' id='instagram' alt='Instagram logo'
-                  src={instagram} />
-                  </a>
+                  <i className='sm-icon fab fa-instagram' alt='Instagram logo'></i>
+                </a>
               </div>
             </div>
 
