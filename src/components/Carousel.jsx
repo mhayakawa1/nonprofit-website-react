@@ -1,13 +1,15 @@
 import React from 'react';
-import image1 from '../images/carousel-image-1.jpeg';
-import image2 from '../images/carousel-image-2.jpg';
-import image3 from '../images/carousel-image-3.jpeg';
-import image4 from '../images/carousel-image-4.jpg';
-import image5 from '../images/carousel-image-5.jpg';
-import image6 from '../images/carousel-image-6.jpg';
-import image7 from '../images/carousel-image-7.jpg';
-import image8 from '../images/carousel-image-8.jpg';
-import image9 from '../images/carousel-image-9.jpg';
+import image1 from '../images/carousel-images/carousel-image-1.jpeg';
+import image2 from '../images/carousel-images/carousel-image-2.jpg';
+import image3 from '../images/carousel-images/carousel-image-3.jpeg';
+import image4 from '../images/carousel-images/carousel-image-4.jpg';
+import image5 from '../images/carousel-images/carousel-image-5.jpg';
+import image6 from '../images/carousel-images/carousel-image-6.jpg';
+import image7 from '../images/carousel-images/carousel-image-7.jpg';
+import image8 from '../images/carousel-images/carousel-image-8.jpg';
+import image9 from '../images/carousel-images/carousel-image-9.jpg';
+const images = require.context('../images/carousel-images', true);
+const imageList = images.keys().map(image => images(image));
   
   //let imageNumArr = [1, 2, 3]; //array to cycle through images
   export default class Carousel extends React.Component {

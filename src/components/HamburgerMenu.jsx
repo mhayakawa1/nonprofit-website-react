@@ -1,5 +1,4 @@
 import React from 'react';
-import homeLogo from '../images/home-logo.png';
 
 export default class Menu extends React.Component {
     constructor(props){

@@ -14,21 +14,20 @@ import videoAltImg from './images/video-alt-image.jpg';
 import aboutImage from './images/about-image.jpg';
 
 import owBackground from './images/our-work-background.jpeg';
-import giBackground from './images/get-involved-background.jpg'
+import giBackground from './images/get-involved-images/get-involved-background.jpg'
 
-import giImage1 from './images/get-involved-image-1.jpeg';
-import giImage2 from './images/get-involved-image-2.jpg';
-import giImage3 from './images/get-involved-image-3.jpg';
-import giImage4 from './images/get-involved-image-4.jpg';
-import giImage5 from './images/get-involved-image-5.jpg';
-import giImage6 from './images/get-involved-image-6.jpg';
-import giImage7 from './images/get-involved-image-7.jpg';
-import giImage8 from './images/get-involved-image-8.jpg';
+import giImage1 from './images/get-involved-images/get-involved-image-1.jpeg';
+import giImage2 from './images/get-involved-images/get-involved-image-2.jpg';
+import giImage3 from './images/get-involved-images/get-involved-image-3.jpg';
+import giImage4 from './images/get-involved-images/get-involved-image-4.jpg';
+import giImage5 from './images/get-involved-images/get-involved-image-5.jpg';
+import giImage6 from './images/get-involved-images/get-involved-image-6.jpg';
+import giImage7 from './images/get-involved-images/get-involved-image-7.jpg';
+import giImage8 from './images/get-involved-images/get-involved-image-8.jpg';
 
-import facebook from './images/facebook-logo.png';
-import twitter from './images/twitter-logo.png';
-import instagram from './images/instagram-logo.png';
- 
+//const images = require.context('./images/get-involved-images', true);
+//const imageList = images.keys().map(image => images(image));
+
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
 */}
