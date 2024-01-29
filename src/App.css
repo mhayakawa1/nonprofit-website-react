@@ -1820,7 +1820,7 @@ i{
 }
 
 .sm-icon:hover{
-  filter: invert(22%) sepia(69%) saturate(1004%) hue-rotate(127deg) brightness(93%) contrast(101%);
+  color: #FFAB00;
 }
 
 @media screen and (max-width: 376px){
@@ -1832,7 +1832,7 @@ i{
 
 .legal-link:hover{
   text-decoration: underline;
-  color: #00563F;
+  color: #FFAB00;
 }
 
 @media screen and (max-width: 376px){
