@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
           <ul className={`menu-items ${this.state.showMenu === true ? 'visible' : 'hidden'} font-weight-thin`}>
             <li>
               <a href='#intro-section' className='menu-link home-logo-row'>
-                <img className='menu-link home-logo' src={homeLogo} />
+                <img className='menu-link home-logo fas fa-home' alt='home' />
               </a>
             </li>
             <li>
