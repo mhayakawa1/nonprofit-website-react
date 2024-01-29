@@ -14,7 +14,7 @@ class NavbarMenu extends React.Component{
                 <ul className='navbar-list'>
                     <li className='nav-link nav-home'>
                         <a href='#intro-section' className='font-size-small' >
-                        <i className='nav-link home-logo fas fa-home' alt=''></i>
+                        <i className='nav-link home-logo fas fa-home' alt='home'></i>
                         </a>
                     </li>
                     <li className='nav-link'>
