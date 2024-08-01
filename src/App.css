@@ -176,7 +176,7 @@ nav{
   }
 }
 
-#intro-section{
+.intro-section{
   width: 100%;
   height: 45rem;
   background-color: black;
@@ -188,13 +188,13 @@ nav{
 
 
 @media all and (min-width: 2560px){
-  #intro-section{
+  .intro-section{
     height: 95rem !important;
   }
 } 
 
 @media screen and (min-width: 1440px){
-  #intro-section{
+  .intro-section{
     height: 51rem;
   }
 }
@@ -368,7 +368,7 @@ nav{
   margin: 0 0 0 0;
 }
 
-#intro-items{
+.intro-items{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -377,7 +377,7 @@ nav{
 }
 
 @media screen and (min-width: 2560px){
-  #intro-items{
+  .intro-items{
     margin: 25rem 0 0 5%;
   }
 }
@@ -387,14 +387,14 @@ nav{
 }
 
 @media screen and (max-width: 769px){
-  #intro-items{
+  .intro-items{
     margin: 11rem 0 0 0;
     gap: 1.5%;
   }
 }
 
 @media screen and (max-width: 426px){
-  #intro-items{
+  .intro-items{
     margin: 3rem 0 0 0;
     flex-direction: column;
     justify-content: center;
@@ -402,7 +402,7 @@ nav{
   }
 }
 
-#intro-logo-container{
+.intro-logo-container{
   position: relative;
   width: 15rem;
   height: 15rem;
@@ -410,7 +410,7 @@ nav{
   margin: 0 0 0 0;
 }
 
-#intro-logo{
+.intro-logo{
   width: 16rem;
   height: 16rem;
   object-fit: cover;
@@ -418,51 +418,51 @@ nav{
 }
 
 @media screen and (min-width: 2560px){
-  #intro-logo-container{
+  .intro-logo-container{
     width: 30rem !important;
     height: 30rem !important;
   }
 
-  #intro-logo{
+  .intro-logo{
     width: 32rem !important;
     height: 32rem !important;
   }
 } 
 
 @media screen and (min-width: 1440px){
-  #intro-logo-container{
+  .intro-logo-container{
     width: 20rem;
     height: 20rem;
   }
 
-  #intro-logo{
+  .intro-logo{
     width: 21.5rem;
     height: 21.5rem;
   }
 }
 
 @media screen and (max-width: 769px){
-  #intro-logo-container{
+  .intro-logo-container{
     width: 10rem;
     height: 10rem;
     margin: 2rem 1rem 2rem 2rem;
   }
 
-  #intro-logo{
+  .intro-logo{
     width: 11rem;
     height: 11rem;
   }
 }
 
 @media screen and (max-width: 426px){
-  #intro-logo-container{
+  .intro-logo-container{
     width: 11rem;
     align-self: center;
     margin: 2rem 0 2rem 0;
   }
 }
 
-#h1-h2{
+.intro-headings{
   align-self: center;
   z-index: 3;
   margin: 0 0 1rem 0;
@@ -511,7 +511,7 @@ h2{
   }
 }
 
-#intro-p{
+.intro-section p{
   position: relative;
   text-align: center;
   margin: 8rem auto 0 auto !important;
