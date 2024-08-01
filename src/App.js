@@ -56,13 +56,13 @@ class App extends React.Component {
         </section>
 
         {/*ABOUT SECTION STARTS HERE*/}
-        <section id='about-section'>
+        <section className='about-section'>
           
-          <img id='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
+          <img className='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
             src={aboutImage} />
         
           <div className='heading-text'>
-            <h2 className='title-headings text-white' id='about-heading'>About</h2>
+            <h2 className='title-headings text-white about-heading'>About</h2>
             <p className='text-white font-size-small font-weight-thin half-border-text-box'>At New Canopy Tree Foundation, our mission is to 
             rejuvenate and safeguard the natural world by planting trees, nurturing forests, and fostering a sustainable future. We 
             are driven by a deep commitment to the environment and a belief that every tree planted is a step toward a healthier planet.</p>
@@ -70,22 +70,22 @@ class App extends React.Component {
         </section>
 
         {/*OUR WORK SECTION STARTS HERE*/}
-        <section id="our-work-section">
-          <img id='our-work-background' src={owBackground} />
-          <div id='our-work-container'>
+        <section className="our-work-section">
+          <img className='our-work-background' src={owBackground} />
+          <div className='our-work-container'>
             <div className='heading-text'>
-              <h2 className='title-headings text-white' id='our-work-heading'>Our Work</h2>
+              <h2 className='title-headings text-white our-work-heading'>Our Work</h2>
               <p className='text-white font-size-small font-weight-thin half-border-text-box'>Our unwavering dedication to reforestation has 
                 transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
                 worked toward the reclamation of nature, one tree at a time.</p>
             </div>                      
-            <div className='text-white' id='tree-counter'>
-              <p id='tree-number'>2,248</p>
-              <p id='trees-planted'>Trees Planted</p>
+            <div className='text-white tree-counter'>
+              <p className='tree-number'>2,248</p>
+              <p className='trees-planted'>Trees Planted</p>
             </div>
           </div>
           
-          <div id='gallery'>
+          <div className='gallery'>
             <Carousel />
           </div>
 
