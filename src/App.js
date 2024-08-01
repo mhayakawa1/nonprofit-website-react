@@ -25,9 +25,6 @@ import giImage6 from './images/get-involved-images/get-involved-image-6.jpg';
 import giImage7 from './images/get-involved-images/get-involved-image-7.jpg';
 import giImage8 from './images/get-involved-images/get-involved-image-8.jpg';
 
-//const images = require.context('./images/get-involved-images', true);
-//const imageList = images.keys().map(image => images(image));
-
 {/* Resources
 https://www.schemecolor.com/dark-orange-green.php
 */}
@@ -35,27 +32,26 @@ https://www.schemecolor.com/dark-orange-green.php
 class App extends React.Component {
   render(){
     return(
-      <div id='page'>        
+      <main>        
         <NavbarMenu />
         <HamburgerMenu />
         {/*INTRO SECTION STARTS HERE*/}
-        <section id='intro-section'>
-          {/*Background image in case video doesn't appear on different devices/browsers*/}
+        <section className='intro-section'>
           <img className='video' src={videoAltImg} />
           <Video />          
           
-          <div id='intro-items'>
-            <div id='intro-logo-container'> 
-              <img id='intro-logo' alt='New Canopy\s logo' src={logo}/>
+          <div className='intro-items'>
+            <div className='intro-logo-container'> 
+              <img className='intro-logo' alt='New Canopy\s logo' src={logo}/>
             </div>         
           
-            <div id='h1-h2'>
+            <div className='intro-headings'>
               <h1 className='title-headings text-white'>New <br/>Canopy</h1>
               <h2 className='text-white font-weight-thin'>Tree Foundation</h2>
             </div>
           </div>
 
-          <p id='intro-p' className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
+          <p className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
              as we cultivate a greener, healthier, and more sustainable future for generations to come.</p>
         </section>
 
@@ -182,7 +178,7 @@ class App extends React.Component {
 
           <p className='font-weight-thin' id='copyright-info'>Copyright © 2022 New Canopy Tree Foundation. All rights reserved.</p>
         </section>
-      </div>
+      </main>
     )
   }
 }
