@@ -39,22 +39,20 @@ export default class Carousel extends React.Component {
     this.renderImage = this.renderImage.bind(this);
   }
 
-  //used when carousel buttons are clicked
   switchImage(direction){
     
-    if(direction === "right"){ //if direction is right, move 1st number in imageNumArr to end
+    if(direction === 'right'){
       this.state.imageNumArr.push(this.state.imageNumArr.shift());
       this.state.dotClasses.unshift(this.state.dotClasses.pop());
       this.state.imagesArr.push(this.state.imagesArr.shift());
       this.state.captionsArr.push(this.state.captionsArr.shift());
-    }else if(direction === "left"){ //if direction is left, most last number in imageNumArr to beginning
+    }else if(direction === 'left'){
       this.state.imageNumArr.unshift(this.state.imageNumArr.pop());
       this.state.dotClasses.push(this.state.dotClasses.shift());
       this.state.imagesArr.unshift(this.state.imagesArr.pop());
       this.state.captionsArr.push(this.state.captionsArr.shift());
     }
     
-    //set imageNumber to 1st element in imageNumArr
     this.setState({
       imagesArr: this.state.imagesArr,
       imageNumArr: this.state.imageNumArr,
@@ -66,8 +64,6 @@ export default class Carousel extends React.Component {
 
   getDots(){
     const dotsArr = [];
-    //if i doesn't align with image that is displayed, make the corresponding dot translucent
-    //if it does, the dot is at full opacity
     for(let i = 0; i < this.state.imageNumArr.length; i++){
       if(i === this.state.imageNumber){
         dotsArr.push(
@@ -87,18 +83,18 @@ export default class Carousel extends React.Component {
     for(let i = 0; i < this.state.imagesArr.length; i++){
       if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
         arr.push(
-          <div key={i} id='slide-img-container'>
+          <div key={i} className='slide-img-container'>
             <figure className='slide fade-in'>
               <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />              
               <figcaption className='caption font-size-small font-weight-thin text-white'>
                 {this.state.captionsArr[0]}
               </figcaption>
             </figure>
-            <div id="gallery-btns">
-              <button id="btn-1" className="carousel-btn fade-in" 
-                onClick={() => this.switchImage("left")}>◀</button>
-              <button id="btn-2" className="carousel-btn fade-in" 
-                onClick={() => this.switchImage("right")}>▶</button>
+            <div className='gallery-btns'>
+              <button className='btn-1 carousel-btn fade-in' 
+                onClick={() => this.switchImage('left')}>◀</button>
+              <button className='btn-2 carousel-btn fade-in' 
+                onClick={() => this.switchImage('right')}>▶</button>
             </div>
           </div>
         )
@@ -109,10 +105,9 @@ export default class Carousel extends React.Component {
   
   render(){
     return(
-      //when carousel buttons are clicked, pass switchImage with direction
-      <div id="gallery-container">
+      <div className='gallery-container'>
         {this.renderImage()}
-        <div id="dots" className="fade-in">
+        <div className='dots fade-in'>
           {this.getDots()}
         </div>
       </div>
