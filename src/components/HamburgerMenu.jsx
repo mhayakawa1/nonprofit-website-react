@@ -9,7 +9,6 @@ export default class Menu extends React.Component {
       this.toggleMenu = this.toggleMenu.bind(this)
     }
   
-  //toggle showMenu true/false
   toggleMenu = () =>{
     this.setState( state => ({
       showMenu: !state.showMenu
@@ -17,10 +16,8 @@ export default class Menu extends React.Component {
   }
   
     render(){
-      return( 
-      //when user clicks on hamburger menu, call toggleMenu
-      //if showMenu is true, menu is visible, if false menu is hidden
-        <div id='hamburger-menu'>
+      return(
+        <div className='hamburger-menu'>
           <button onClick={this.toggleMenu} className='menu-button'>
             <span className='menu-line' />
             <span className='menu-line' />
