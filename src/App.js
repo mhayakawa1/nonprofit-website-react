@@ -25,17 +25,12 @@ import giImage6 from './images/get-involved-images/get-involved-image-6.jpg';
 import giImage7 from './images/get-involved-images/get-involved-image-7.jpg';
 import giImage8 from './images/get-involved-images/get-involved-image-8.jpg';
 
-{/* Resources
-https://www.schemecolor.com/dark-orange-green.php
-*/}
-
 class App extends React.Component {
   render(){
     return(
       <main>        
         <NavbarMenu />
         <HamburgerMenu />
-        {/*INTRO SECTION STARTS HERE*/}
         <section className='intro-section'>
           <img className='video' src={videoAltImg} />
           <Video />          
@@ -55,7 +50,6 @@ class App extends React.Component {
              as we cultivate a greener, healthier, and more sustainable future for generations to come.</p>
         </section>
 
-        {/*ABOUT SECTION STARTS HERE*/}
         <section className='about-section'>
           
           <img className='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
@@ -69,8 +63,7 @@ class App extends React.Component {
           </div>
         </section>
 
-        {/*OUR WORK SECTION STARTS HERE*/}
-        <section className="our-work-section">
+        <section className='our-work-section'>
           <img className='our-work-background' src={owBackground} />
           <div className='our-work-container'>
             <div className='heading-text'>
@@ -91,29 +84,24 @@ class App extends React.Component {
 
         </section>
 
-        {/*GET INVOLVED SECTION STARTS HERE*/}
-        <section id='get-involved-section'>
-          <img id='get-involved-background' src={giBackground} />
+        <section className='get-involved-section'>
+          <img className='get-involved-background' src={giBackground} />
           
-          <h2 className='title-headings text-white' id='get-involved-heading'>Get Involved</h2>
+          <h2 className='title-headings text-white get-involved-heading'>Get Involved</h2>
 
-            <div id='make-donation'>
-              <h3 id='make-donation-heading'>Make a donation</h3>
-              
-              <p id='donate-text' className='font-size-small font-weight-thin'>Every dollar you contribute goes directly 
-              to our reforestation efforts. No amount is too small, and every tree planted makes a difference.</p>
-              
+            <div className='make-donation'>
+              <h3>Make a donation</h3>              
+              <p className='donate-text font-size-small font-weight-thin'>Every dollar you contribute goes directly 
+              to our reforestation efforts. No amount is too small, and every tree planted makes a difference.</p>              
               <DonateButtons />
-
-              <button id='donate-continue' className='font-weight-thin'>Continue</button>
-              
+              <button className='donate-continue font-weight-thin'>Continue</button>              
             </div>
 
-          <h3 id='find-event-heading' className='text-white'>Find an event near you</h3>
+          <h3 className='find-event-heading text-white'>Find an event near you</h3>
 
           <SearchEvents />
 
-          <div id='get-involved-images'>
+          <div className='get-involved-images'>
             <img className='get-involved-image' src={giImage1} alt='Woman holding tray of potted saplings'/>
             <img className='get-involved-image' src={giImage2} alt='Adult and child planting sapling'/> 
             <img className='get-involved-image' src={giImage3} alt='Close up of person with gloves planting sapling'/>
@@ -124,26 +112,24 @@ class App extends React.Component {
             <img className='get-involved-image' src={giImage8} alt='Mangrove saplings in shallow water at the beach'/>
           </div>
 
-          <div id='email-signup'>
-            <h3 id='sign-up-h3' className='text-white'>Sign up for our newsletter</h3>
-            <p className='text-white font-size-small font-weight-thin' id='sign-up-p'>Stay informed and be part of our mission by 
+          <div className='email-signup'>
+            <h3 className='text-white'>Sign up for our newsletter</h3>
+            <p className='text-white font-size-small font-weight-thin'>Stay informed and be part of our mission by 
             signing up for our newsletter today – together, we can make a positive difference</p>
-            <div id='email-input-container'>
-              <input className='font-weight-thin' id='email-input' type='email' placeholder='Enter your email'></input>
-              <button className='font-weight-thin' id='submit-email' type='submit'>Sign Up</button>
-            </div>            
-          </div>
-          
+            <div className='email-input-container'>
+              <input className='font-weight-thin' type='email' placeholder='Enter your email'></input>
+              <button className='font-weight-thin' type='submit'>Sign Up</button>
+            </div>
+          </div>          
         </section>
 
-        {/*FOOTER SECTION STARTS HERE*/}
-        <section className='text-white' id='footer-section'>
-          <div id='footer-container'>
-            <div id='footer-logo-container'>
-              <img id='footer-logo' alt='New Canopy\s logo' src={logo}/>
+        <footer className='text-white'>
+          <div className='footer-container'>
+            <div className='footer-logo-container'>
+              <img className='footer-logo' alt='New Canopy\s logo' src={logo}/>
             </div>          
 
-            <div id='contact-info'>
+            <div className='contact-info'>
               <p className='footer-headings'>Contact</p>
               <p className='font-size-small font-weight-thin'>(012) 345-6789</p>
               <p className='font-size-small font-weight-thin'>
@@ -154,9 +140,9 @@ class App extends React.Component {
               </p>
             </div>
           
-            <div id='social-media'>
+            <div className='social-media'>
               <p className='footer-headings'>Social Media</p>
-              <div id='sm-links'>
+              <div className='sm-links'>
                 <a href='#social-media'>
                   <i className='sm-icon fab fa-facebook' alt='Facebook logo'></i>
                 </a>
@@ -169,15 +155,15 @@ class App extends React.Component {
               </div>
             </div>
 
-            <div id='legal-info'>
+            <div className='legal-info'>
               <p className='footer-headings'>Legal</p>
               <p><a className='legal-link font-size-small font-weight-thin' href='#legal-info'>Privacy Policy</a></p>
               <p><a className='legal-link font-size-small font-weight-thin' href='#legal-info'>Terms of Use</a></p>
             </div>
           </div>
 
-          <p className='font-weight-thin' id='copyright-info'>Copyright © 2022 New Canopy Tree Foundation. All rights reserved.</p>
-        </section>
+          <p className='font-weight-thin copyright-info'>Copyright © 2022 New Canopy Tree Foundation. All rights reserved.</p>
+        </footer>
       </main>
     )
   }
