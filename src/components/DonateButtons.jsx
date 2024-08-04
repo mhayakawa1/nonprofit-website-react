@@ -3,7 +3,6 @@ import React from 'react';
 export default class DonateButtons extends React.Component {
     constructor(props) {
       super(props);
-      //set all buttons to false by default
       this.state = {
         selected5: false,
         selected10: false,
@@ -16,77 +15,53 @@ export default class DonateButtons extends React.Component {
     }
   
     toggleButtons(event, value){
-      //toggle correct button based on value number, set the rest to false
-      //only one button can be selected at a time
-      //when custom value is entered, set all to false so that no buttons are selected
+      const setAllToFalse = () => {
+        this.setState( state => ({
+          selected5: false,
+          selected10: false,
+          selected25: false,
+          selected50: false,
+          selected100: false,
+          selected200: false
+        }))
+      }
       switch(value){
         case 0:
-          this.setState( state => ({
-            selected5: false,
-            selected10: false,
-            selected25: false,
-            selected50: false,
-            selected100: false,
-            selected200: false
-          }));
+          setAllToFalse();
           break;
         case 5:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: !state.selected5,
-            selected10: false,
-            selected25: false,
-            selected50: false,
-            selected100: false,
-            selected200: false
+            selected5: !state.selected5
           }));
           break;
         case 10:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: false,
-            selected10: !state.selected10,
-            selected25: false,
-            selected50: false,
-            selected100: false,
-            selected200: false
+            selected10: !state.selected10
           }));
           break;
         case 25:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: false,
-            selected10: false,
-            selected25: !state.selected25,
-            selected50: false,
-            selected100: false,
-            selected200: false
+            selected25: !state.selected25
           }));
           break;
         case 50:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: false,
-            selected10: false,
-            selected25: false,
-            selected50: !state.selected50,
-            selected100: false,
-            selected200: false
+            selected50: !state.selected50
           }));
           break;
         case 100:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: false,
-            selected10: false,
-            selected25: false,
-            selected50: false,
-            selected100: !state.selected100,
-            selected200: false
+            selected100: !state.selected100
           }));
           break;
         case 200:
+          setAllToFalse();
           this.setState( state => ({
-            selected5: false,
-            selected10: false,
-            selected25: false,
-            selected50: false,
-            selected100: false,
             selected200: !state.selected200
           }));
       }
@@ -94,13 +69,9 @@ export default class DonateButtons extends React.Component {
   
     render(){
   
-      return( 
-        //when buttons are clicked, call toggleButtons to toggle boolean and pass number as parameter
-        //if false, render button without className donate-amount-selected
-        //if true, render button with className donate-amount-selected
-        //if custom input is entered, call toggleButtons and pass 0 as parameter to unselect all buttons
-        <div id='donate-selection'>
-          <div id='donate-buttons'>
+      return(
+        <div className='donate-selection'>
+          <div className='donate-buttons'>
             {this.state.selected5 === false ? 
               <button onClick={event => this.toggleButtons(event, 5)} className='donate-amount'>$5</button>
               : <button onClick={event => this.toggleButtons(event, 5)} className='donate-amount donate-amount-selected'>$5</button>}
@@ -125,9 +96,9 @@ export default class DonateButtons extends React.Component {
               <button onClick={event => this.toggleButtons(event, 200)} className='donate-amount'>$200</button>
               : <button onClick={event => this.toggleButtons(event, 200)} className='donate-amount donate-amount-selected'>$200</button>}
             
-            <div id='donate-custom'>
-              <label id='dollar-label'>$</label>
-              <input onChange={event => this.toggleButtons(event, 0)} id='custom-input' type='number' min='0' 
+            <div className='donate-custom'>
+              <label className='dollar-label'>$</label>
+              <input onChange={event => this.toggleButtons(event, 0)} className='custom-input' type='number' min='0' 
                 placeholder='Custom' />
             </div>
           </div>          
