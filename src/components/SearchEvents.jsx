@@ -8,13 +8,12 @@ export default class SearchEvents extends React.Component {
         eventsData: [],
         searchResults: [],
         input: '',
-        inputArr: [], //for input text split into array of individual words
+        inputArr: []
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleKeyDown = this.handleKeyDown.bind(this)
     }
    
-    //update input as text is entered
     handleChange(event){
       this.setState({
         input: event.target.value
@@ -27,22 +26,22 @@ export default class SearchEvents extends React.Component {
         inputArr: [],
         searchResults: []
       })
-      //if 'Enter' is pressed, execute the following
+      
       if(event.keyCode === 13){
         this.state.inputArr = this.state.input.toLowerCase().split(' ')
           this.setState({
             inputArr: this.state.inputArr
           })
-        const split = this.state.input.split(' ')
+        const split = this.state.input.split(' ');
         split.forEach((searchTerm) => {
             this.state.eventsData.forEach((event) => {
               for(const key in event){
                 if(event[key].toLowerCase().includes(searchTerm) === true
                   && this.state.searchResults.includes(event) === false){
                   if(key === 'State' || key === 'StateAbbreviation' || key === 'City'){
-                    this.state.searchResults.unshift(event)
+                    this.state.searchResults.unshift(event);
                   }else{
-                    this.state.searchResults.push(event)
+                    this.state.searchResults.push(event);
                   }
                   this.setState({
                     searchResults: this.state.searchResults
@@ -56,11 +55,11 @@ export default class SearchEvents extends React.Component {
     }
 
     parseCSV(csvText){
-      const rows = csvText.split(/\r?\n/); // Split CSV text into rows, handling '\r' characters
-      const headers = rows[0].split(','); // Extract headers (assumes the first row is the header row)
-      const data = []; // Initialize an array to store parsed data
+      const rows = csvText.split(/\r?\n/);
+      const headers = rows[0].split(',');
+      const data = [];
       for (let i = 1; i < rows.length; i++) {
-          const rowData = rows[i].split(','); // Split the row, handling '\r' characters
+          const rowData = rows[i].split(',');
           const rowObject = {};
           for (let j = 0; j < headers.length; j++) {
               rowObject[headers[j]] = rowData[j];
@@ -124,18 +123,14 @@ export default class SearchEvents extends React.Component {
     
     render(){   
       return(
-        //when input is entered, pass handleChange
-        //when enter is pressed, pass handleKeyDown
-        //set aria-hidden to true to make elements on last row left aligned
-        <div id='find-event' >
-          <input id='search-input' className='font-weight-thin'
+        <div>
+          <input className='search-input font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
             value={this.state.input} onChange={this.handleChange}
             onKeyDown={this.handleKeyDown} 
           />
    
-          <div id='search-results'>
-            {/*results*/}
+          <div className='search-results'>
             {this.getEventsWithLoop()}
             <i aria-hidden='true'></i>
           </div>
