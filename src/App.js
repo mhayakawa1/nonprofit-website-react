@@ -35,19 +35,17 @@ class App extends React.Component {
           <img className='video' src={videoAltImg} />
           <Video />          
           
-          <div className='intro-items'>
-            <div className='intro-logo-container'> 
+          <div className='intro-container'>
+            <div className='logo-headers-container'> 
               <img className='intro-logo' alt='New Canopy\s logo' src={logo}/>
-            </div>         
-          
-            <div className='intro-headings'>
-              <h1 className='title-headings text-white'>New <br/>Canopy</h1>
-              <h2 className='text-white font-weight-thin'>Tree Foundation</h2>
+              <div className='intro-headings'>
+                <h1 className='title-headings text-white'>New <br/>Canopy</h1>
+                <h2 className='text-white font-weight-thin'>Tree Foundation</h2>
+              </div>
             </div>
+            <p className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
+               as we cultivate a greener, healthier, and more sustainable future for generations to come.</p>
           </div>
-
-          <p className='font-size-small font-weight-thin'>Join us in our mission to plant hope, one tree at a time,
-             as we cultivate a greener, healthier, and more sustainable future for generations to come.</p>
         </section>
 
         <section className='about-section'>
