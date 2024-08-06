@@ -176,48 +176,6 @@ nav{
   }
 }
 
-@media all and (min-width: 2560px){
-  .intro-section{
-    height: 95rem !important;
-  }
-} 
-
-@media screen and (min-width: 1440px){
-  .intro-section{
-    height: 51rem;
-  }
-}
-
-.video{
-  width: 120%;
-  height: 35rem;
-  border-radius: 0px 0px 50% 50%;
-  position: absolute;
-  z-index: 1;
-  margin: -9rem 0 0 -10%;
-  justify-self: flex-start;
-  object-fit: cover;
-  overflow-x: hidden;
-}
-
-@media screen and (min-width: 1440px){
-  .video{
-    height: 39rem;
-  }
-}
-
-@media all and (min-width: 2560px){
-  .video{
-    height: 63rem;
-  }
-}
-
-@media screen and (max-width: 434px){
-  .video{    
-    height: 35rem;
-  }
-}
-
 .hamburger-menu{
   display: flex;
   padding: 0;
@@ -357,6 +315,35 @@ nav{
   margin: 0 0 0 0;
 }
 
+.video{
+  width: 120%;
+  height: 112%;
+  border-radius: 0px 0px 50% 50%;
+  position: absolute;
+  z-index: 1;
+  margin: -32vh 0 0 -10%;
+  justify-self: flex-start;
+  object-fit: cover;
+  overflow-x: hidden;
+}
+
+
+@media all and (min-width: 2560px){
+  .video{
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .video{
+  }
+}
+
+@media screen and (max-width: 434px){
+  .video{    
+    height: 35rem;
+  }
+}
+
 .intro-section{
   width: 100%;
   height: auto;
@@ -367,18 +354,17 @@ nav{
   margin: 0;
 }
 
-.intro-items{
+.intro-container{
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 11rem 0 0 5%;
-  gap: 4%;
+  padding: 16vh 0 8vh 0;
+  gap: 16vh;
 }
 
 @media screen and (min-width: 2560px){
-  .intro-items{
-    margin: 25rem 0 0 5%;
-  }
+  
 }
 
 @media screen and (min-width: 1440px){
@@ -386,10 +372,7 @@ nav{
 }
 
 @media screen and (max-width: 769px){
-  .intro-items{
-    margin: 11rem 0 0 0;
-    gap: 1.5%;
-  }
+  
 }
 
 @media screen and (max-width: 426px){
@@ -401,12 +384,13 @@ nav{
   }
 }
 
-.intro-logo-container{
+.logo-headers-container{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
   position: relative;
-  width: 15rem;
-  height: 15rem;
   z-index: 3;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
 .intro-logo{
@@ -416,49 +400,21 @@ nav{
   justify-self: flex-start;
 }
 
-@media screen and (min-width: 2560px){
-  .intro-logo-container{
-    width: 30rem !important;
-    height: 30rem !important;
-  }
-
-  .intro-logo{
-    width: 32rem !important;
-    height: 32rem !important;
-  }
-} 
-
 @media screen and (min-width: 1440px){
-  .intro-logo-container{
-    width: 20rem;
-    height: 20rem;
-  }
+  
+}
 
-  .intro-logo{
-    width: 21.5rem;
-    height: 21.5rem;
-  }
+@media screen and (min-width: 2560px){
 }
 
 @media screen and (max-width: 769px){
-  .intro-logo-container{
-    width: 10rem;
-    height: 10rem;
-    margin: 2rem 1rem 2rem 2rem;
-  }
-
   .intro-logo{
-    width: 11rem;
-    height: 11rem;
+    width: 12rem;
+    height: 12rem;
   }
 }
 
 @media screen and (max-width: 426px){
-  .intro-logo-container{
-    width: 11rem;
-    align-self: center;
-    margin: 2rem 0 2rem 0;
-  }
 }
 
 .intro-headings{
@@ -513,22 +469,20 @@ h2{
 .intro-section p{
   position: relative;
   text-align: center;
-  margin: 8rem auto 0 auto !important;
-  padding: 0 10% 0 10%;
+  margin: 0 auto;
   color: white;
   z-index: 1;
+  width: 80%;
   max-width: 40rem;
 }
 
 @media screen and (max-width: 2561px){
   .intro-section p{
-    margin: 18rem 15% 0 15%;
   }
 }
 
 @media screen and (max-width: 1441px){
   .intro-section p{
-    margin: 8rem 15% 0 15%;
   }
 }
 
