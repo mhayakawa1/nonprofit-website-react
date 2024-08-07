@@ -48,11 +48,12 @@ class App extends React.Component {
           </div>
         </section>
 
-        <section className='about-section'>
-          
-          <img className='about-photo' alt='Group of volunteers posing in the forest with tree saplings' 
+        <section className='about-section'> 
+          <div className='about-photo'>         
+            <img alt='Group of volunteers posing in the forest with tree saplings' 
             src={aboutImage} />
-        
+          </div>
+
           <div className='heading-text'>
             <h2 className='title-headings text-white about-heading'>About</h2>
             <p className='text-white font-size-small font-weight-thin half-border-text-box'>At New Canopy Tree Foundation, our mission is to 
