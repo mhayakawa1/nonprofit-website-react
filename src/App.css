@@ -551,20 +551,21 @@ h2{
   .about-section{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 40rem;
-    padding: 0 0 2rem 0;
+    justify-content: start;
+    height: auto;
+    box-sizing: border-box;
   }
 
   .about-section .heading-text{
-    margin: 0;
+    margin: 32vh 0 16vh 0;
   }
 
   .about-heading{
     text-align: center;
   }
 
-  .about-photo{
+  .about-photo img{
+    height: 100vh;
   }
 }
 
@@ -580,23 +581,23 @@ h2{
 
 .our-work-section{
   width: 100%;
-  height: 34rem;
+  height: 200vh;
   display: flex;
 }
 
 .our-work-background{
   z-index: -2;
   position: absolute;
-  height: 80rem;
+  height: 200vh;
   width: 100%;
-  margin: -10rem 0 0 0;
+  margin: 0;
   object-fit: cover;
   filter: brightness(50%);
 }
 
 .our-work-container{
   grid-column: 1/2;
-  padding: 2rem 0 0 10%;
+  padding: 10vh 0 0 10%;
 }
 
 .our-work-container .heading-text{
