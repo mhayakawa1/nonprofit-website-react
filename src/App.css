@@ -598,6 +598,7 @@ h2{
 .our-work-container{
   grid-column: 1/2;
   padding: 10vh 0 0 10%;
+  border: 1px solid red;
 }
 
 .our-work-container .heading-text{
