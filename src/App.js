@@ -65,22 +65,23 @@ class App extends React.Component {
         <section className='our-work-section'>
           <img className='our-work-background' src={owBackground} />
           <div className='our-work-container'>
-            <div className='heading-text'>
-              <h2 className='title-headings text-white our-work-heading'>Our Work</h2>
-              <p className='text-white font-size-small font-weight-thin half-border-text-box'>Our unwavering dedication to reforestation has 
-                transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
-                worked toward the reclamation of nature, one tree at a time.</p>
-            </div>                      
-            <div className='text-white tree-counter'>
-              <p className='tree-number'>2,248</p>
-              <p className='trees-planted'>Trees Planted</p>
+            <div className='our-work-text'>
+              <div className='heading-text'>
+                <h2 className='title-headings text-white our-work-heading'>Our Work</h2>
+                <p className='text-white font-size-small font-weight-thin half-border-text-box'>Our unwavering dedication to reforestation has 
+                  transformed landscapes, communities, and the future of our planet. For years, we have rolled up our sleeves and tirelessly 
+                  worked toward the reclamation of nature, one tree at a time.</p>
+              </div>                      
+              <div className='text-white tree-counter'>
+                <p className='tree-number'>2,248</p>
+                <p className='trees-planted'>Trees Planted</p>
+              </div>
+            </div>
+            
+            <div className='gallery'>
+              <Carousel />
             </div>
           </div>
-          
-          <div className='gallery'>
-            <Carousel />
-          </div>
-
         </section>
 
         <section className='get-involved-section'>
