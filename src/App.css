@@ -580,10 +580,8 @@ h2{
 
 .our-work-section{
   width: 100%;
-  height: 120vh;
   display: flex;  
   justify-content: center;
-  padding: 0;
 }
 
 .our-work-background{
@@ -597,17 +595,11 @@ h2{
 }
 
 .our-work-container{
-  margin: auto;
-  width: 24rem;
-
+  margin: 16vh auto;
 }
 
 .our-work-container .heading-text{
   margin: 0;
-}
-
-.our-work-text{
-  padding: 0;
 }
 
 .our-work-heading{
@@ -696,7 +688,6 @@ h2{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 14rem;
   }
 
   .tree-number{
@@ -706,19 +697,12 @@ h2{
 
 @media screen and (min-width: 2560px){
   .tree-counter{
-    height: 28rem;
-    width: 50rem;
-    margin: 2rem 0 0 0;
   }
   
   .tree-number{
-    font-size: 18rem;
-    margin: 2rem 0 0 0;
   }
   
   .trees-planted{
-    font-size: 4rem;
-    margin: 0 0 0 0rem;
   }
 }
 
