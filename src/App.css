@@ -1114,7 +1114,7 @@ h3{
 }
 
 .make-donation{
-  width: 30rem;
+  width: 32vw;
   height: 24rem;
   background-color: white;
   display: flex;
@@ -1219,7 +1219,7 @@ h3{
   color: white;
 }
 
-@media screen and (min-width: 2560px){
+/* @media screen and (min-width: 2560px){
   .make-donation{
     width: 60rem;
     height: 48rem;
@@ -1270,7 +1270,7 @@ h3{
     font-size: 2rem;
     border-radius: .5rem;
   }
-}
+} */
 
 @media screen and (max-width: 426px){
   .make-donation{
