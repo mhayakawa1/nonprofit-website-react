@@ -582,12 +582,13 @@ h2{
   width: 100%;
   display: flex;  
   justify-content: center;
+  height: 140vh;
 }
 
 .our-work-background{
   z-index: -2;
   position: absolute;
-  height: 120vh;
+  height: 140vh;
   width: 100%;
   margin: 0;
   object-fit: cover;
@@ -597,11 +598,12 @@ h2{
 .our-work-container{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .our-work-text{
-  margin: 16vh auto;
   width: 24rem;
+  margin: 0;
 }
 
 .our-work-text .heading-text{
@@ -614,9 +616,6 @@ h2{
 }
 
 @media screen and (min-width: 1440px){
-  .our-work-section{
-  }
-
   .our-work-container{
     flex-direction: row;
     width: 100%;
@@ -625,41 +624,8 @@ h2{
 } 
 
 @media screen and (min-width: 2560px){
-  .our-work-section{
-  }
-
   .our-work-container{
     max-width: unset;
-  }
-
-  .our-work-text{
-  }
-}
-
-@media screen and (max-width: 1024px){
-  .our-work-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8vh;
-    height: 140vh;
-  }
-
-  .our-work-background{
-    height: 140vh;
-  }
-
-  .our-work-text{
-    margin: 0;
-  }
-  
-  .our-work-text .heading-text{
-    margin: 0;
-  }
-
-  .our-work-heading{
-    text-align: center;
-    width: 100%;
   }
 }
 
@@ -758,7 +724,7 @@ h2{
 }
 
 .gallery{
-  margin: auto;
+  margin: 0 auto;
 }
 
 .gallery-container{
