@@ -1,32 +1,29 @@
 import React from 'react';
 
+const buttonsDefault = {
+  "$5": false,
+  "$10": false,
+  "$25": false,
+  "$50": false,
+  "$100": false,
+  "$200": false
+}
+
 export default class DonateButtons extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        "$5": false,
-        "$10": false,
-        "$25": false,
-        "$50": false,
-        "$100": false,
-        "$200": false
-      }
+      this.state = {...buttonsDefault}
       this.toggleButtons = this.toggleButtons.bind(this)
     }
   
     toggleButtons(event, dollarAmount){
-      this.setState( state => ({
-        "$5": false,
-        "$10": false,
-        "$25": false,
-        "$50": false,
-        "$100": false,
-        "$200": false
-      }))
+      this.setState( state => ({...buttonsDefault}))
 
-      this.setState( state => ({
+      if(dollarAmount !== 'custom'){
+        this.setState( state => ({
         [dollarAmount]: !this.state[dollarAmount]
       }));
+      }
     }
 
     getDonateButtons(){
@@ -50,7 +47,7 @@ export default class DonateButtons extends React.Component {
             {this.getDonateButtons()}
             <div className='donate-custom'>
               <label className='dollar-label'>$</label>
-              <input onChange={event => this.toggleButtons(event, 0)} className='custom-input' type='number' min='0' 
+              <input onChange={event => this.toggleButtons(event, 'custom')} className='custom-input' type='number' min='0' 
                 placeholder='Custom' />
             </div>
           </div>          
