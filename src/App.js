@@ -8,36 +8,30 @@ import DonateButtons from './components/DonateButtons';
 import SearchEvents from './components/SearchEvents';
 
 import logo from './images/hand-planting-logo.svg';
-
 import videoAltImg from './images/video-alt-image.jpg';
-
 import aboutImage from './images/about-image.jpg';
-
 import owBackground from './images/our-work-background.jpeg';
-import giBackground from './images/get-involved-images/get-involved-background.jpg'
 
-import giImage1 from './images/get-involved-images/get-involved-image-1.jpeg';
-import giImage2 from './images/get-involved-images/get-involved-image-2.jpg';
-import giImage3 from './images/get-involved-images/get-involved-image-3.jpg';
-import giImage4 from './images/get-involved-images/get-involved-image-4.jpg';
-import giImage5 from './images/get-involved-images/get-involved-image-5.jpg';
-import giImage6 from './images/get-involved-images/get-involved-image-6.jpg';
-import giImage7 from './images/get-involved-images/get-involved-image-7.jpg';
-import giImage8 from './images/get-involved-images/get-involved-image-8.jpg';
-import { LiaAddressBook, LiaAddressCard } from 'react-icons/lia';
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const giImages = importAll(require.context('./images/get-involved-images', false, '/\.jpg/'));
 
 class App extends React.Component {
   getInvolvedImages() {
     let images = [];
     const imagesInfo = {
-      [giImage1]: 'Woman holding tray of potted saplings',
-      [giImage2]: 'Adult and child planting sapling',
-      [giImage3]: 'Close up of person with gloves planting sapling',
-      [giImage4]: 'Child holding two potted saplings in both hands',
-      [giImage5]: 'Close up of two people preparing to plant a sapling with a trowel',
-      [giImage6]: 'Smiling man posing with a young evergreen tree on a cart',
-      [giImage7]: 'Two adults and two children planting a young tree with a shovel',
-      [giImage8]: 'Mangrove saplings in shallow water at the beach',
+      [giImages['get-involved-image-1.jpg']]: 'Woman holding tray of potted saplings',
+      [giImages['get-involved-image-2.jpg']]: 'Adult and child planting sapling',
+      [giImages['get-involved-image-3.jpg']]: 'Close up of person with gloves planting sapling',
+      [giImages['get-involved-image-4.jpg']]: 'Child holding two potted saplings in both hands',
+      [giImages['get-involved-image-5.jpg']]: 'Close up of two people preparing to plant a sapling with a trowel',
+      [giImages['get-involved-image-6.jpg']]: 'Smiling man posing with a young evergreen tree on a cart',
+      [giImages['get-involved-image-7.jpg']]: 'Two adults and two children planting a young tree with a shovel',
+      [giImages['get-involved-image-8.jpg']]: 'Mangrove saplings in shallow water at the beach',
     }
 
     for (const [key, value] of Object.entries(imagesInfo)) {
@@ -107,7 +101,7 @@ class App extends React.Component {
 
         <section className='get-involved-section'>
           <div className='get-involved-container'>
-            <img className='get-involved-background' src={giBackground} />
+            <img className='get-involved-background' src={giImages['get-involved-bg.jpg']} />
             <h2 className='title-headings text-white get-involved-heading'>Get Involved</h2>
 
             <div className='make-donation'>
