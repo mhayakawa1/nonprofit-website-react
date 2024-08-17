@@ -1748,14 +1748,24 @@ footer{
 
 .footer-container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 25% 25% 25% 25%;
   padding: 4vh 4vw;
+  box-sizing: border-box;
 }
 
-.footer-headings{
+footer h4{
   font-weight: bold;
   margin: 0 0 2vh 0;
+}
+
+.footer-item{
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
 }
 
 .footer-logo{
@@ -1763,47 +1773,33 @@ footer{
 }
 
 .footer-logo-container{
-  width: 100%;
   height: 100%;
-  margin: 0;
-  justify-self: center;
   display: flex;
-  align-items: start;
-  justify-content: center;
-  border: 1px solid red;
+  align-items: center;
+  justify-content: start;
 }
 
 .contact-info{
-  margin: 0;
   padding: 0;
 }
 
-.contact-info ul{
-  padding: 0;
+footer ul{
   list-style-type: none;
+  width: 9rem;
+  padding: 0;
 }
 
 .phone-number{
   margin-bottom: 1rem;
 }
 
-#follow-us{  
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 0;
-}
-
 .follow-links{
   display: flex;
-  border: 1px solid red;
   justify-content: left;
   gap: 1rem;
 }
 
 .follow-links a{
-  border: 1px solid red;
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -1847,8 +1843,6 @@ footer{
 
 .copyright-info{
   font-size: .7rem;
-  grid-column: 2/3;
-  grid-row: 3;
   text-align: center;
   color: grey;
   padding: 1rem 0 1rem 0;
@@ -1859,10 +1853,9 @@ footer{
   }
 
   .footer-container{
-    margin: 0 10% 0 10%;
   }
 
-  .footer-headings{
+  footer h4{
     font-size: 2rem !important;
   }
 
@@ -1889,7 +1882,7 @@ footer{
   footer{
   }
 
-  .footer-headings{
+  footer h4{
     font-size: 1.5rem;
   }
 
@@ -1903,42 +1896,12 @@ footer{
 }
 
 @media screen and (max-width: 1024px){
-  footer{
-  }
+}
 
+@media screen and (max-width: 769px){  
   .footer-container{
-    border: 1px solid red;
-    margin: 0;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
-  }
-
-  .footer-logo-container{
-    border: 1px solid red;
-    grid-column: 1/2;
-    grid-row: 1;
-  }
-
-  .contact-info{
-    border: 1px solid red;
-    grid-column: 2/3;
-    grid-row: 1;
-  }
-
-  #social-media{
-    border: 1px solid red;
-    grid-column: 1/2;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    padding: 0;
-  }
-
-  .legal-info{
-    grid-column: 2/3;
-    grid-row: 2;
+    grid-template-columns: 50% 50%;
+    row-gap: 4vh;
   }
 }
 
