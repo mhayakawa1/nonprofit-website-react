@@ -1,18 +1,17 @@
 import React from 'react';
-import image1 from '../images/carousel-images/carousel-image-1.jpeg';
-import image2 from '../images/carousel-images/carousel-image-2.jpg';
-import image3 from '../images/carousel-images/carousel-image-3.jpeg';
-import image4 from '../images/carousel-images/carousel-image-4.jpg';
-import image5 from '../images/carousel-images/carousel-image-5.jpg';
-import image6 from '../images/carousel-images/carousel-image-6.jpg';
-import image7 from '../images/carousel-images/carousel-image-7.jpg';
-import image8 from '../images/carousel-images/carousel-image-8.jpg';
-import image9 from '../images/carousel-images/carousel-image-9.jpg';
-const images = require.context('../images/carousel-images', true);
-const imageList = images.keys().map(image => images(image));
+import image1 from '../images/carousel-images/carousel-1.jpg';
+import image2 from '../images/carousel-images/carousel-2.jpg';
+import image3 from '../images/carousel-images/carousel-3.jpg';
+import image4 from '../images/carousel-images/carousel-4.jpg';
+import image5 from '../images/carousel-images/carousel-5.jpg';
+import image6 from '../images/carousel-images/carousel-6.jpg';
+import image7 from '../images/carousel-images/carousel-7.jpg';
+import image8 from '../images/carousel-images/carousel-8.jpg';
+import image9 from '../images/carousel-images/carousel-9.jpg';
 
 export default class Carousel extends React.Component {
-  constructor(props){
+
+  constructor(props) {
     super(props);
     this.state = {
       imageNumber: 0,
@@ -39,20 +38,20 @@ export default class Carousel extends React.Component {
     this.renderImage = this.renderImage.bind(this);
   }
 
-  switchImage(direction){
-    
-    if(direction === 'right'){
+  switchImage(direction) {
+
+    if (direction === 'right') {
       this.state.imageNumArr.push(this.state.imageNumArr.shift());
       this.state.dotClasses.unshift(this.state.dotClasses.pop());
       this.state.imagesArr.push(this.state.imagesArr.shift());
       this.state.captionsArr.push(this.state.captionsArr.shift());
-    }else if(direction === 'left'){
+    } else if (direction === 'left') {
       this.state.imageNumArr.unshift(this.state.imageNumArr.pop());
       this.state.dotClasses.push(this.state.dotClasses.shift());
       this.state.imagesArr.unshift(this.state.imagesArr.pop());
       this.state.captionsArr.push(this.state.captionsArr.shift());
     }
-    
+
     this.setState({
       imagesArr: this.state.imagesArr,
       imageNumArr: this.state.imageNumArr,
@@ -62,38 +61,35 @@ export default class Carousel extends React.Component {
     })
   }
 
-  getDots(){
+  getDots() {
     const dotsArr = [];
-    for(let i = 0; i < this.state.imageNumArr.length; i++){
-      if(i === this.state.imageNumber){
-        dotsArr.push(
-          <span key={i} className='dot'></span>
-        )
-      }else{
-        dotsArr.push(
-          <span key={i} className='dot translucent'></span>
-        )
-      }
+    for (let i = 0; i < this.state.imageNumArr.length; i++) {
+
+      dotsArr.push(
+        <span key={i} className={`dot ${i === this.state.imageNumber ? '' : 'translucent'}`}></span>
+      )
+
     }
+
     return dotsArr;
   }
 
-  renderImage = () =>{
+  renderImage = () => {
     const arr = [];
-    for(let i = 0; i < this.state.imagesArr.length; i++){
-      if(this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber){
+    for (let i = 0; i < this.state.imagesArr.length; i++) {
+      if (this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber) {
         arr.push(
           <div key={i} className='slide-img-container'>
             <figure className='slide fade-in'>
-              <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />              
+              <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />
               <figcaption className='caption font-size-small font-weight-thin text-white'>
                 {this.state.captionsArr[0]}
               </figcaption>
             </figure>
             <div className='gallery-btns'>
-              <button className='btn-1 carousel-btn fade-in' 
+              <button className='btn-1 carousel-btn fade-in'
                 onClick={() => this.switchImage('left')}>◀</button>
-              <button className='btn-2 carousel-btn fade-in' 
+              <button className='btn-2 carousel-btn fade-in'
                 onClick={() => this.switchImage('right')}>▶</button>
             </div>
           </div>
@@ -102,9 +98,9 @@ export default class Carousel extends React.Component {
     }
     return arr;
   }
-  
-  render(){
-    return(
+
+  render() {
+    return (
       <div className='gallery-container'>
         {this.renderImage()}
         <div className='dots fade-in'>
@@ -114,4 +110,3 @@ export default class Carousel extends React.Component {
     )
   }
 }
-  
