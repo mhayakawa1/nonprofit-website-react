@@ -12,26 +12,29 @@ import videoAltImg from './images/video-alt-image.jpg';
 import aboutImage from './images/about-image.jpg';
 import owBackground from './images/our-work-background.jpeg';
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
+import giBackground from './images/get-involved-images/get-involved-bg.jpg'
 
-const giImages = importAll(require.context('./images/get-involved-images', false, '/\.jpg/'));
+import giImage1 from './images/get-involved-images/get-involved-1.jpg';
+import giImage2 from './images/get-involved-images/get-involved-2.jpg';
+import giImage3 from './images/get-involved-images/get-involved-3.jpg';
+import giImage4 from './images/get-involved-images/get-involved-4.jpg';
+import giImage5 from './images/get-involved-images/get-involved-5.jpg';
+import giImage6 from './images/get-involved-images/get-involved-6.jpg';
+import giImage7 from './images/get-involved-images/get-involved-7.jpg';
+import giImage8 from './images/get-involved-images/get-involved-8.jpg';
 
 class App extends React.Component {
   getInvolvedImages() {
     let images = [];
     const imagesInfo = {
-      [giImages['get-involved-image-1.jpg']]: 'Woman holding tray of potted saplings',
-      [giImages['get-involved-image-2.jpg']]: 'Adult and child planting sapling',
-      [giImages['get-involved-image-3.jpg']]: 'Close up of person with gloves planting sapling',
-      [giImages['get-involved-image-4.jpg']]: 'Child holding two potted saplings in both hands',
-      [giImages['get-involved-image-5.jpg']]: 'Close up of two people preparing to plant a sapling with a trowel',
-      [giImages['get-involved-image-6.jpg']]: 'Smiling man posing with a young evergreen tree on a cart',
-      [giImages['get-involved-image-7.jpg']]: 'Two adults and two children planting a young tree with a shovel',
-      [giImages['get-involved-image-8.jpg']]: 'Mangrove saplings in shallow water at the beach',
+      [giImage1]: 'Woman holding tray of potted saplings',
+      [giImage2]: 'Adult and child planting sapling',
+      [giImage3]: 'Close up of person with gloves planting sapling',
+      [giImage4]: 'Child holding two potted saplings in both hands',
+      [giImage5]: 'Close up of two people preparing to plant a sapling with a trowel',
+      [giImage6]: 'Smiling man posing with a young evergreen tree on a cart',
+      [giImage7]: 'Two adults and two children planting a young tree with a shovel',
+      [giImage8]: 'Mangrove saplings in shallow water at the beach'
     }
 
     for (const [key, value] of Object.entries(imagesInfo)) {
@@ -101,7 +104,9 @@ class App extends React.Component {
 
         <section className='get-involved-section'>
           <div className='get-involved-container'>
-            <img className='get-involved-background' src={giImages['get-involved-bg.jpg']} />
+            <img className='get-involved-background'
+            src={[giBackground]} 
+            />
             <h2 className='title-headings text-white get-involved-heading'>Get Involved</h2>
 
             <div className='make-donation'>
@@ -160,12 +165,12 @@ class App extends React.Component {
                   </svg>
                 </a>
                 <a href='#social-media'>
-                  <svg class='square-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z" />
+                  <svg className='square-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z" />
                     <desc>Twitter X</desc>
                   </svg>
                 </a>
                 <a href='#social-media'>
-                  <svg class='square-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                  <svg className='square-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                     <desc>Instagram</desc>
                   </svg>
                 </a>
