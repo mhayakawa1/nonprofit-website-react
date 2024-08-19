@@ -89,7 +89,7 @@ a{
 
 .half-border-text-box{
   border-top: 1px solid white;
-  border-left: 1px solid white;
+  border-bottom: 1px solid white;
   padding: 1.5rem;
   width: auto;
   height: auto;
@@ -337,7 +337,7 @@ nav{
 
 @media screen and (max-width: 434px){
   .video{    
-    height: 35rem;
+    /*height: 35rem;*/
   }
 }
 
@@ -360,27 +360,6 @@ nav{
   gap: 16vh;
   margin: 0 auto;
   max-width: 1440px;
-}
-
-@media screen and (min-width: 2560px){
-  
-}
-
-@media screen and (min-width: 1440px){
-
-}
-
-@media screen and (max-width: 769px){
-  
-}
-
-@media screen and (max-width: 426px){
-  .intro-items{
-    margin: 3rem 0 0 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .logo-headers-container{
@@ -414,6 +393,14 @@ nav{
 }
 
 @media screen and (max-width: 426px){
+  .logo-headers-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    position: relative;
+    z-index: 3;
+    margin: 0;
+  }
 }
 
 .intro-headings{
@@ -556,7 +543,7 @@ h2{
   }
 
   .about-section .heading-text{
-    margin: 32vh 0 16vh 0;
+    margin: 32vh 10% 16vh 10%;
   }
 
   .about-heading{
@@ -610,9 +597,12 @@ h2{
   margin: 0;
 }
 
+.our-work-text h2{
+  text-align: center;
+}
+
 .our-work-text .heading-text{
-  margin: 0;
-  
+  margin: 0;  
 }
 
 .our-work-heading{
@@ -1749,7 +1739,7 @@ footer{
 .footer-container{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  padding: 4vh 4vw;
+  padding: 8vh 4vw;
   box-sizing: border-box;
 }
 
