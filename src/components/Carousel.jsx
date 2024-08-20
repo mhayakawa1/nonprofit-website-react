@@ -14,9 +14,56 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageNumber: 0,
+      //imageNumber: 1,
       dotClasses: ['dot', 'dot translucent', 'dot translucent'],
-      imageNumArr: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      imagesInfo: [
+        {
+          number: 1,
+          image: image1,
+          caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla.'
+        },
+        {
+          number: 2,
+          image: image2,
+          caption: 'Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida.'
+        },
+        {
+          number: 3,
+          image: image3,
+          caption: 'Aenean tempus accumsan sem, ac varius nulla laoreet ac. Pellentesque luctus ante in mauris sodales, facilisis tempor ex.'
+        },
+        {
+          number: 4,
+          image: image4,
+          caption: 'Cursus euismod quis viverra nibh cras. Lobortis elementum nibh tellus molestie nunc non.'
+        },
+        {
+          number: 5,
+          image: image5,
+          caption: 'Nec nam aliquam sem et tortor consequat id porta. Sit amet luctus venenatis lectus. Consectetur purus ut faucibus pulvinar.'
+        },
+        {
+          number: 6,
+          image: image6,
+          caption: 'Non sodales neque sodales ut. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor.'
+        },
+        {
+          number: 7,
+          image: image7,
+          caption: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
+        {
+          number: 8,
+          image: image8,
+          caption: 'Sapien faucibus et molestie ac feugiat sed lectus. Metus vulputate eu scelerisque felis imperdiet proin.'
+        },
+        {
+          number: 9,
+          image: image9,
+          caption: 'Morbi tristique senectus et netus et malesuada. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.'
+        }
+      ],
+      imageNumArr: [1, 2, 3, 4, 5, 6, 7, 8, 9],
       imagesArr: [image1, image2, image3, image4, image5, image6, image7, image8, image9],
       captionsArr: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla.',
@@ -42,33 +89,31 @@ export default class Carousel extends React.Component {
 
     if (direction === 'right') {
       this.state.imageNumArr.push(this.state.imageNumArr.shift());
-      this.state.dotClasses.unshift(this.state.dotClasses.pop());
+      //this.state.dotClasses.unshift(this.state.dotClasses.pop());
       this.state.imagesArr.push(this.state.imagesArr.shift());
       this.state.captionsArr.push(this.state.captionsArr.shift());
     } else if (direction === 'left') {
       this.state.imageNumArr.unshift(this.state.imageNumArr.pop());
-      this.state.dotClasses.push(this.state.dotClasses.shift());
+      //this.state.dotClasses.push(this.state.dotClasses.shift());
       this.state.imagesArr.unshift(this.state.imagesArr.pop());
-      this.state.captionsArr.push(this.state.captionsArr.shift());
+      this.state.captionsArr.unshift(this.state.captionsArr.pop());
     }
 
     this.setState({
       imagesArr: this.state.imagesArr,
       imageNumArr: this.state.imageNumArr,
-      imageNumber: this.state.imageNumArr[0],
-      dotClasses: this.state.dotClasses,
+      //imageNumber: this.state.imageNumArr[0],
+      //dotClasses: this.state.dotClasses,
       fadeIn: this.state.fadeIn
     })
   }
 
   getDots() {
     const dotsArr = [];
-    for (let i = 0; i < this.state.imageNumArr.length; i++) {
-
+    for (let i = 1; i <= 9; i++) {
       dotsArr.push(
-        <span key={i} className={`dot ${i === this.state.imageNumber ? '' : 'translucent'}`}></span>
+        <span key={i} className={`dot ${i === this.state.imageNumArr[0] ? '' : 'translucent'}`}></span>
       )
-
     }
 
     return dotsArr;
@@ -77,7 +122,7 @@ export default class Carousel extends React.Component {
   renderImage = () => {
     const arr = [];
     for (let i = 0; i < this.state.imagesArr.length; i++) {
-      if (this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumber) {
+      if (this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumArr[0]) {
         arr.push(
           <div key={i} className='slide-img-container'>
             <figure className='slide fade-in'>
