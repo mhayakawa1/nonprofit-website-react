@@ -49,7 +49,7 @@ class App extends React.Component {
       <main>
         <NavbarMenu />
         <HamburgerMenu />
-        <section className='intro-section'>
+        <section id='intro-section'>
           <img className='video' src={videoAltImg} />
           <Video />
 
@@ -66,7 +66,7 @@ class App extends React.Component {
           </div>
         </section>
 
-        <section className='about-section'>
+        <section id='about-section'>
           <div className='about-photo'>
             <img alt='Group of volunteers posing in the forest with tree saplings'
               src={aboutImage} />
@@ -80,7 +80,7 @@ class App extends React.Component {
           </div>
         </section>
 
-        <section className='our-work-section'>
+        <section id='our-work-section'>
           <img className='our-work-background' src={owBackground} />
           <div className='our-work-container'>
             <div className='our-work-text'>
@@ -102,7 +102,7 @@ class App extends React.Component {
           </div>
         </section>
 
-        <section className='get-involved-section'>
+        <section id='get-involved-section'>
           <div className='get-involved-container'>
             <img className='get-involved-background'
             src={[giBackground]} 
