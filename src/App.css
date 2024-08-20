@@ -324,24 +324,7 @@ nav{
   overflow-x: hidden;
 }
 
-
-@media all and (min-width: 2560px){
-  .video{
-  }
-}
-
-@media screen and (min-width: 1440px){
-  .video{
-  }
-}
-
-@media screen and (max-width: 434px){
-  .video{    
-    /*height: 35rem;*/
-  }
-}
-
-.intro-section{
+#intro-section{
   width: 100%;
   height: auto;
   background-color: black;
@@ -452,7 +435,7 @@ h2{
   }
 }
 
-.intro-section p{
+#intro-section p{
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -462,23 +445,13 @@ h2{
   max-width: 1440px;
 }
 
-@media screen and (max-width: 2561px){
-  .intro-section p{
-  }
-}
-
-@media screen and (max-width: 1441px){
-  .intro-section p{
-  }
-}
-
 @media screen and (max-width: 426px){
-  .intro-section p{
+  #intro-section p{
     font-size: .6rem !important;
   }
 }
 
-.about-section{
+#about-section{
   position: relative;
   background-color: #121212;
   width: 100%;
@@ -498,7 +471,7 @@ h2{
   width: auto;
 }
 
-.about-section .heading-text{
+#about-section .heading-text{
   margin: 0 10% 0 10%;
 }
 
@@ -515,7 +488,7 @@ h2{
 }
 
 @media screen and (max-width: 769px){
-  .about-section{
+  #about-section{
     height: auto;
     display: flex;
     flex-direction: column;
@@ -524,7 +497,7 @@ h2{
     box-sizing: border-box;
   }
 
-  .about-section .heading-text{
+  #about-section .heading-text{
     margin: 16vh 10%;
   }
 
@@ -538,7 +511,7 @@ h2{
 }
 
 @media screen and (max-width: 426px){
-  .about-section .heading-text{
+  #about-section .heading-text{
     margin: 8vh 10%;
   }
 
@@ -547,7 +520,7 @@ h2{
   }
 }
 
-.our-work-section{
+#our-work-section{
   position: relative;
   width: 100%;
   height: auto;
@@ -605,13 +578,12 @@ h2{
   }
 }
 
-@media screen and (max-width: 376px){
-  .our-work-section{
-    height: 60rem;
+@media screen and (max-width: 426px){
+  .our-work-text{
+    width: auto;
   }
-
-  .our-work-background{
-    height: 60rem;
+  .our-work-text .heading-text{
+    margin: 0 10%;  
   }
 }
 
@@ -650,19 +622,8 @@ h2{
   }
 }
 
-@media screen and (min-width: 2560px){
-  .tree-counter{
-  }
-  
-  .tree-number{
-  }
-  
-  .trees-planted{
-  }
-}
-
 @media screen and (max-width: 769px){
-  .our-work-section{
+  #our-work-section{
     height: 52rem;
   }
 
@@ -672,7 +633,7 @@ h2{
 }
 
 @media screen and (max-width: 426px){
-  .our-work-section{
+  #our-work-section{
     height: 54rem;
   }
 
@@ -984,24 +945,12 @@ h2{
   }
 }
 
-.get-involved-section{
+#get-involved-section{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
-}
-
-@media screen and (max-width: 426px){
-  .get-involved-section{
-    height: 120rem;
-  }
-}
-
-@media screen and (max-width: 376px){
-  .get-involved-section{
-    height: 114rem;
-  }
 }
 
 .get-involved-container{
@@ -1026,7 +975,6 @@ h2{
   filter: brightness(75%);
 }
 
-
 @media screen and (min-width: 2560px){
   .get-involved-background{
     height: 180rem !important;
@@ -1039,7 +987,7 @@ h2{
   }  
 } 
 
-.get-involved-section h2{
+#get-involved-section h2{
   position: static;
   filter: drop-shadow(1px 1px 5px rgb(0,0,0, .25));
 }
@@ -1225,7 +1173,6 @@ h3{
   background-color: #C44004;
   color: white;
 }
-
 
 /* @media screen and (min-width: 2560px){
   .make-donation{
@@ -1668,49 +1615,15 @@ i{
 }
 
 @media screen and (max-width: 426px){
-  .email-signup{
-    height: 25rem;
-  }
-
-  .email-signup {
-    max-width: 23rem;
-  }
-
-  .email-input-container{
-    width: 100%;
-    justify-content: center;
-  }
-
   .email-input-container input{
-    max-width: 100%;
-    width: auto;
-    height: 2.5rem;
-  }
-
-  .email-input-container button{
-    width: 8rem;
-    height: 2.5rem;
-  }
-}
-
-@media screen and (max-width: 376px){
-  .email-signup{
-    height: 25rem;
-    width: 90%;
-  }
-
-  .email-signup p{
-    max-width: 18rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .email-input-container{
     flex-direction: column;
     align-items: center;
     width: 90%;
-  }
-
-  .email-input-container input{
-    width: 100%;
   }
 }
 
@@ -1821,12 +1734,6 @@ footer ul{
 }
 
 @media screen and (min-width: 2560px){  
-  footer{
-  }
-
-  .footer-container{
-  }
-
   footer h4{
     font-size: 2rem !important;
   }
@@ -1851,9 +1758,6 @@ footer ul{
 }
 
 @media screen and (min-width: 1440px){
-  footer{
-  }
-
   footer h4{
     font-size: 1.5rem;
   }
