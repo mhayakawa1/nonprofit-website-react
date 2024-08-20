@@ -514,27 +514,9 @@ h2{
   filter: sepia(20%);
 }
 
-@media screen and (min-width: 1440px){
-  .about-section{
-  }
-
-  .about-photo{
-  }
-
-  .about-section .heading-text{
-  }
-}
-
-@media screen and (min-width: 2560px){
-  .about-section{
-  }
-
-  .about-photo{
-  }
-}  
-
 @media screen and (max-width: 769px){
   .about-section{
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -543,25 +525,25 @@ h2{
   }
 
   .about-section .heading-text{
-    margin: 32vh 10% 16vh 10%;
+    margin: 16vh 10%;
   }
 
   .about-heading{
     text-align: center;
   }
 
-  .about-photo img{
-    height: 100vh;
+  .about-photo{
+    height: 72vh;
   }
 }
 
-@media screen and (max-width: 376px){
-  .about-section{
-    height: 31rem;
+@media screen and (max-width: 426px){
+  .about-section .heading-text{
+    margin: 8vh 10%;
   }
 
   .about-photo{
-    height: 18rem;
+    height: 40vh;
   }
 }
 
