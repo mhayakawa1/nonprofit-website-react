@@ -32,13 +32,13 @@ export default class Menu extends React.Component {
             </a>
           </li>
           <li>
-            <a className='menu-link' href='#about-section'>About</a>
+            <a href='#about-section'>About</a>
           </li>
           <li>
-            <a className='menu-link' href='#our-work-section'>Our Work</a>
+            <a href='#our-work-section'>Our Work</a>
           </li>
           <li>
-            <a className='menu-link' href='#about-section'>Get Involved</a>
+            <a href='#get-involved-section'>Get Involved</a>
           </li>
         </ul>
       </div>
