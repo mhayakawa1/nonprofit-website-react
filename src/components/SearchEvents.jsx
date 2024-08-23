@@ -36,8 +36,8 @@ export default class SearchEvents extends React.Component {
         split.forEach((searchTerm) => {
             this.state.eventsData.forEach((event) => {
               for(const key in event){
-                if(event[key].toLowerCase().includes(searchTerm) === true
-                  && this.state.searchResults.includes(event) === false){
+                if(event[key].toLowerCase().includes(searchTerm)
+                  && !this.state.searchResults.includes(event) ){
                   if(key === 'State' || key === 'StateAbbreviation' || key === 'City'){
                     this.state.searchResults.unshift(event);
                   }else{
