@@ -12,7 +12,7 @@ export default class SearchEvents extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.getSearchResults = this.getSearchResults.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   handleChange(event) {
