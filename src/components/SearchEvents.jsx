@@ -10,7 +10,8 @@ export default class SearchEvents extends React.Component {
         input: '',
         inputArr: []
       }
-      this.handleChange = this.handleChange.bind(this)
+      this.handleChange = this.handleChange.bind(this);
+      this.getSearchResults = this.getSearchResults.bind(this);
       this.handleKeyDown = this.handleKeyDown.bind(this)
     }
    
@@ -20,15 +21,9 @@ export default class SearchEvents extends React.Component {
       }, () => {
       })
     }
-   
-    handleKeyDown(event){
-      this.setState({
-        inputArr: [],
-        searchResults: []
-      })
-      
-      if(event.keyCode === 13){
-        this.state.inputArr = this.state.input.toLowerCase().split(' ')
+
+    getSearchResults(){
+      this.state.inputArr = this.state.input.toLowerCase().split(' ')
           this.setState({
             inputArr: this.state.inputArr
           })
@@ -51,6 +46,16 @@ export default class SearchEvents extends React.Component {
             })
           }
         );
+    }
+   
+    handleKeyDown(event){
+      this.setState({
+        inputArr: [],
+        searchResults: []
+      })
+
+      if(event.keyCode === 13){
+        this.getSearchResults()
       }
     }
 
@@ -108,7 +113,7 @@ export default class SearchEvents extends React.Component {
                 {renderEvents[i].Address}, {renderEvents[i].City}, {renderEvents[i].StateAbbreviation}
               </p>
               <p className='result-font result-description font-size-small font-weight-thin'>{renderEvents[i].Description}</p>
-            </div>          
+            </div>
             <div className='result-buttons'>
               <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
               <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
@@ -124,12 +129,15 @@ export default class SearchEvents extends React.Component {
     render(){   
       return(
         <div>
-          <input className='search-input font-weight-thin'
-            placeholder='Search time, location, etc.' type='text'
-            value={this.state.input} onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown} 
-          />
-   
+          <div className='search-container'>
+            <input className='search-input font-weight-thin'
+              placeholder='Search time, location, etc.' type='text'
+              value={this.state.input} onChange={this.handleChange}
+              onKeyDown={this.handleKeyDown} 
+            />
+            <button className='search-button font-weight-thin'
+              onClick={this.getSearchResults}>Search</button>
+          </div>
           <div className='search-results'>
             {this.getEventsWithLoop()}
             <i aria-hidden='true'></i>
