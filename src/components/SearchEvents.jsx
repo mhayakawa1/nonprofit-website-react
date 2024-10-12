@@ -23,12 +23,12 @@ export default class SearchEvents extends React.Component {
     }
 
     getSearchResults(){
-      this.state.inputArr = this.state.input.toLowerCase().split(' ')
+      this.state.inputArr = this.state.input.toLowerCase().split(' ');
           this.setState({
             inputArr: this.state.inputArr
           })
-        const split = this.state.input.split(' ');
-        split.forEach((searchTerm) => {
+        const searchTerms = this.state.input.split(' ');
+        searchTerms.forEach((searchTerm) => {
             this.state.eventsData.forEach((event) => {
               for(const key in event){
                 if(event[key].toLowerCase().includes(searchTerm)
@@ -55,7 +55,7 @@ export default class SearchEvents extends React.Component {
       })
 
       if(event.keyCode === 13){
-        this.getSearchResults()
+        this.getSearchResults();
       }
     }
 
@@ -75,7 +75,7 @@ export default class SearchEvents extends React.Component {
     }
 
     fetchEventsData(){
-      const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSz8IuTNhD06iLT4KiIP4SD61mYtLSPfFifGgmSJQJ2uff-8qELJMjRttERw8bUwVvxJMD_rX1R7qfP/pub?output=csv'
+      const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSz8IuTNhD06iLT4KiIP4SD61mYtLSPfFifGgmSJQJ2uff-8qELJMjRttERw8bUwVvxJMD_rX1R7qfP/pub?output=csv';
       axios.get(url)
       .then((response) => {
           const parsedCsvData = this.parseCSV(response.data);
@@ -94,7 +94,7 @@ export default class SearchEvents extends React.Component {
 
     getEventsWithLoop(){
       const eventsArr = [];
-      let renderEvents
+      let renderEvents;
 
       if(this.state.input === ''){
         renderEvents = this.state.eventsData
