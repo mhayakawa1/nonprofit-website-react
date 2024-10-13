@@ -223,17 +223,17 @@ nav{
 }
 
 .home-logo-row{
-  height: 3rem;
   display: flex;
   align-items: center;
+  height: 3rem;
 }
 
 .home-logo{
+  filter: invert(100%);
   height: 1.5rem;
   width: 1.5rem;
-  font-size: 1.5rem;
-  filter: invert(100%);
   margin: 0 0 0 15%;
+  font-size: 1.5rem;
 }
 
 .home-logo-row:hover .home-logo{
@@ -241,12 +241,12 @@ nav{
 }
 
 .menu-items li{
-  list-style-type: none;
-  height: 3rem;
-  padding: 0 0 0 8%;
-  margin: 0;
   display: flex;
   align-items: center;
+  height: 3rem;
+  margin: 0;
+  padding: 0 0 0 8%;
+  list-style-type: none;
 }
 
 .menu-items a{
@@ -307,25 +307,26 @@ nav{
 }
 
 .video{
-  width: 120%;
-  height: 112%;
-  border-radius: 0px 0px 50% 50%;
   position: absolute;
   z-index: 1;
-  margin: -32vh 0 0 -10%;
   justify-self: flex-start;
   object-fit: cover;
   overflow-x: hidden;
+  width: 120%;
+  height: 112%;
+  margin: -32vh 0 0 -10%;
+  border-radius: 0px 0px 50% 50%;
 }
 
 #intro-section{
-  width: 100%;
-  height: auto;
-  background-color: black;
+  position: relative;
   z-index: 0;
   overflow: hidden;
-  position: relative;
+  width: 100%;
+  height: auto;
   margin: 0;
+  background-color: black;
+
 }
 
 .intro-container{
@@ -333,33 +334,26 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 16vh 0 8vh 0;
   gap: 16vh;
   margin: 0 auto;
+  padding: 16vh 0 8vh 0;
   max-width: 1440px;
 }
 
 .logo-headers-container{
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   gap: 4%;
-  position: relative;
-  z-index: 3;
   margin: 0;
 }
 
 .intro-logo{
-  width: 16rem;
-  height: 16rem;
   object-fit: cover;
   justify-self: flex-start;
-}
-
-@media screen and (min-width: 1440px){
-  
-}
-
-@media screen and (min-width: 2560px){
+  width: 16rem;
+  height: 16rem;
 }
 
 @media screen and (max-width: 769px){
@@ -371,18 +365,18 @@ nav{
 
 @media screen and (max-width: 426px){
   .logo-headers-container{
+    position: relative;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     gap: 4%;
-    position: relative;
-    z-index: 3;
     margin: 0;
   }
 }
 
 .intro-headings{
-  align-self: center;
   z-index: 3;
+  align-self: center;
   margin: 0 0 1rem 0;
 }
 
@@ -392,14 +386,14 @@ h1{
 }
 
 h2{
-  font-size: 1rem;
   margin: 0 0 0 .3rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 1440px){
   h2{
-    font-size: 1.5rem;
     margin: 0 0 0 .4rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -424,19 +418,19 @@ h2{
     font-size: 2rem !important;
   }
   h2{
-    font-size: .8rem;
     margin: 0 0 0 0.2rem;
+    font-size: .8rem;
   }
 }
 
 #intro-section p{
   position: relative;
-  text-align: center;
-  margin: 0 auto;
-  color: white;
   z-index: 1;
   width: 80%;
   max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
 }
 
 @media screen and (max-width: 426px){
@@ -447,15 +441,15 @@ h2{
 
 #about-section{
   position: relative;
-  background-color: #121212;
-  width: 100%;
-  height: 80vh;
+  z-index: -1;
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  width: 100%;
+  height: 80vh;
   margin: 0;
+  background-color: #121212;
 }
 
 .heading-text{
@@ -470,20 +464,19 @@ h2{
 }
 
 .about-photo{
-  height: 80vh;
   width: 100%;
+  height: 80vh;
 }
 
 .about-photo img{
-  height: 100%;
-  width: 100%;
   object-fit: cover;
   filter: sepia(20%);
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 769px){
   #about-section{
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -516,27 +509,27 @@ h2{
 
 #our-work-section{
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: auto;
-  display: flex;  
-  justify-content: center;
 }
 
 .our-work-background{
-  z-index: -2;
   position: absolute;
+  z-index: -2;
+  object-fit: cover;
+  filter: brightness(50%);
   height: 100%;
   width: 100%;
   margin: 0;
-  object-fit: cover;
-  filter: brightness(50%);
 }
 
 .our-work-container{
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: auto;
   padding: 8vh 0;
   box-sizing: border-box;
 }
@@ -582,18 +575,18 @@ h2{
 }
 
 .tree-counter{
-  height: 14rem;
-  width: 25rem;
-  white-space: normal;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 25rem;
+  height: 14rem;
   margin: 1rem 0 0 0;
+  white-space: normal;
 }
 
 .tree-number{
-  font-size: 10rem;
   margin: 0;
+  font-size: 10rem;
   text-decoration: underline;
 }
 
