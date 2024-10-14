@@ -97,9 +97,9 @@ export default class SearchEvents extends React.Component {
     let renderEvents;
 
     if (this.state.input === '') {
-      renderEvents = this.state.eventsData
+      renderEvents = this.state.eventsData;
     } else {
-      renderEvents = this.state.searchResults
+      renderEvents = this.state.searchResults;
     }
     for (let i = 0; i < renderEvents.length; i++) {
       eventsArr.push(
@@ -135,8 +135,6 @@ export default class SearchEvents extends React.Component {
             value={this.state.input} onChange={this.handleChange}
             onKeyDown={this.handleKeyDown}
           />
-          <button className='search-button font-weight-thin'
-            onClick={this.getSearchResults}>Search</button>
         </div>
         <div className='search-results'>
           {this.getEventsWithLoop()}
