@@ -1275,31 +1275,13 @@ h3{
   font-size: 1rem;
   height: inherit;
   border: none;
-  border-radius: .25rem 0 0 .25rem;
+  border-radius: .25rem;
   padding: 0 0 0 1rem;
   box-sizing: border-box;
 }
 
 .search-input:focus{
   outline: none;
-}
-
-.search-button{
-  border: none;
-  border-radius: 0 .25rem .25rem 0;
-  width: 16%;
-  background-color: #FFAB00;
-  font-family: 'Alexandria', sans-serif;
-  font-size: 1rem;
-  color: white;
-}
-
-.search-button:hover{
-  background-color: #F37433;
-}
-
-.search-button:active{
-  background-color: #C44004;
 }
 
 .search-results{
