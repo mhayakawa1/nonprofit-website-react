@@ -22,7 +22,8 @@ export default class SearchEvents extends React.Component {
     })
   }
 
-  getSearchResults() {
+  getSearchResults(event) {
+    event.preventDefault();
     this.state.inputArr = this.state.input.toLowerCase().split(' ');
     this.setState({
       inputArr: this.state.inputArr
@@ -57,6 +58,11 @@ export default class SearchEvents extends React.Component {
     if (event.keyCode === 13) {
       this.getSearchResults();
     }
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    console.log('test')
   }
 
   parseCSV(csvText) {
@@ -129,13 +135,13 @@ export default class SearchEvents extends React.Component {
   render() {
     return (
       <div>
-        <div className='search-container'>
+        <form className='search-container' onSubmit={this.getSearchResults} >
           <input className='search-input font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
             value={this.state.input} onChange={this.handleChange}
             onKeyDown={this.handleKeyDown}
           />
-        </div>
+        </form>
         <div className='search-results'>
           {this.getEventsWithLoop()}
           <i aria-hidden='true'></i>
