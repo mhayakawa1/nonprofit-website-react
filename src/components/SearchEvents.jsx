@@ -11,7 +11,7 @@ export default class SearchEvents extends React.Component {
       inputArr: []
     }
     this.handleChange = this.handleChange.bind(this);
-    this.getSearchResults = this.getSearchResults.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -22,7 +22,7 @@ export default class SearchEvents extends React.Component {
     })
   }
 
-  getSearchResults(event) {
+  handleSubmit(event) {
     event.preventDefault();
     this.state.inputArr = this.state.input.toLowerCase().split(' ');
     this.setState({
@@ -47,22 +47,14 @@ export default class SearchEvents extends React.Component {
       })
     }
     );
+    return false;
   }
 
-  handleKeyDown(event) {
+  handleKeyDown() {
     this.setState({
       inputArr: [],
       searchResults: []
     })
-
-    if (event.keyCode === 13) {
-      this.getSearchResults();
-    }
-  }
-
-  handleSubmit(event){
-    event.preventDefault();
-    console.log('test')
   }
 
   parseCSV(csvText) {
@@ -135,7 +127,7 @@ export default class SearchEvents extends React.Component {
   render() {
     return (
       <div>
-        <form className='search-container' onSubmit={this.getSearchResults} >
+        <form className='search-container' onSubmit={this.handleSubmit} >
           <input className='search-input font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
             value={this.state.input} onChange={this.handleChange}
