@@ -132,9 +132,9 @@ export default class Carousel extends React.Component {
               </figcaption>
             </figure>
             <div className='gallery-btns'>
-              <button className='btn-1 carousel-btn fade-in'
+              <button className='left-button carousel-button fade-in'
                 onClick={() => this.switchImage('left')}>◀</button>
-              <button className='btn-2 carousel-btn fade-in'
+              <button className='right-button carousel-button fade-in'
                 onClick={() => this.switchImage('right')}>▶</button>
             </div>
           </div>
