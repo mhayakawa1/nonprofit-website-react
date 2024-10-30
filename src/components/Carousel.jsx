@@ -89,12 +89,10 @@ export default class Carousel extends React.Component {
 
     if (direction === 'right') {
       this.state.imageNumArr.push(this.state.imageNumArr.shift());
-      //this.state.dotClasses.unshift(this.state.dotClasses.pop());
       this.state.imagesArr.push(this.state.imagesArr.shift());
       this.state.captionsArr.push(this.state.captionsArr.shift());
     } else if (direction === 'left') {
       this.state.imageNumArr.unshift(this.state.imageNumArr.pop());
-      //this.state.dotClasses.push(this.state.dotClasses.shift());
       this.state.imagesArr.unshift(this.state.imagesArr.pop());
       this.state.captionsArr.unshift(this.state.captionsArr.pop());
     }
@@ -102,8 +100,6 @@ export default class Carousel extends React.Component {
     this.setState({
       imagesArr: this.state.imagesArr,
       imageNumArr: this.state.imageNumArr,
-      //imageNumber: this.state.imageNumArr[0],
-      //dotClasses: this.state.dotClasses,
       fadeIn: this.state.fadeIn
     })
   }
@@ -112,7 +108,7 @@ export default class Carousel extends React.Component {
     const dotsArr = [];
     for (let i = 1; i <= 9; i++) {
       dotsArr.push(
-        <span key={i} className={`dot ${i === this.state.imageNumArr[0] ? '' : 'translucent'}`}></span>
+        <span key={i} className={`dot ${i !== this.state.imageNumArr[0] && 'translucent'}`}></span>
       )
     }
 
