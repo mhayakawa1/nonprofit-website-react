@@ -32,7 +32,7 @@ export default class DonateButtons extends React.Component {
       for (const key of Object.keys(this.state)) {
         buttons.push(
           <button key={key} onClick={event => this.toggleButtons(event, key)} 
-          className={`donate-amount ${this.state[key] ? 'donate-amount-selected' : null}`}>{key}</button>
+          className={`donate-amount ${this.state[key] && 'donate-amount-selected'}`}>{key}</button>
         )
       }
       return(
