@@ -1266,6 +1266,9 @@ h3 {
   }
 }
 
+.search-events{
+}
+
 .search-container {
   display: flex;
   width: 40rem;
@@ -1294,15 +1297,18 @@ h3 {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
+  scrollbar-width: 1rem;
+  scroll-margin: none;
+  scroll-padding: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 1rem;
-  box-sizing: border-box;
   width: 40rem;
   height: 25rem;
+  box-sizing: border-box;
   margin: 4vh auto 0 auto;
-  padding: 1rem;
+  padding: 1rem 0;
   border: none;
   border-radius: .25rem;
   background-color: white;
@@ -1318,7 +1324,7 @@ h3 {
   z-index: -1;
   width: 16rem;
   height: 16rem;
-  padding: 0 1rem 0 1rem;
+  padding: 0 1rem;
   border-radius: .25rem;
   color: #303030;
 }
@@ -1389,6 +1395,7 @@ h3 {
 
 .secondary:active {
   border: none;
+  background-color: #F37433;
   color: white;
 }
 
