@@ -1,6 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+function Button(props){
+  return(
+    <button className={`${props.primary ? 'primary' : 'secondary'} result-font font-size-small font-weight-thin`}>{props.text}</button>
+  )
+}
+
 export default class SearchEvents extends React.Component {
   constructor(props) {
     super(props);
@@ -113,8 +119,8 @@ export default class SearchEvents extends React.Component {
             <p className='result-font result-description font-size-small font-weight-thin'>{renderEvents[i].Description}</p>
           </div>
           <div className='result-buttons'>
-            <button className='result-font primary font-size-small font-weight-thin'>Learn More</button>
-            <button className='result-font secondary font-size-small font-weight-thin'>Add to Calendar</button>
+            <Button text={'Learn More'} primary={true} />
+            <Button text={'Add to Calendar'} primary={false} />
           </div>
         </div>
       )
@@ -126,7 +132,7 @@ export default class SearchEvents extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='search-events'>
         <form className='search-container' onSubmit={this.handleSubmit} >
           <input className='search-input font-weight-thin'
             placeholder='Search time, location, etc.' type='text'
