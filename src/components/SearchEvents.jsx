@@ -106,17 +106,18 @@ export default class SearchEvents extends React.Component {
       renderEvents = this.state.searchResults;
     }
     for (let i = 0; i < renderEvents.length; i++) {
+      const {Weekday, Month, Day, Year, Time, Title, Address, City, StateAbbreviation, Description } = renderEvents[i];
       eventsArr.push(
         <div className='search-result' key={i}>
           <div>
             <p className='result-font result-date-time font-size-small font-weight-thin'>
-              {renderEvents[i].Weekday}, {renderEvents[i].Month} {renderEvents[i].Day}, {renderEvents[i].Year} {renderEvents[i].Time}
+              {Weekday}, {Month} {Day}, {Year} {Time}
             </p>
-            <p className='result-font result-title'>{renderEvents[i].Title}</p>
+            <p className='result-font result-title'>{Title}</p>
             <p className='result-font result-type-location font-size-small'>
-              {renderEvents[i].Address}, {renderEvents[i].City}, {renderEvents[i].StateAbbreviation}
+              {Address}, {City}, {StateAbbreviation}
             </p>
-            <p className='result-font result-description font-size-small font-weight-thin'>{renderEvents[i].Description}</p>
+            <p className='result-font result-description font-size-small font-weight-thin'>{Description}</p>
           </div>
           <div className='result-buttons'>
             <Button text={'Learn More'} primary={true} />
