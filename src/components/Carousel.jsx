@@ -9,12 +9,37 @@ import image7 from '../images/carousel-images/carousel-7.jpg';
 import image8 from '../images/carousel-images/carousel-8.jpg';
 import image9 from '../images/carousel-images/carousel-9.jpg';
 
-export default class Carousel extends React.Component {
+const CarouselButton = ({ direction, switchImage, text }) => {
+  return <button className={`${direction ? 'right' : 'left'}-button carousel-button fade-in`} onClick={() => switchImage(direction)}>
+    {text}
+  </button>
+}
 
+const Image = ({ number, caption, image, switchImage }) => {
+  return (
+    <div key={number} className='slide-img-container'>
+      <figure className='slide fade-in'>
+        <img className='slide-img' alt={`${caption}`} src={image} />
+        <figcaption className='caption font-size-small font-weight-thin text-white'>
+          {caption}
+        </figcaption>
+      </figure>
+      <div className='gallery-btns'>
+        <CarouselButton direction={false} switchImage={switchImage} text='◀' />
+        <CarouselButton direction={true} switchImage={switchImage} text='▶' />
+      </div>
+    </div>
+  )
+}
+
+const Dot = ({ index, number }) => {
+  return <span key={index} className={`dot ${index !== number  && 'translucent'}`}></span>
+}
+
+export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //imageNumber: 1,
       dotClasses: ['dot', 'dot translucent', 'dot translucent'],
       imagesInfo: [
         {
@@ -62,90 +87,43 @@ export default class Carousel extends React.Component {
           image: image9,
           caption: 'Morbi tristique senectus et netus et malesuada. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.'
         }
-      ],
-      imageNumArr: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      imagesArr: [image1, image2, image3, image4, image5, image6, image7, image8, image9],
-      captionsArr: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla mi, suscipit sed leo sit amet, facilisis fringilla nulla.',
-        'Sed ultrices nec elit quis egestas. Donec mauris nisi, convallis vitae enim vel, auctor convallis risus. In lorem libero, gravida.',
-        'Aenean tempus accumsan sem, ac varius nulla laoreet ac. Pellentesque luctus ante in mauris sodales, facilisis tempor ex.',
-        'Cursus euismod quis viverra nibh cras. Lobortis elementum nibh tellus molestie nunc non.',
-        'Nec nam aliquam sem et tortor consequat id porta. Sit amet luctus venenatis lectus. Consectetur purus ut faucibus pulvinar.',
-        'Non sodales neque sodales ut. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor.',
-        'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        'Sapien faucibus et molestie ac feugiat sed lectus. Metus vulputate eu scelerisque felis imperdiet proin.',
-        'Morbi tristique senectus et netus et malesuada. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque.'
-      ],
-      image: '',
-      caption: '',
-      fadeIn: 'fade-in'
+      ]
     }
     this.switchImage = this.switchImage.bind(this);
-    this.getDots = this.getDots.bind(this);
-    this.renderImage = this.renderImage.bind(this);
+    this.renderDots = this.renderDots.bind(this);
   }
 
   switchImage(direction) {
+    const { imagesInfo } = this.state;
 
-    if (direction === 'right') {
-      this.state.imageNumArr.push(this.state.imageNumArr.shift());
-      this.state.imagesArr.push(this.state.imagesArr.shift());
-      this.state.captionsArr.push(this.state.captionsArr.shift());
-    } else if (direction === 'left') {
-      this.state.imageNumArr.unshift(this.state.imageNumArr.pop());
-      this.state.imagesArr.unshift(this.state.imagesArr.pop());
-      this.state.captionsArr.unshift(this.state.captionsArr.pop());
+    if (direction) {
+      imagesInfo.push(imagesInfo.shift());
+    } else {
+      imagesInfo.unshift(imagesInfo.pop());
     }
-
     this.setState({
-      imagesArr: this.state.imagesArr,
-      imageNumArr: this.state.imageNumArr,
-      fadeIn: this.state.fadeIn
+      imagesInfo: imagesInfo
     })
   }
 
-  getDots() {
+  renderDots() {
     const dotsArr = [];
     for (let i = 1; i <= 9; i++) {
       dotsArr.push(
-        <span key={i} className={`dot ${i !== this.state.imageNumArr[0] && 'translucent'}`}></span>
+        <Dot index={i} number={this.state.imagesInfo[0].number} />
       )
     }
 
     return dotsArr;
   }
 
-  renderImage = () => {
-    const arr = [];
-    for (let i = 0; i < this.state.imagesArr.length; i++) {
-      if (this.state.imagesArr.indexOf(this.state.imagesArr[i]) === this.state.imageNumArr[0]) {
-        arr.push(
-          <div key={i} className='slide-img-container'>
-            <figure className='slide fade-in'>
-              <img className='slide-img' alt={`${this.state.captionsArr[0]}`} src={this.state.imagesArr[0]} />
-              <figcaption className='caption font-size-small font-weight-thin text-white'>
-                {this.state.captionsArr[0]}
-              </figcaption>
-            </figure>
-            <div className='gallery-btns'>
-              <button className='left-button carousel-button fade-in'
-                onClick={() => this.switchImage('left')}>◀</button>
-              <button className='right-button carousel-button fade-in'
-                onClick={() => this.switchImage('right')}>▶</button>
-            </div>
-          </div>
-        )
-      }
-    }
-    return arr;
-  }
-
   render() {
+    const { caption, image, number } = this.state.imagesInfo[0];
     return (
       <div className='gallery-container'>
-        {this.renderImage()}
+        <Image caption={caption} image={image} number={number} switchImage={this.switchImage} />
         <div className='dots fade-in'>
-          {this.getDots()}
+          {this.renderDots()}
         </div>
       </div>
     )
