@@ -9,6 +9,10 @@ const buttonsDefault = {
   "$200": false
 }
 
+const DonateButton = () => {
+  
+}
+
 export default class DonateButtons extends React.Component {
     constructor(props) {
       super(props);
