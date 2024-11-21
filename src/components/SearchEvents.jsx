@@ -1,9 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 
-function Button(props){
-  return(
+const Button = (props) => {
+  return (
     <button className={`${props.primary ? 'primary' : 'secondary'} result-font font-size-small font-weight-thin`}>{props.text}</button>
+  )
+}
+
+const Event = ({ eventInfo }) => {
+  const { Weekday, Month, Day, Year, Time, Title, Address, City, StateAbbreviation, Description } = eventInfo;
+  return (
+    <div className='search-result'>
+      <div>
+        <p className='result-font result-date-time font-size-small font-weight-thin'>
+          {Weekday}, {Month} {Day}, {Year} {Time}
+        </p>
+        <p className='result-font result-title'>{Title}</p>
+        <p className='result-font result-type-location font-size-small'>
+          {Address}, {City}, {StateAbbreviation}
+        </p>
+        <p className='result-font result-description font-size-small font-weight-thin'>{Description}</p>
+      </div>
+      <div className='result-buttons'>
+        <Button text={'Learn More'} primary={true} />
+        <Button text={'Add to Calendar'} primary={false} />
+      </div>
+    </div>
   )
 }
 
@@ -106,24 +128,8 @@ export default class SearchEvents extends React.Component {
       renderEvents = this.state.searchResults;
     }
     for (let i = 0; i < renderEvents.length; i++) {
-      const {Weekday, Month, Day, Year, Time, Title, Address, City, StateAbbreviation, Description } = renderEvents[i];
       eventsArr.push(
-        <div className='search-result' key={i}>
-          <div>
-            <p className='result-font result-date-time font-size-small font-weight-thin'>
-              {Weekday}, {Month} {Day}, {Year} {Time}
-            </p>
-            <p className='result-font result-title'>{Title}</p>
-            <p className='result-font result-type-location font-size-small'>
-              {Address}, {City}, {StateAbbreviation}
-            </p>
-            <p className='result-font result-description font-size-small font-weight-thin'>{Description}</p>
-          </div>
-          <div className='result-buttons'>
-            <Button text={'Learn More'} primary={true} />
-            <Button text={'Add to Calendar'} primary={false} />
-          </div>
-        </div>
+        <Event key={i} eventInfo={renderEvents[i]} />
       )
     }
     return (
