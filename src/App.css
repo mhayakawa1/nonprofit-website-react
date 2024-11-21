@@ -1266,9 +1266,6 @@ h3 {
   }
 }
 
-.search-events{
-}
-
 .search-container {
   display: flex;
   width: 40rem;
@@ -1666,26 +1663,26 @@ footer ul {
   margin-bottom: 1rem;
 }
 
-.follow-links {
+.social-media-links {
   display: flex;
   justify-content: left;
   gap: 1rem;
 }
 
-.follow-links a {
+.social-media-links a {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.follow-links svg {
+.social-media-links svg {
   filter: invert(100%);
 }
 
-.follow-links svg:hover {
+.social-media-links svg:hover {
   filter: invert(57%) sepia(91%) saturate(628%) hue-rotate(0deg) brightness(104%) contrast(104%);
 }
 
-.follow-links svg:active {
+.social-media-links svg:active {
   filter: invert(25%) sepia(28%) saturate(6981%) hue-rotate(16deg) brightness(95%) contrast(97%);
 }
 
