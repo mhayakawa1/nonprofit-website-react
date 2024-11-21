@@ -110,7 +110,7 @@ export default class Carousel extends React.Component {
     const dotsArr = [];
     for (let i = 1; i <= 9; i++) {
       dotsArr.push(
-        <Dot index={i} number={this.state.imagesInfo[0].number} />
+        <Dot key={i} index={i} number={this.state.imagesInfo[0].number} />
       )
     }
 
