@@ -6,6 +6,7 @@ import HamburgerMenu from './components/HamburgerMenu';
 import Carousel from './components/Carousel';
 import DonateButtons from './components/DonateButtons';
 import SearchEvents from './components/SearchEvents';
+import GetInvolvedImages from './components/GetInvolvedImages';
 import Footer from './components/Footer';
 
 import videoAltImg from './images/video-alt-image.jpg';
@@ -15,36 +16,7 @@ import logo from './images/hand-planting-logo.svg';
 
 import giBackground from './images/get-involved-images/get-involved-bg.jpg'
 
-import giImage1 from './images/get-involved-images/get-involved-1.jpg';
-import giImage2 from './images/get-involved-images/get-involved-2.jpg';
-import giImage3 from './images/get-involved-images/get-involved-3.jpg';
-import giImage4 from './images/get-involved-images/get-involved-4.jpg';
-import giImage5 from './images/get-involved-images/get-involved-5.jpg';
-import giImage6 from './images/get-involved-images/get-involved-6.jpg';
-import giImage7 from './images/get-involved-images/get-involved-7.jpg';
-import giImage8 from './images/get-involved-images/get-involved-8.jpg';
-
 class App extends React.Component {
-  getInvolvedImages() {
-    let images = [];
-    const imagesInfo = {
-      [giImage1]: 'Woman holding tray of potted saplings',
-      [giImage2]: 'Adult and child planting sapling',
-      [giImage3]: 'Close up of person with gloves planting sapling',
-      [giImage4]: 'Child holding two potted saplings in both hands',
-      [giImage5]: 'Close up of two people preparing to plant a sapling with a trowel',
-      [giImage6]: 'Smiling man posing with a young evergreen tree on a cart',
-      [giImage7]: 'Two adults and two children planting a young tree with a shovel',
-      [giImage8]: 'Mangrove saplings in shallow water at the beach'
-    }
-
-    for (const [key, value] of Object.entries(imagesInfo)) {
-      images.push(
-        <img key={key} className='get-involved-image' src={key} alt={value} />
-      )
-    }
-    return (images);
-  }
   render() {
     return (
       <main>
@@ -106,7 +78,7 @@ class App extends React.Component {
         <section id='get-involved-section'>
           <div className='get-involved-container'>
             <img className='get-involved-background'
-            src={[giBackground]} 
+              src={[giBackground]}
             />
             <h2 className='title-headings text-white get-involved-heading'>Get Involved</h2>
 
@@ -123,9 +95,7 @@ class App extends React.Component {
             <SearchEvents />
           </div>
 
-          <div className='get-involved-images'>
-            {this.getInvolvedImages()}
-          </div>
+          <GetInvolvedImages />
 
           <div className='email-signup'>
             <h3 className='text-white'>Sign up for our newsletter</h3>
