@@ -91,7 +91,6 @@ class App extends React.Component {
             </div>
 
             <h3 className='find-event-heading text-white'>Find an event near you</h3>
-
             <SearchEvents />
           </div>
 
